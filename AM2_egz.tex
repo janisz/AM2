@@ -41,7 +41,46 @@ Ciągie podziałów $(\pi(n)$ nazywamy normalnym, jeśli $\delta(\pi(n))\xrighta
 \end{array}
 \end{df}
 \begin{df}[Funkcja całkowalna w sensie Riemanna]
-Funkcja f jest całkowalna w sensie Riemanna na $<a,b> \Leftrightarrow$ instnieje $\sigma\in\mathbb{R}$ taka,że dla dowolnego normalnego ciągu podziałów $(\pi_n)$ oraz dla dowolnego wartościowania tego ciągu $(\omega_n)$ mamy $\lim\limits_{n\to\infty}\sigma_n(\pi_n,\omega_0) = \lim\limits_{n\to\infty}\sum\limits_{i=1}^{k_n}f(\xi_i^{(n)})(x_i^{(n)}-x_{i-1}^{(n)}})$, to $\sigma$ nazywamy całką Riemanna funkcji f na $<a,b>$ i oznaczamy $\int\limits_a^b(f(x)dx$
+Funkcja f jest całkowalna w sensie Riemanna na $[a,b] \Leftrightarrow$ instnieje $\sigma\in\mathbb{R}$ taka,że dla dowolnego normalnego ciągu podziałów $(\pi_n)$ oraz dla dowolnego wartościowania tego ciągu $(\omega_n)$ mamy $\lim\limits_{n\to\infty}\sigma_n(\pi_n,\omega_0) = \lim\limits_{n\to\infty}\sum\limits_{i=1}^{k_n}f(\xi_i^{(n)})(x_i^{(n)}-x_{i-1}^{(n)}})$, to $\sigma$ nazywamy całką Riemanna funkcji f na $<a,b>$ i oznaczamy $\int\limits_a^b(f(x)dx$
 \end{df}
+\begin{tw}
+$f: [a,b] \rightarrow \mathbb{R}$ (ograniczona) jest całkowalna w sensie Riemanna na $[a,b] \Leftrightarrow s=S$
+\end{tw}
+\begin{tw}
+Każda funkcja monoticzna i ograniczona na $[a,b]$ jest całkowalna w sensie Riemanna na $[a,b]$
+\end{tw}
+\begin{tw}
+Każda funkcja ciągła na $[a,b]$ jest całkowalna w sensie Riemanna na $[a,b]$
+\end{tw}
+Własności całki Riemanna
+\begin{enumerate}
+\item $f,g: [a,b] \to \mathbb{R} {x\in[a,b]: f(x) \neq g(x)}$ jest zbiorem skończonym $\Rightarrow$ f jest całkowalna na $[a,b]\Leftrightarrow$ g jest całkowalna na $[a,b]$. W przypadku całkowalności $\int\limits_a^bf(x)dx=\int\limits_a^bg(x)dx$
+\item Liniowość
+\item $f: [a,b]\to\mathbb{R}$ całkowalna na $[a,b] \Rightarrow$ f jest całkowalna na kazdym podprzedziale $[a,b]$
+\item $f: [a,b]\to\mathbb{R}$, f jest całkowalna na $[a,c]$ oraz $[c,b] \Rightarrow$ f jest całkowalna na $[a,b]$ oraz $\int\limits_a^bf(x)dx = \int\limits_a^cf(x)dx + \int\limits_c^bf(x)dx$
+\item $f: [a,b] \to \mathbb{R}$ całkowalna na $[a,b]$, $\forall x\in[a,b] f(x) \geq 0 \Rightarrow \int\limits_a^bf(x)dx \geq 0$
+\item $f,g: [a,b] \to \mathbb{R}$ całkowalne na $[a,b]$, $\forall x\in[a,b] f(x) \leq g(x) \Rightarrow \int\limits_a^bf(x)dx \leq \int\limits_a^bg(x)dx$
+\item $f: [a,b] \to \mathbb{R}$ całkowalna na $[a,b] \Rightarrow$ $|f|$ też jest całkowalna na $[a,b]$ oraz $|\int\limits_a^bf(x)dx| \leq \int\limits_a^b|f(x)|dx$
+\item $f: [a,b] \to \mathbb{R}$ całkowalna na $[a,b] \Rightarrow \int\limits_a^bf(x)dx \leq \sup\limits_{x\in[a,b]}f(x)\cdot(b-a)$
+\item Podstawowy wzór rachunku całkowego\\
+$f: [a,b] \to \mathbb{R}$ funkcja ciągła, $\phi(x)$ --- dowolna funkcja pierwotna dla $f(x)$, to znaczy $\phi'(x)=f(x) \Rightarrow \int\limits_a^bf(x)dx = \phi(b)-\phi(a)$
+\item Całkowanie przez podstawienie\\
+$
+f: [a,b]\to\mathbb{R}$, funkcja ciągła, $g: [a,b]\to\mathbb{R},~ g\in C^1([a,b])\\
+\alpha = g(a),~ \beta =g(b)\\
+\int\limits_a^bf(g(x))g'(x)dx = \int\limits_\alpha^\beta f(t)dt, \mbox{ gdzie }t = g(x)
+$
+\item Całkowanie przez cześci\\
+$
+u,v: [a,b]\to\mathbb{R} \mbox{ --- funkcje klasy } C'\\
+\int\limits_a^bu(x)v'(x)dx = [u(x)v(x)]\limits_a^b - \int\limits_a^bu'(x)v(x)dx
+$
+\item Twierdzenie o wartości średniej rachunku całkowego
+$
+f,g: [a,b]\to\mathbb{R} \mbox{ --- funkcje ciągłe, g jest nieujemna (niedodatnia)}\\
+ \exists \xi\in [a,b] \int\limits_a^bf(x)g(x)dx = f(\xi)\int\limits_a^bg(x)dx
+$
+\end{enumerate}
 
 \end{document} 
+
