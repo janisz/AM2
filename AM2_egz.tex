@@ -1,0 +1,47 @@
+\documentclass{article}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[centertags]{amsmath}
+\usepackage{amsthm}
+\usepackage{newlfont}
+\newtheorem{lemat}{Lemat}
+\newtheorem{tw}{Twierdzenie}
+\newtheorem{przyklad}{Przykład}
+\newtheorem{wn}{Wniosek}
+\newtheorem{zad}{Zadanie}
+\theoremstyle{definition}
+\newtheorem{df}{Definicja}
+\usepackage[polish]{babel}
+\usepackage[utf8]{inputenc}
+\textwidth 18cm
+\textheight 24.5cm
+\topmargin -1cm
+\oddsidemargin 0cm
+\evensidemargin 0cm
+\def\thefootnote{\arabic{footnote})}
+
+
+\pagestyle{plain}
+\begin{document}
+\title{ Analiza matematyczna 2}
+\author{Tomasz Janiszewski}
+\date{\today}
+\maketitle
+\thispagestyle{empty}
+
+\section{Całka Riemanna}
+\begin{df}[Ciąg normalny podziałów]
+Ciągie podziałów $(\pi(n)$ nazywamy normalnym, jeśli $\delta(\pi(n))\xrightarrow{n\to\infty}0$
+\end{def}
+\begin{df}[Sumy całkowe]~\\
+\begin{array}{l l}
+\mbox{Dolna suma całkowa:}& $s_n = s_n(\pi_n) = \sum\limits_{i=1}^{k_n}m_i^{(n)}(x_i^{(n)}-x_{i-1}^{(n)}})$\\
+\mbox{Górna suma całkowa:}& $S_n = S_n(\pi_n) = \sum\limits_{i=1}^{k_n}M_i^{(n)}(x_i^{(n)}-x_{i-1}^{(n)}})$\\
+\mbox{Suma całkowa Riemanna:}& $\sigma_n = \sigma_n(\pi_n) = \sum\limits_{i=1}^{k_n}f(\xi_i^{(n)})(x_i^{(n)}-x_{i-1}^{(n)}})$
+\end{array}
+\end{df}
+\begin{df}[Funkcja całkowalna w sensie Riemanna]
+Funkcja f jest całkowalna w sensie Riemanna na $<a,b> \Leftrightarrow$ instnieje $\sigma\in\mathbb{R}$ taka,że dla dowolnego normalnego ciągu podziałów $(\pi_n)$ oraz dla dowolnego wartościowania tego ciągu $(\omega_n)$ mamy $\lim\limits_{n\to\infty}\sigma_n(\pi_n,\omega_0) = \lim\limits_{n\to\infty}\sum\limits_{i=1}^{k_n}f(\xi_i^{(n)})(x_i^{(n)}-x_{i-1}^{(n)}})$, to $\sigma$ nazywamy całką Riemanna funkcji f na $<a,b>$ i oznaczamy $\int\limits_a^b(f(x)dx$
+\end{df}
+
+\end{document} 
