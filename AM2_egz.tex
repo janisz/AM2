@@ -13,7 +13,7 @@
 \newtheorem{df}{Definicja}
 \usepackage[polish]{babel}
 \usepackage[utf8]{inputenc}
-\textwidth 18cm
+\textwidth 16cm
 \textheight 24.5cm
 \topmargin -1cm
 \oddsidemargin 0cm
@@ -31,7 +31,7 @@
 
 \section{Całka Riemanna}
 \begin{df}[Ciąg normalny podziałów]
-Ciągie podziałów $(\pi(n)$ nazywamy normalnym, jeśli $\delta(\pi(n))\xrightarrow{n\to\infty}0$
+Ciąg podziałów $(\pi(n)$ nazywamy normalnym, jeśli $\delta(\pi(n))\xrightarrow{n\to\infty}0$
 \end{def}
 \begin{df}[Sumy całkowe]~\\
 \begin{array}{l l}
@@ -70,17 +70,36 @@ f: [a,b]\to\mathbb{R}$, funkcja ciągła, $g: [a,b]\to\mathbb{R},~ g\in C^1([a,b
 \alpha = g(a),~ \beta =g(b)\\
 \int\limits_a^bf(g(x))g'(x)dx = \int\limits_\alpha^\beta f(t)dt, \mbox{ gdzie }t = g(x)
 $
+\begin{proof}~\\
+	Niech $\phi(x)$ będzie funkcją pierwotną dla $f(x)$, to znaczy $\phi'(x) = f(x), \phi=\int\limits_a^bf(t)dt = \phi(\beta)-\phi(\alpha)$\\
+$[\phi(g(x))]' = \phi'(g(x))g'(x) = f(g(x))g'(x) \Rightarrow \phi(g(x)) \mbox{ to funkcja pierwotna funkcji } f(g(x))g'(x)$\\
+$L = \int\limits_a^bf(g(x))g'(x)dx = \phi(g(b))-\phi(g(a)) = \phi(\beta)-\phi(\alpha)\\
+L = P
+\end{proof}
 \item Całkowanie przez cześci\\
 $
 u,v: [a,b]\to\mathbb{R} \mbox{ --- funkcje klasy } C'\\
 \int\limits_a^bu(x)v'(x)dx = [u(x)v(x)]\limits_a^b - \int\limits_a^bu'(x)v(x)dx
 $
+\begin{proof}~\\
+$
+	[u(x)v(x)]' = u'(x)v(x)+u(x)v'(x)\\
+	\int\limits_a^b[u(x)v(x)]'dx = \int\limits_a^b(u'(x)v(x)+u(x)v'(x))dx = 
+	\int\limits_a^b u'(x)v(x)dx + \int\limits_a^bu(x)v'(x)dx \quad(*)\\
+	u(x)v(x) \mbox{ to funkcja pierwotna } [u(x)v(x)]'\\
+	\int\limits_a^b[u(x)v(x)]'dx u(b)v(b) - u(a)v(a) = [u(x)v(x)]\limits_a^b \quad(**)\\
+	(*):(**) \Rightarrow [u(x)v(x)]\limits_a^b = \int\limits_a^bu'(x)v(x)dx + \int\limits_a^b u(x)v'(x)dx\\
+	\int\limits_a^bu(x)v(x)dx = [u(x)v(x)]_a^b-\int\limits_a^bu'(x)v(x)dx	
+$
+\end{proof}
 \item Twierdzenie o wartości średniej rachunku całkowego
 $
 f,g: [a,b]\to\mathbb{R} \mbox{ --- funkcje ciągłe, g jest nieujemna (niedodatnia)}\\
  \exists \xi\in [a,b] \int\limits_a^bf(x)g(x)dx = f(\xi)\int\limits_a^bg(x)dx
 $
 \end{enumerate}
+
+
 
 \end{document} 
 
