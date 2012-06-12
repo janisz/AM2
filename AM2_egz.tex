@@ -13,6 +13,7 @@
 %\usepackage{newlfont}
 \usepackage{amsmath} %pakiet potrzebny do \eqref
 \usepackage{amssymb} %pakiet potrzebny do \blacksquare i \mathbb{•}
+\usepackage{hyperref}
 
 \newtheorem{lemat}{Lemat}
 \newtheorem{tw}{Twierdzenie}
@@ -24,7 +25,7 @@
 \usepackage[polish]{babel}
 \usepackage[utf8]{inputenc}
 
-
+ \hypersetup{colorlinks=false}
 
 \pagestyle{plain}
 \begin{document}
@@ -32,9 +33,12 @@
 \author{Tomasz Janiszewski}
 \date{\today}
 \maketitle
-\thispagestyle{empty}
+\tableofcontents
+\pagebreak
 
 \section{Całka Riemanna}
+
+
 \begin{df}[Ciąg normalny podziałów]
 Ciąg podziałów $(\pi(n)$ nazywamy normalnym, jeśli $\delta(\pi(n))\xrightarrow{n\to\infty}0$
 \end{def}
@@ -147,9 +151,7 @@ Niech $f: [a,b] \to \mathbb{R}$ - funkcja klasy $C^1$. Wówczs długość łuku 
 \end{tw}
 
 \begin{tw}[Objętość bryły]
-Niech $f: [a,b] \to \mathbb{R}$ - funkcja klasy $C^1$ oraz $V$ oznacza bryłę powstałą poprzez obrót dookoła osi OX krzywej $y - f(x), x\in [a,b]$. Wówczs objętość $V$ dana jest wzorem $V = \Pi\int\limits_a^b f^2(x)dx
+Niech $f: [a,b] \to \mathbb{R}$ - funkcja klasy $C^1$ oraz $V$ oznacza bryłę powstałą poprzez obrót dookoła osi OX krzywej $y - f(x), x\in [a,b]$. Wówczs objętość $V$ dana jest wzorem $V = \pi\int\limits_a^b f^2(x)dx$
 \end{tw}
-
-
 \end{document} 
 
