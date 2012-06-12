@@ -1,9 +1,19 @@
-\documentclass{article}
-\usepackage{amsfonts}
-\usepackage{amssymb}
+\documentclass[12pt,a4paper]{article}
 \usepackage[centertags]{amsmath}
+\usepackage[polish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[a4paper]{geometry}
+\usepackage{amsfonts}
+\usepackage{fullpage}
+%\usepackage{epsfig}
 \usepackage{amsthm}
-\usepackage{newlfont}
+\usepackage{pdflscape}
+\usepackage{float}
+%\usepackage{newlfont}
+\usepackage{amsmath} %pakiet potrzebny do \eqref
+\usepackage{amssymb} %pakiet potrzebny do \blacksquare i \mathbb{•}
+
 \newtheorem{lemat}{Lemat}
 \newtheorem{tw}{Twierdzenie}
 \newtheorem{przyklad}{Przykład}
@@ -13,12 +23,7 @@
 \newtheorem{df}{Definicja}
 \usepackage[polish]{babel}
 \usepackage[utf8]{inputenc}
-\textwidth 16cm
-\textheight 24.5cm
-\topmargin -1cm
-\oddsidemargin 0cm
-\evensidemargin 0cm
-\def\thefootnote{\arabic{footnote})}
+
 
 
 \pagestyle{plain}
@@ -52,7 +57,9 @@ Każda funkcja monoticzna i ograniczona na $[a,b]$ jest całkowalna w sensie Rie
 \begin{tw}
 Każda funkcja ciągła na $[a,b]$ jest całkowalna w sensie Riemanna na $[a,b]$
 \end{tw}
-Własności całki Riemanna
+
+\subsection{Własności całki Riemanna}
+
 \begin{enumerate}
 \item $f,g: [a,b] \to \mathbb{R} {x\in[a,b]: f(x) \neq g(x)}$ jest zbiorem skończonym $\Rightarrow$ f jest całkowalna na $[a,b]\Leftrightarrow$ g jest całkowalna na $[a,b]$. W przypadku całkowalności $\int\limits_a^bf(x)dx=\int\limits_a^bg(x)dx$
 \item Liniowość
@@ -71,10 +78,11 @@ f: [a,b]\to\mathbb{R}$, funkcja ciągła, $g: [a,b]\to\mathbb{R},~ g\in C^1([a,b
 \int\limits_a^bf(g(x))g'(x)dx = \int\limits_\alpha^\beta f(t)dt, \mbox{ gdzie }t = g(x)
 $
 \begin{proof}~\\
-	Niech $\phi(x)$ będzie funkcją pierwotną dla $f(x)$, to znaczy $\phi'(x) = f(x), \phi=\int\limits_a^bf(t)dt = \phi(\beta)-\phi(\alpha)$\\
+	Niech $\phi(x)$ będzie funkcją pierwotną dla $f(x)$, to znaczy
+	 $\phi'(x) = f(x), \phi=\int\limits_a^bf(t)dt = \phi(\beta)-\phi(\alpha)$\\
 $[\phi(g(x))]' = \phi'(g(x))g'(x) = f(g(x))g'(x) \Rightarrow \phi(g(x)) \mbox{ to funkcja pierwotna funkcji } f(g(x))g'(x)$\\
 $L = \int\limits_a^bf(g(x))g'(x)dx = \phi(g(b))-\phi(g(a)) = \phi(\beta)-\phi(\alpha)\\
-L = P
+L = P$
 \end{proof}
 \item Całkowanie przez cześci\\
 $
@@ -99,6 +107,48 @@ f,g: [a,b]\to\mathbb{R} \mbox{ --- funkcje ciągłe, g jest nieujemna (niedodatn
 $
 \end{enumerate}
 
+\subsection{Całki niewłaściwe}
+
+\begin{df}
+$f: [a, \infty) \to \mathbb{R} \mbox{ całkowalna na } [\alpha, \beta] \forall \beta > \alpha$ oraz istnieje granica $\lim\limits_{\beta\to\infty} \int\limits_\alpha^\beta f(x)dx \Rightarrow$ granicę tę nazywamy całka niewłaściwą pierwszego rodzaju i oznaczamy $\int\limits_\alpha^\beta f(x)dx := \lim\limits_{\beta\to\infty} \int\limits_\alpha^\beta f(x)dx$\\
+Ponadto jeśli granica ta istnieje i jest skończona to całkę niewłaściwą nazywamy zbieżną. Natomiast w pozostałych przypadkach całkę niewłaściwą nazywamy rozbieżną.
+\end{df}
+
+\begin{df}
+$f: [a, \infty) \to \mathbb{R} \mbox{ całkowalna na } [\alpha, \beta] \quad \forall a < \beta < b$ oraz istnieje granica $\lim\limits_{\beta\to b^-} \int\limits_a^\beta f(x)dx \Rightarrow$ granicę tę nazywamy całka niewłaściwą drugiego rodzaju i oznaczamy $\int\limits_a^b f(x)dx := \lim\limits_{\beta\to b^-} \int\limits_\alpha^\beta f(x)dx$\\
+Ponadto jeśli granica ta istnieje i jest skończona to całkę niewłaściwą nazywamy zbieżną. Natomiast w pozostałych przypadkach całkę niewłaściwą nazywamy rozbieżną.
+\end{df}
+
+\subsection{Kryteria zbieżności}
+
+\begin{tw}[Kryterium porównawcze]
+$f,g: [a,b) \to \mathbb{R} \mbox{ całkowalna na } [\alpha, \beta] \quad \forall a < \beta < b$ oraz
+$\forall x\in [a,b) \quad 0<leq f(x) \leq g(x)$ Wtedy:
+\begin{itemize}
+\item $\int\limits_a^bg(x)dx$ jest zbieżna $\Rightarrow \int\limits_a^bg(x)dx$ też jest zbieżna
+\item $\int\limits_a^bf(x)dx$ jest rozbieżna $\Rightarrow \int\limits_a^bg(x)dx$ też jest rozbieżna
+\end{itemize}
+\end{tw}
+
+\begin{tw}
+$f: [a,b) \to \mathbb{R} \mbox{ całkowalna na } [\alpha, \beta] \quad \forall a < \beta < b$ oraz
+$\int\limits_a^b \f(x)|dx$ jest zbieżna, to $\int\limits_a^b f(x)dx$ też jest zbieżna. Mówimy wtedy, że jest zbieżna bezwzględnie.
+\end{tw} 
+
+\subsection{Zastosowania geometryczne całki Riemanna}
+
+\begin{tw}[Pole zbioru płaskiego]
+$f: [a,b] \to \mathbb{R}$ funkcja nieujemna i ciągła, $D = \{(x,y) \in \mathbb{R}^2: x\in [a,b[, y\in [0, f(x)]$\\
+pole $D = |D| = \int\limits_a^b f(x)dx$
+\end{tw}
+
+\begin{tw}[Długość łuku]
+Niech $f: [a,b] \to \mathbb{R}$ - funkcja klasy $C^1$. Wówczs długość łuku opisanego równaniem $y=f(x), x\in [a,b]$ dana jest wzorem $L = \int\limits_a^b \sqrt{1 + \left[f'(x)\right]^2}$
+\end{tw}
+
+\begin{tw}[Objętość bryły]
+Niech $f: [a,b] \to \mathbb{R}$ - funkcja klasy $C^1$ oraz $V$ oznacza bryłę powstałą poprzez obrót dookoła osi OX krzywej $y - f(x), x\in [a,b]$. Wówczs objętość $V$ dana jest wzorem $V = \Pi\int\limits_a^b f^2(x)dx
+\end{tw}
 
 
 \end{document} 
