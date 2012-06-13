@@ -259,7 +259,6 @@ Szereg $\sum\limits_{n=1}^\infty a_n$ jest zbiezny bezwzględnie $\Rightarrow$ S
 
 \section{Ciągi i szeregi funkcyjne}
 \subsection{Ciągi funkcyjne}
-
 \begin{df}[Punktowej zbieżności]~\\
 Mówimy, że ciąg funkcyjny $(f_n)$ jest zbieżny do funkcji $f$ (punktowo)
  $$\Leftrightarrow \forall x\in A \quad \lim\limits_{n\to\infty}\underbrace{f_n(x)}_{ciąg liczbowy} = \underbrace{f(x)}_{liczba} \Leftrightarrow \forall x\in A ~ \forall\epsilon > 0 ~~ \exists N = N(\epsilon, x) ~ \forall n \geqslant N \quad |f_n(x)-f(x)| < \epsilon$$, oznaczamy $f_n \rightarrow f$
@@ -307,6 +306,43 @@ $A \mbox{ -- przedział } \subset \mathbb{R}$ są różniczkowalne w każdym pun
 \begin{tw}[o całkowaniu granicy ciągu funkcyjnego]~\\
 $A \mbox{ -- przedział } \subset \mathbb{R}, f, f_n \in C(A), f_n \rightrightarrows_A f \Rightarrow \forall a,b \in A \quad \int\limits_a^bf(x)dx = \lim\limits_{n\to\infty}\int\limits_a^bf_n(x)dx$ 
 \end{itemize}
+
+\subsection{Szeregi funkcyjne}
+% dodać definicje
+\begin{tw}
+Szereg $\sum\limits_{n=1}^\infty a_n$ jest zbieżny jednostajnie $\Leftrightarrow$ spełnia warunek Cauchego jednostajnej zbieżności szeregu funkcyjnego.
+$$\forall \espilon ~~\exists N ~ \forall m>n>N ~~ \forall x\in A \quad |a_{n+1}(x) + \dots + u_m(x)| < \epsilon $$
+\end{tw}
+
+\begin{tw}[Kryterium Weierstrassa]
+Jeśli istnieje ciąg liczbowy $(a_n)$ taki, że $\forall n\in \mathbb{N} ~~ \forallx\in A \quad |u_n(x)|\leqslant a_n$ i $\sum\limits_{n=1}^\infty a_n$ jest zbieżny, to szereg funkcyjny $\sum\limits_{n=1}^\infty u_n$ jest zbieżny jednostajny ( i bezwzględnie)
+\begin{przyklad}
+Szereg $\sum\limits_{n=1}^\infty \frac{sin(nx)}{2^n}$ jest zbieżny jednostajnie na $\mathbb{R}$ bo
+$\forall n\in \mathbb{N} ~~ \forall x\in\mathbb{R} \quad \frac{sin(nx)}{2^n} \leqslant \frac{1}{2^n} $ i $\sum\limits_{n=1}^\infty \frac{1}{2^n}$ jest zbieżny jako ciąg geometryczny.
+\end{przyklad}
+\end{tw}
+
+\begin{tw}[o ciągłości sumy szeregu funkcyjnego]~\\
+$S, u_n: A \to \mathbb{R}, ~~ \sum\limits_{n=1}^\infty u_n$ jest zbieżny jednostajnie do funkcji S, funkcje $u_n$ są ciągłe na $A~ \forall n\in\mathbb{N} \Rightarrow S=\sum\limits_{n=1}^\infty u_n$ też jest ciągła na $A$.
+\end{tw}
+
+\begin{tw}[o różniczkowaniu sumy szeregu funkcyjnego]~\\
+$A$ -- przedział $\subset \mathbb{R}$\\
+$u_n: A \to \mathbb{R}$ są różniczkowalne w każdym punkcie przedziału $A$\\
+$\sum\limits_{n=1}^\infty u_n'$ jest zbieżny jednostajnie na $A$\\
+$\exists x_0\in A ~~ \sum\limits_{n=1}^\infty u_n(x_0)$ jest zbieżby $\Rightarrow$
+\begin{itemize}
+	\item $\sum\limits_{n=1}^\infty u_n$ jest zbieżny jednostajnie
+	\item $\sum\limits_{n=1}^\infty u_n$ jest różniczkowalna na $A$ i $(\sum\limits_{n=1}^\infty u_n)' = \sum\limits_{n=1}^\infty u_n'$
+\end{itemize}
+\end{tw}
+
+\begin{tw}[o całkowaniu szeregu funkcyjnego]~\\
+$A$ -- przedział $\subset \mathbb{R}$\\
+$u_n: A \to \mathbb{R}$ są ciągłe na $A$\\
+$\sum\limits_{n=1}^\infty u_n$ jest zbieżny jednostajnie\\
+$\forall a,b\in A ~~ \int\limits_a^b (\sum\limits_{n=1}^\infty u_n(x))dx = \lim\limits_{n\to\infty}\int\limits_a^b (u_1(x) + u_2(x) + \dots + u_n(x))dx =  \sum\limits_{n=1}^\infty \int\limits_a^b u_n(x)dx$
+\end{tw}
 
 \end{document} 
 
