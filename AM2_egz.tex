@@ -148,7 +148,8 @@ Niech $f: [a,b] \to \mathbb{R}$ - funkcja klasy $C^1$. Wówczs długość łuku 
 \end{tw}
 
 \begin{tw}[Objętość bryły]
-Niech $f: [a,b] \to \mathbb{R}$ - funkcja klasy $C^1$ oraz $V$ oznacza bryłę powstałą poprzez obrót dookoła osi OX krzywej $y - f(x), x\in [a,b]$. Wówczs objętość $V$ dana jest wzorem $V = \pi\int\limits_a^b f^2(x)dx$
+Niech $f: [a,b] \to \mathbb{R}$ - funkcja klasy $C^1$ oraz $V$ oznacza bryłę powstałą poprzez obrót
+ dookoła osi OX krzywej $y - f(x), x\in [a,b]$. Wówczs objętość $V$ dana jest wzorem $V = \pi\int\limits_a^b f^2(x)dx$
 \end{tw}
 
 
@@ -174,7 +175,7 @@ $\sum\limits_{n=1}^\infty \frac{1}{n}$ nie jest zbiezny, mimo że $\lim\limits_{
 \begin{tw}
 Szereg $\sum\limits_{n=1}^\infty a_n$ jest zbieżny $\Leftrightarrow$ spełnia warunek Cauch'ego, to znaczy
 $$
-\forall \epsilon > 0 ~~\exists N ~~\forall m > n > N \quad |a_{n+1} + a_{n+2} + \dots + a_m| < \epsilon
+\forall \varepsilon > 0 ~~\exists N ~~\forall m > n > N \quad |a_{n+1} + a_{n+2} + \dots + a_m| < \varepsilon
 $$
 \end{tw}
 
@@ -260,11 +261,11 @@ Szereg $\sum\limits_{n=1}^\infty a_n$ jest zbiezny bezwzględnie $\Rightarrow$ S
 \subsection{Ciągi funkcyjne}
 \begin{df}[Punktowej zbieżności]~\\
 Mówimy, że ciąg funkcyjny $(f_n)$ jest zbieżny do funkcji $f$ (punktowo)
- $$\Leftrightarrow \forall x\in A \quad \lim\limits_{n\to\infty}\underbrace{f_n(x)}_{ciąg liczbowy} = \underbrace{f(x)}_{liczba} \Leftrightarrow \forall x\in A ~ \forall\epsilon > 0 ~~ \exists N = N(\epsilon, x) ~ \forall n \geqslant N \quad |f_n(x)-f(x)| < \epsilon$$, oznaczamy $f_n \rightarrow f$
+ $$\Leftrightarrow \forall x\in A \quad \lim\limits_{n\to\infty}\underbrace{f_n(x)}_{ciąg liczbowy} = \underbrace{f(x)}_{liczba} \Leftrightarrow \forall x\in A ~ \forall\varepsilon > 0 ~~ \exists N = N(\varepsilon, x) ~ \forall n \geqslant N \quad |f_n(x)-f(x)| < \varepsilon$$, oznaczamy $f_n \rightarrow f$
 \end{df}
 
 \begin{df}[Jednostajnej zbieżności]~\\
-Mówimy, że ciąg funkcyjny $(f_n)$ jest zbieżny do funkcji $f$ (jednostajnie) $$\Leftrightarrow \forall\epsilon > 0 ~~ \exists N = N(\epsilon, x) ~ \forall n \geqslant N ~ \forall x\in A ~ \quad |f_n(x)-f(x)| < \epsilon$$, oznaczamy $f_n \rightarrow f$
+Mówimy, że ciąg funkcyjny $(f_n)$ jest zbieżny do funkcji $f$ (jednostajnie) $$\Leftrightarrow \forall\varepsilon > 0 ~~ \exists N = N(\varepsilon, x) ~ \forall n \geqslant N ~ \forall x\in A ~ \quad |f_n(x)-f(x)| < \varepsilon$$, oznaczamy $f_n \rightarrow f$
 \end{df}
 
 \begin{tw}[Warunek równoważny zbiezności jednostajnej ciągu funkcyjnego]~\\
@@ -284,7 +285,7 @@ $
 
 \begin{df}[Warunek Cauch'ego dla zbieżności punktowej i jednostajnej]~\\
 $\forall x\in A f_n \rightarrow f \Leftrightarrow \forall x\in A$ ciąg $(f_n(x))$ jest zbieżny $\Leftrightarrow \forall x\in A \mbox{ ciąg } (f_n(x))$ spełnia warunek Cauch'ego, to znaczy 
-$\forall x\in A ~~ \forall \epsilon>0 ~~ \exists N ~ \foralln,m \geqslant N \quad |f_n(x) - f_m(x)| < \epsilon$ 
+$\forall x\in A ~~ \forall \varepsilon>0 ~~ \exists N ~ \foralln,m \geqslant N \quad |f_n(x) - f_m(x)| < \varepsilon$ 
 \end{df}
 
 \begin{tw}
@@ -310,7 +311,7 @@ $A \mbox{ -- przedział } \subset \mathbb{R}, f, f_n \in C(A), f_n \rightrightar
 % dodać definicje
 \begin{tw}
 Szereg $\sum\limits_{n=1}^\infty a_n$ jest zbieżny jednostajnie $\Leftrightarrow$ spełnia warunek Cauchego jednostajnej zbieżności szeregu funkcyjnego.
-$$\forall \espilon ~~\exists N ~ \forall m>n>N ~~ \forall x\in A \quad |a_{n+1}(x) + \dots + u_m(x)| < \epsilon $$
+$$\forall \espilon ~~\exists N ~ \forall m>n>N ~~ \forall x\in A \quad |a_{n+1}(x) + \dots + u_m(x)| < \varepsilon $$
 \end{tw}
 
 \begin{tw}[Kryterium Weierstrassa]
@@ -463,5 +464,60 @@ $$S(x_0, r) = \{x\in X: \varrho(x,x_0) = r\} = \begin{cases}
 	X\smallsetminus\{x_0\} &\mbox{ gdy } r=1
 \end{cases}$$
 \end{przyklad}
+
+\begin{df}
+Ciąg $(a_n)$ o wyrazach w przestrzeni metrycznej $(X, \varrho)$ jest zbiezny do $a\in X \Leftrightarrow \forall\varepsilon >0~~ \exists N ~ \forall n \geqslant N \quad \varrho(a_n, a) < \varepsilon \Leftrightarrow \forall\varepsilon >0~~ \exists N ~ \forall n \geqslant N \quad |\varrho(a_n, a) - 0| < \varepsilon \Leftrightarrow \varrho(a_n, a) \rightarrow 0$
+\end{df}
+
+\begin{df}
+Ciąg $(a_n)$ o wyrazach w przestrzeni metrycznej spelnia warunek Cauch'ego $\Leftrightarrow \forall \varepsilon >0 ~~ \exists N ~ \foralln,m > N \quad \varrho(a_n, a_m) < \varepsilon$
+\end{df}
+
+\begin{tw}
+Ciąg $(a_n)$ o wyrazach w przestrzeni metrycznej jest zbieżny $\Rightarrow$ spełnia warunek Cauch'ego
+\end{tw}
+
+\begin{przyklad}
+Ciąg $a_n = \frac{1}{n}$ o wyrazach w przestrzeni metrycznej $X = (0, \infty)$ z metryką naturalną spełnia warunek Cauch'ego a mimo to nie jest zbieżny bo jedyny kandydat na granicę -- $0$ odpada
+\end{przyklad}
+
+\begin{df}
+Przestrzeń metryczna, w której każdy ciąg spełniający warunek Cauch'ego jest zbieżny nazywamy przestrzenią metryczną zupełną.
+\end{df}
+
+\begin{tw}
+Przestrzeń $X = \mathbb{R}$ i $\varrho (x,y) = |x-y|$ jest przestrzenią zupełną
+\end{tw}
+
+\begin{tw}[Banach o punkcie stałym]~\\
+Niech $(X, \varrho)$ będzie przestrzenią metryczną zupełną i $f: X \to X$ będzie odwzorowaniem zwężającym, to znaczy funkcją spełniająca warunek
+$$ \exists L\in (0,1) ~~ \forall x,y\in X \quad \varrho (f(x), f(y)) \leqslant L\varrho (x, y) $$
+Wówczas istnieje dokładnie jedno $x_0 \in X$ (nazywane punktem stałym odwzorowania), takie że $f(x_0) = x_0$. 
+\end{tw}
+
+
+\subsection{Elementy topologii}
+\begin{df}
+Zbiór $A$ zawarty w przestrzeni metrycznej $(X, \varrho)$ nazywamy otwartym jesli każdy punkt $a$ ze zbioru $A$ nalezy do $A$ wraz z pewną kulą o środku w $a$.\\
+$$A \mbox{ jest otwarty } \Leftrightarrow \forall a\in A ~~ \exists r>0 \quad K(a, r) \subset A$$
+\end{df}
+\begin{df}
+Zbiór $A$ zawarty w przestrzeni metrycznej $(X, \varrho)$ nazywamy domkniętym $ \Leftrightarrow X \smallsetminus A$ jest otwarty
+\end{df}
+
+\begin{df}
+Wnętrze zbioru $A$ w przestrzenimetrycznej $(X, \varrho)$ to 
+$$ IntA := \{a\in A: ~~ \exists r>0 ~~ K(a,r) \subset A \} $$
+\end{df}
+\begin{df}
+Domknięcie zbioru $A$ w przestrzenimetrycznej $(X, \varrho)$ to 
+$$ \overline{A} := \{x\in X: ~~ \exists r>0 ~~ K(x,r) \cap A \neq \emptyset \} $$
+\end{df}
+
+\begin{przyklad}
+Rozpatrzmyu przestrzen metryczną $(X, \varrho)$, gdzie $X = \mathbb{R}$, $\varrho (x,y) = |x-y|$\\
+$$Int([a,b)) = (a,b) \quad\quad \overline{(a,b)} = [a,b]$$
+\end{przyklad}
+
 \end{document} 
 
