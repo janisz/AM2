@@ -30,7 +30,6 @@
 \pagestyle{plain}
 \begin{document}
 \title{ Analiza matematyczna 2}
-\author{Tomasz Janiszewski}
 \date{\today}
 \maketitle
 \tableofcontents
@@ -410,12 +409,59 @@ Niech $f\in C^\infty ((x_0-\delta, x_0+\delta))$ wtedy szereg potęgowy $\sum\li
 Niech $f\in C^\infty ((\delta, \delta))$ wtedy szereg potęgowy $\sum\limits_{n=0}^\infty \frac{f^{(n)}(0)}{n!}x^n$ nazywamy szeregiem Maclaurina dla funkcji $f$.
 \end{df}
 
-\begin{przyklad}[Rozwinięć niekturych funkcji w szereg Macalurina]~\\
+\begin{przyklad}[Rozwinięć niektórych funkcji w szereg Macalurina]~\\
 \begin{itemize}
 	\item $\frac{1}{1-x} = \sum\limits_{n=0}^\infty x^n \quad |x| < 1$
 	\item $e^x = \sum\limits_{n=0}^\infty \frac{x^n}{n!}$
 	\item $sinx = \sum\limits_{n=0}^\infty \frac{(-1)^n}{(2n+1)!}x^{2n+1}$
 	\item $cosx = \sum\limits_{n=0}^\infty \frac{(-1)^n}{(2n)!}x^{2n}$
 \end{itemize}
+
+\section{Przestrzenie metryczne i unormowane}
+\begin{df}
+Przestrzenią metryczną nazywamy parę $(X, \varrho)$, gdzie $X$ to niepusty zbiór, a $\varrho$ to metryka w tym zbiorze. Elementy $X$ nazywamy punktami zaś $\varrho (x,y)$ odległościa między $x$ i $y$ 
+\end{df}
+\begin{przyklad}[Metryka naturalna (euklidesowa)]
+$X = \mathbb{R}^2 ~\varrho((x_1,x_2),(y_1, y_2)) = \sqrt{(x_1-y_1)^2+(x_2-y_2)^2}$
+\end{przyklad}
+\begin{przyklad}[Metryka dyskretna]
+$X \mbox{-- dowolny zbiór niepusty} \quad \varrho(x,y) = 
+\begin{cases}
+0 \mbox{ dla } x = y\\
+1 \mbox{ dla } x \neq y
+\end{cases}$
+\end{przyklad}
+\begin{przyklad}[Metryka taksówkowa (miejska)]
+$X = \mathbb{R}^n ~\varrho(x, y) = \sum\limits_{k=1}^n |x_k-y_k|$
+\end{przyklad}
+
+\begin{df}
+Kulą (otwartą) o środku w punkcie $x_0$ i promieniu $r$ w przestrzeni metrycznej $(X, \varrho)$ nazywamy zbiór $K(x_0, r) = \{x\in X: \varrho(x,x_0) < r\}$
+\end{df}
+\begin{df}
+Kulą domkniętą o środku w punkcie $x_0$ i promieniu $r$ w przestrzeni metrycznej $(X, \varrho)$ nazywamy zbiór $\overline{K}(x_0, r) = \{x\in X: \varrho(x,x_0) \leqslant r\}$
+\end{df}
+\begin{df}
+Sferą o środku w punkcie $x_0$ i promieniu $r$ w przestrzeni metrycznej $(X, \varrho)$ nazywamy zbiór $S(x_0, r) = \{x\in X: \varrho(x,x_0) = r\}$
+\end{df}
+
+\begin{przyklad}[Kula w metryce dyskretnej]
+$$K(x_0, r) = \{x\in X: \varrho(x,x_0) < r\} = \begin{cases}
+	\{x_0\} &\mbox{ gdy } r\in (0,1]\\
+	X &\mbox{ gdy } r\in (1, \infty)
+\end{cases}$$
+\end{przyklad}
+\begin{przyklad}[Kula domknięta w metryce dyskretnej]
+$$\overline{K}(x_0, r) = \{x\in X: \varrho(x,x_0) \leqslant r\} = \begin{cases}
+	\{x_0\} &\mbox{ gdy } r\in (0,1)\\
+	X &\mbox{ gdy } r\in [1, \infty)
+\end{cases}$$
+\end{przyklad}
+\begin{przyklad}[Sfera w metryce dyskretnej]
+$$S(x_0, r) = \{x\in X: \varrho(x,x_0) = r\} = \begin{cases}
+	\emptyset &\mbox{ gdy } r\in (0,1) \cup (1,\infty)\\
+	X\smallsetminus\{x_0\} &\mbox{ gdy } r=1
+\end{cases}$$
+\end{przyklad}
 \end{document} 
 
