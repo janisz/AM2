@@ -152,6 +152,7 @@ Niech $f: [a,b] \to \mathbb{R}$ - funkcja klasy $C^1$. Wówczs długość łuku 
 Niech $f: [a,b] \to \mathbb{R}$ - funkcja klasy $C^1$ oraz $V$ oznacza bryłę powstałą poprzez obrót dookoła osi OX krzywej $y - f(x), x\in [a,b]$. Wówczs objętość $V$ dana jest wzorem $V = \pi\int\limits_a^b f^2(x)dx$
 \end{tw}
 
+
 \section{Szeregi liczbowe}
 
 \begin{df}[sumy szeregu liczbowego]~\\
@@ -254,6 +255,58 @@ Szereg $\sum\limits_{n=1}^\infty a_n$ jest zbiezny bezwzględnie $\Rightarrow$ S
 %dodać przykłady i wyjaśnieniea
 
 
+
+
+\section{Ciągi i szeregi funkcyjne}
+\subsection{Ciągi funkcyjne}
+
+\begin{df}[Punktowej zbieżności]~\\
+Mówimy, że ciąg funkcyjny $(f_n)$ jest zbieżny do funkcji $f$ (punktowo)
+ $$\Leftrightarrow \forall x\in A \quad \lim\limits_{n\to\infty}\underbrace{f_n(x)}_{ciąg liczbowy} = \underbrace{f(x)}_{liczba} \Leftrightarrow \forall x\in A ~ \forall\epsilon > 0 ~~ \exists N = N(\epsilon, x) ~ \forall n \geqslant N \quad |f_n(x)-f(x)| < \epsilon$$, oznaczamy $f_n \rightarrow f$
+\end{df}
+
+\begin{df}[Jednostajnej zbieżności]~\\
+Mówimy, że ciąg funkcyjny $(f_n)$ jest zbieżny do funkcji $f$ (jednostajnie) $$\Leftrightarrow \forall\epsilon > 0 ~~ \exists N = N(\epsilon, x) ~ \forall n \geqslant N ~ \forall x\in A ~ \quad |f_n(x)-f(x)| < \epsilon$$, oznaczamy $f_n \rightarrow f$
+\end{df}
+
+\begin{tw}[Warunek równoważny zbiezności jednostajnej ciągu funkcyjnego]~\\
+$f, f_n: A \to \mathbb{R}$. Wówczas $f_n \rightrightarrows f \Leftrightarrow \lim\limits_{n\to\infty} \sup\limits_{x\in A} |f_n(x)-f(x)| = 0$
+\end{tw}
+
+\begin{przyklad}[ciągu który jest zbieżny punktowo ale nie jednostajnie]
+$f_n: [0,1] \to \mathbb{R}, \quad f_n(x) = x^n$ zbieżność punktowa
+$
+	\lim\limits_{n\to\infty}f_n(x) = \lim\limits_{n\to\infty}x^n = 
+	\begin{cases}
+	0 \quad x\in[0,1)\\
+	1 \quad x=1
+	\end{cases}
+$
+\end{przyklad}
+
+\begin{df}[Warunek Cauch'ego dla zbieżności punktowej i jednostajnej]~\\
+$\forall x\in A f_n \rightarrow f \Leftrightarrow \forall x\in A$ ciąg $(f_n(x))$ jest zbieżny $\Leftrightarrow \forall x\in A \mbox{ ciąg } (f_n(x))$ spełnia warunek Cauch'ego, to znaczy 
+$\forall x\in A ~~ \forall \epsilon>0 ~~ \exists N ~ \foralln,m \geqslant N \quad |f_n(x) - f_m(x)| < \epsilon$ 
+\end{df}
+
+\begin{tw}
+Ciąg funkcyjny $(f_n)$ jest zbieżny jednostajnie na A $\Leftrightarrow$ spełnia warunek Cauch'ego zbiezności jednostajnej.
+\end{tw}
+
+\begin{tw}[o ciągłości granicy ciągu funkcyjnego]~\\
+$f, f_n: A\to \mathbb{R}, f_n \rightrightarrows_A f$, funkcje $f_n$ są ciągłe w punkcie $a\in A ~~ \forall n\in N \Rightarrow f$ jest ciągła w punkcie $a$
+\end{tw}
+
+\begin{tw}[o różniczkowaniu granicy ciągu funkcyjnego]~\\
+$A \mbox{ -- przedział } \subset \mathbb{R}$ są różniczkowalne w każdym punkcie przedziału A. Ciąg $(f_n')$ jest z zbieżny jednostajnie na A, czyli $\exists x_0 \in A  \quad (f_n'(x_0))$ jest zbieżny $\Rightarrow$
+\begin{itemize}
+	\item ciąg $(f_n)$ jest jednostajnie zbieżny na A do pewnej funkcji granicznej
+	\item funckja graniczna $f$ jest różniczkowalna na A i $$\forall x\in A ~~ f'(x) = \lim\limits_{n\to\infty} f_n'(x) = (\lim\limits_{n\to\infty} f_n(x))'$$
+\end{itemize}
+
+\begin{tw}[o całkowaniu granicy ciągu funkcyjnego]~\\
+$A \mbox{ -- przedział } \subset \mathbb{R}, f, f_n \in C(A), f_n \rightrightarrows_A f \Rightarrow \forall a,b \in A \quad \int\limits_a^bf(x)dx = \lim\limits_{n\to\infty}\int\limits_a^bf_n(x)dx$ 
+\end{itemize}
 
 \end{document} 
 
