@@ -344,5 +344,78 @@ $\sum\limits_{n=1}^\infty u_n$ jest zbieżny jednostajnie\\
 $\forall a,b\in A ~~ \int\limits_a^b (\sum\limits_{n=1}^\infty u_n(x))dx = \lim\limits_{n\to\infty}\int\limits_a^b (u_1(x) + u_2(x) + \dots + u_n(x))dx =  \sum\limits_{n=1}^\infty \int\limits_a^b u_n(x)dx$
 \end{tw}
 
+\subsection{Szeregi potęgowe}
+\begin{df}
+Szeregiem potęgowym nazywamy szereg funkcyjny w postaci $\sum\limits_{n=0}^\infty a_nx^n$, gdzie $a_n\in\mathbb{R}$ dla $n\in\mathbb{N}$ 
+\end{df}
+
+\begin{tw}
+Jesli istnieje granica $\lim\limits_{n\to\infty} |\frac{a_{n+1}}{a_n}| = \lambda $, to promień zbieżności szeregu potęgowego $\sum\limits_{n=0}^\infty a_nx^n$ dany jest wzorem:
+$ R = 
+	\begin{cases}
+		\frac{1}{\lambda}, & \lambda \in (0,\infty)\\
+		+\infty, & \lambda = 0\\
+		0, & \lambda = \infty
+	\end{cases} $
+\end{tw}
+
+\begin{tw}[Cauch'ego-Hadamarda]~\\
+Promień zbieżności szeregu potęgowego $\sum\limits_{n=0}^\infty a_nx^n$ dany jest wzorem 
+$ R = 
+	\begin{cases}
+		\frac{1}{\lambda}, & \lambda \in (0,\infty)\\
+		+\infty, & \lambda = 0\\
+		0, & \lambda = \infty
+	\end{cases} $, gdzie $\lambda = \limsup\limits_{n\to\infty}\sqrt[n]{|a_n|}$
+\end{tw}
+
+\begin{przyklad}[Szeregu o promieniu zbieżności = 7]
+$\sum\limits_{n=1}^\infty \frac{1}{n7^n}x^n$
+\end{przyklad}
+\begin{przyklad}[Szeregu zbieżnego tylko dla x=0]
+$\sum\limits_{n=1}^\infty n^nx^n$
+\end{przyklad}
+\begin{przyklad}[Szeregu zbieżnego tylko dla x=5]
+$\sum\limits_{n=1}^\infty n^n(5-x)^n$
+\end{przyklad}
+
+\begin{tw}[o ciągłości sumy szeregu potęgowego]~\\
+Niech promień zbieżności $R$ szeregu $\sum\limits_{n=0}^\infty a_nx^n$ będzie dodatni. Wówczas funkcja $f(x)=\sum\limits_{n=0}^\infty a_nx^n$ jest ciągła na $(-R, R)$
+\end{tw}
+
+\begin{tw}[Abela]
+Szereg potęgowy jest funkcją ciągłą w każdym punkcie, w którym jest zbieżny (w punktach końcowych przedziału mówimy o ciągłości jednostronnej) 
+\end{tw}
+
+\begin{tw}[o różniczkowaniu szeregu potęgowego]~\\
+\begin{itemize}
+	\item Oba szeregi $\sum\limits_{n=0}^\infty a_nx^n$ i $\sum\limits_{n=0}^\infty (a_nx^n)'$ mają te same promienie zbieżności
+	\item Jeśli $R > 0$, to $f(x) = \sum\limits_{n=0}^\infty a_nx^n$ jest różniczkowalna na $(-R, R)$ i $f'(x) = (\sum\limits_{n=0}^\infty a_nx^n)' = \sum\limits_{n=0}^\infty (a_nx^n)' \quad \forall x\in (-R,R)$
+\end{itemize}
+\end{tw}
+
+\begin{tw}[o całkowaniu szeregu potęgowego]~\\
+\begin{itemize}
+	\item Oba szeregi $\sum\limits_{n=0}^\infty a_nx^n$ i $\sum\limits_{n=0}^\infty \int\limits_0^x (a_nt^n)dt$ mają te same promienie zbieżności
+	\item Jeśli $R > 0$, to $f(t) = \sum\limits_{n=0}^\infty a_nt^n$ jest całkowalna na $(0, x)$ i $\int\limits_0^x f(t)dt = \int\limits_0^x(\sum\limits_{n=0}^\infty a_nt^n)dt \quad \forall x\in (-R,R)$
+\end{itemize}
+\end{tw}
+
+\subsection{Szereg Taylora i Maclaurina}
+\begin{df}[szeregu Taylora]~\\
+Niech $f\in C^\infty ((x_0-\delta, x_0+\delta))$ wtedy szereg potęgowy $\sum\limits_{n=0}^\infty \frac{f^{(n)}(x_0)}{n!}(x-x_0)^n$ nazywamy szeregiem Taylora o środku w punkcie $x_0$ dla funkcji $f$.
+\end{df}
+
+\begin{df}[szeregu maclaurina]~\\
+Niech $f\in C^\infty ((\delta, \delta))$ wtedy szereg potęgowy $\sum\limits_{n=0}^\infty \frac{f^{(n)}(0)}{n!}x^n$ nazywamy szeregiem Maclaurina dla funkcji $f$.
+\end{df}
+
+\begin{przyklad}[Rozwinięć niekturych funkcji w szereg Macalurina]~\\
+\begin{itemize}
+	\item $\frac{1}{1-x} = \sum\limits_{n=0}^\infty x^n \quad |x| < 1$
+	\item $e^x = \sum\limits_{n=0}^\infty \frac{x^n}{n!}$
+	\item $sinx = \sum\limits_{n=0}^\infty \frac{(-1)^n}{(2n+1)!}x^{2n+1}$
+	\item $cosx = \sum\limits_{n=0}^\infty \frac{(-1)^n}{(2n)!}x^{2n}$
+\end{itemize}
 \end{document} 
 
