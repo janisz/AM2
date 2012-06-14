@@ -519,5 +519,53 @@ Rozpatrzmyu przestrzen metryczną $(X, \varrho)$, gdzie $X = \mathbb{R}$, $\varr
 $$Int([a,b)) = (a,b) \quad\quad \overline{(a,b)} = [a,b]$$
 \end{przyklad}
 
+
+
+\section{Funkcje wielu zmiennych}
+\subsection{Granica funkcji}
+\begin{df}[Granicy wg Heinego]
+Mówimy, że $g$ jest granicą funkcji $f$ w punkcie $a$
+$$\Leftrightarrow ~~\forall \{\mathbf{x}_n \subset D \smallsetminus \{a\} \quad [\lim\limits_{n\to\infty}\mathbf{x}_n = a \Rightarrow \lim\limits_{n\to\infty}f(\mathbf{x}_n)=g]$$
+\end{df}
+\begin{df}[Granicy wg Cauchego]
+Mówimy, że $g$ jest granicą funkcji $f$ w punkcie $a$
+$$\Leftrightarrow \forall\varepsilon >0 ~~\exists \delta >0 ~~\forall x\in D \quad 0<||\mathbf{x} - a|| <\delta \Rightarrow |f(\mathbf{x})-g| < \varepsilon$$
+\end{df}
+\begin{df}[Granicy niewłaściwej wg Heinego]
+$$\lim\limits_{x\to a} = \pm \infty~~\Leftrightarrow ~~\forall \{\mathbf{x}_n \subset D \smallsetminus \{a\} \quad [\lim\limits_{n\to\infty}\mathbf{x}_n = a \Rightarrow \lim\limits_{n\to\infty}f(\mathbf{x}_n)=\pm\infty$$
+\end{df}
+\begin{df}[Granicy niewłaściwej wg Cauchego]
+$$\lim\limits_{x\to a} = +\infty~~\Leftrightarrow \forall M\in\mathbb{R}~~\exists \delta >0 ~~\forall x\in D \quad 0<||\mathbf{x} - a|| <\delta \Rightarrow f(x) > M$$
+$$\lim\limits_{x\to a} = -\infty~~\Leftrightarrow \forall M\in\mathbb{R}~~\exists \delta >0 ~~\forall x\in D \quad 0<||\mathbf{x} - a|| <\delta \Rightarrow f(x) < M$$
+\end{df}
+
+\subsection{Ciągłość funkcji}
+\begin{df}
+Funkcja $f$ jest ciągła w punkcie $a\in D \Leftrightarrow [\exists \lim\limits_{x\to a}f(x) \mbox{ i } \lim\limits_{x\to a}f(x) = f(a)]$ 
+\end{df}
+\begin{df}
+Funkcja $f$ jest ciągła $\Leftrightarrow$ jest ciągła w każdym punkcie $a\in D$
+\end{df}
+
+\begin{tw}[o ciągłości działań arytmetycznych]
+$[f,g: D\to \mathbb{R}, D\subset\mathbb{R}^k, a\in D; f,g \mbox{ są ciągłe w} a, x\in\mathbb{R}] \Rightarrow$ ciągłe w punkcie są następujące funkcje
+$$
+\begin{array}{c c c c c}
+|f| & \lambda f & f \pm g & fg & \frac{1}{g} \mbox{ jeśli tylko } g(a) \neq 0
+\end{array}
+$$
+\end{tw}
+\begin{przyklad}
+$ f:\mathbb{R}^2 \to\mathbb{R}, f(xy) \begin{cases} 
+	\frac{xy}{x^2+y^2} & \mbox{dla} (x,y) \neq (0,0)\\
+	0 & \mbox{dla} (x,y) = (0,0)
+$\\
+\end{cases}
+\begin{itemize}
+	\item $f$ jest ciągła na $\mathbb{R}^2 \smallsetminus \{(0,0)\}$ jako iloraz funkcji ciągłych (wielomianów)
+	\item $f$ nie jest ciągła w punkcie $(0,0)$, bo nie istnieje granica $\lim\limits_{(x,y)\to(0,0)}f(x,y)$
+\end{itemize}
+
+\end{przyklad}
 \end{document} 
 
