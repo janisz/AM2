@@ -420,57 +420,57 @@ Niech $f\in C^\infty ((\delta, \delta))$ wtedy szereg potęgowy $\sum\limits_{n=
 
 \section{Przestrzenie metryczne i unormowane}
 \begin{df}
-Przestrzenią metryczną nazywamy parę $(X, \varrho)$, gdzie $X$ to niepusty zbiór, a $\varrho$ to metryka w tym zbiorze. Elementy $X$ nazywamy punktami zaś $\varrho (x,y)$ odległościa między $x$ i $y$ 
+Przestrzenią metryczną nazywamy parę $(X, \rho)$, gdzie $X$ to niepusty zbiór, a $\rho$ to metryka w tym zbiorze. Elementy $X$ nazywamy punktami zaś $\rho (x,y)$ odległościa między $x$ i $y$ 
 \end{df}
 \begin{przyklad}[Metryka naturalna (euklidesowa)]
-$X = \mathbb{R}^2 ~\varrho((x_1,x_2),(y_1, y_2)) = \sqrt{(x_1-y_1)^2+(x_2-y_2)^2}$
+$X = \mathbb{R}^2 ~\rho((x_1,x_2),(y_1, y_2)) = \sqrt{(x_1-y_1)^2+(x_2-y_2)^2}$
 \end{przyklad}
 \begin{przyklad}[Metryka dyskretna]
-$X \mbox{-- dowolny zbiór niepusty} \quad \varrho(x,y) = 
+$X \mbox{-- dowolny zbiór niepusty} \quad \rho(x,y) = 
 \begin{cases}
 0 \mbox{ dla } x = y\\
 1 \mbox{ dla } x \neq y
 \end{cases}$
 \end{przyklad}
 \begin{przyklad}[Metryka taksówkowa (miejska)]
-$X = \mathbb{R}^n ~\varrho(x, y) = \sum\limits_{k=1}^n |x_k-y_k|$
+$X = \mathbb{R}^n ~\rho(x, y) = \sum\limits_{k=1}^n |x_k-y_k|$
 \end{przyklad}
 
 \begin{df}
-Kulą (otwartą) o środku w punkcie $x_0$ i promieniu $r$ w przestrzeni metrycznej $(X, \varrho)$ nazywamy zbiór $K(x_0, r) = \{x\in X: \varrho(x,x_0) < r\}$
+Kulą (otwartą) o środku w punkcie $x_0$ i promieniu $r$ w przestrzeni metrycznej $(X, \rho)$ nazywamy zbiór $K(x_0, r) = \{x\in X: \rho(x,x_0) < r\}$
 \end{df}
 \begin{df}
-Kulą domkniętą o środku w punkcie $x_0$ i promieniu $r$ w przestrzeni metrycznej $(X, \varrho)$ nazywamy zbiór $\overline{K}(x_0, r) = \{x\in X: \varrho(x,x_0) \leqslant r\}$
+Kulą domkniętą o środku w punkcie $x_0$ i promieniu $r$ w przestrzeni metrycznej $(X, \rho)$ nazywamy zbiór $\overline{K}(x_0, r) = \{x\in X: \rho(x,x_0) \leqslant r\}$
 \end{df}
 \begin{df}
-Sferą o środku w punkcie $x_0$ i promieniu $r$ w przestrzeni metrycznej $(X, \varrho)$ nazywamy zbiór $S(x_0, r) = \{x\in X: \varrho(x,x_0) = r\}$
+Sferą o środku w punkcie $x_0$ i promieniu $r$ w przestrzeni metrycznej $(X, \rho)$ nazywamy zbiór $S(x_0, r) = \{x\in X: \rho(x,x_0) = r\}$
 \end{df}
 
 \begin{przyklad}[Kula w metryce dyskretnej]
-$$K(x_0, r) = \{x\in X: \varrho(x,x_0) < r\} = \begin{cases}
+$$K(x_0, r) = \{x\in X: \rho(x,x_0) < r\} = \begin{cases}
 	\{x_0\} &\mbox{ gdy } r\in (0,1]\\
 	X &\mbox{ gdy } r\in (1, \infty)
 \end{cases}$$
 \end{przyklad}
 \begin{przyklad}[Kula domknięta w metryce dyskretnej]
-$$\overline{K}(x_0, r) = \{x\in X: \varrho(x,x_0) \leqslant r\} = \begin{cases}
+$$\overline{K}(x_0, r) = \{x\in X: \rho(x,x_0) \leqslant r\} = \begin{cases}
 	\{x_0\} &\mbox{ gdy } r\in (0,1)\\
 	X &\mbox{ gdy } r\in [1, \infty)
 \end{cases}$$
 \end{przyklad}
 \begin{przyklad}[Sfera w metryce dyskretnej]
-$$S(x_0, r) = \{x\in X: \varrho(x,x_0) = r\} = \begin{cases}
+$$S(x_0, r) = \{x\in X: \rho(x,x_0) = r\} = \begin{cases}
 	\emptyset &\mbox{ gdy } r\in (0,1) \cup (1,\infty)\\
 	X\smallsetminus\{x_0\} &\mbox{ gdy } r=1
 \end{cases}$$
 \end{przyklad}
 
 \begin{df}
-Ciąg $(a_n)$ o wyrazach w przestrzeni metrycznej $(X, \varrho)$ jest zbiezny do $a\in X \Leftrightarrow \forall\varepsilon >0~~ \exists N ~ \forall n \geqslant N \quad \varrho(a_n, a) < \varepsilon \Leftrightarrow \forall\varepsilon >0~~ \exists N ~ \forall n \geqslant N \quad |\varrho(a_n, a) - 0| < \varepsilon \Leftrightarrow \varrho(a_n, a) \rightarrow 0$
+Ciąg $(a_n)$ o wyrazach w przestrzeni metrycznej $(X, \rho)$ jest zbiezny do $a\in X \Leftrightarrow \forall\varepsilon >0~~ \exists N ~ \forall n \geqslant N \quad \rho(a_n, a) < \varepsilon \Leftrightarrow \forall\varepsilon >0~~ \exists N ~ \forall n \geqslant N \quad |\rho(a_n, a) - 0| < \varepsilon \Leftrightarrow \rho(a_n, a) \rightarrow 0$
 \end{df}
 
 \begin{df}
-Ciąg $(a_n)$ o wyrazach w przestrzeni metrycznej spelnia warunek Cauch'ego $\Leftrightarrow \forall \varepsilon >0 ~~ \exists N ~ \foralln,m > N \quad \varrho(a_n, a_m) < \varepsilon$
+Ciąg $(a_n)$ o wyrazach w przestrzeni metrycznej spelnia warunek Cauch'ego $\Leftrightarrow \forall \varepsilon >0 ~~ \exists N ~ \foralln,m > N \quad \rho(a_n, a_m) < \varepsilon$
 \end{df}
 
 \begin{tw}
@@ -486,36 +486,36 @@ Przestrzeń metryczna, w której każdy ciąg spełniający warunek Cauch'ego je
 \end{df}
 
 \begin{tw}
-Przestrzeń $X = \mathbb{R}$ i $\varrho (x,y) = |x-y|$ jest przestrzenią zupełną
+Przestrzeń $X = \mathbb{R}$ i $\rho (x,y) = |x-y|$ jest przestrzenią zupełną
 \end{tw}
 
 \begin{tw}[Banach o punkcie stałym]~\\
-Niech $(X, \varrho)$ będzie przestrzenią metryczną zupełną i $f: X \to X$ będzie odwzorowaniem zwężającym, to znaczy funkcją spełniająca warunek
-$$ \exists L\in (0,1) ~~ \forall x,y\in X \quad \varrho (f(x), f(y)) \leqslant L\varrho (x, y) $$
+Niech $(X, \rho)$ będzie przestrzenią metryczną zupełną i $f: X \to X$ będzie odwzorowaniem zwężającym, to znaczy funkcją spełniająca warunek
+$$ \exists L\in (0,1) ~~ \forall x,y\in X \quad \rho (f(x), f(y)) \leqslant L\rho (x, y) $$
 Wówczas istnieje dokładnie jedno $x_0 \in X$ (nazywane punktem stałym odwzorowania), takie że $f(x_0) = x_0$. 
 \end{tw}
 
 
 \subsection{Elementy topologii}
 \begin{df}
-Zbiór $A$ zawarty w przestrzeni metrycznej $(X, \varrho)$ nazywamy otwartym jesli każdy punkt $a$ ze zbioru $A$ nalezy do $A$ wraz z pewną kulą o środku w $a$.\\
+Zbiór $A$ zawarty w przestrzeni metrycznej $(X, \rho)$ nazywamy otwartym jesli każdy punkt $a$ ze zbioru $A$ nalezy do $A$ wraz z pewną kulą o środku w $a$.\\
 $$A \mbox{ jest otwarty } \Leftrightarrow \forall a\in A ~~ \exists r>0 \quad K(a, r) \subset A$$
 \end{df}
 \begin{df}
-Zbiór $A$ zawarty w przestrzeni metrycznej $(X, \varrho)$ nazywamy domkniętym $ \Leftrightarrow X \smallsetminus A$ jest otwarty
+Zbiór $A$ zawarty w przestrzeni metrycznej $(X, \rho)$ nazywamy domkniętym $ \Leftrightarrow X \smallsetminus A$ jest otwarty
 \end{df}
 
 \begin{df}
-Wnętrze zbioru $A$ w przestrzenimetrycznej $(X, \varrho)$ to 
+Wnętrze zbioru $A$ w przestrzenimetrycznej $(X, \rho)$ to 
 $$ IntA := \{a\in A: ~~ \exists r>0 ~~ K(a,r) \subset A \} $$
 \end{df}
 \begin{df}
-Domknięcie zbioru $A$ w przestrzenimetrycznej $(X, \varrho)$ to 
+Domknięcie zbioru $A$ w przestrzenimetrycznej $(X, \rho)$ to 
 $$ \overline{A} := \{x\in X: ~~ \exists r>0 ~~ K(x,r) \cap A \neq \emptyset \} $$
 \end{df}
 
 \begin{przyklad}
-Rozpatrzmyu przestrzen metryczną $(X, \varrho)$, gdzie $X = \mathbb{R}$, $\varrho (x,y) = |x-y|$\\
+Rozpatrzmyu przestrzen metryczną $(X, \rho)$, gdzie $X = \mathbb{R}$, $\rho (x,y) = |x-y|$\\
 $$Int([a,b)) = (a,b) \quad\quad \overline{(a,b)} = [a,b]$$
 \end{przyklad}
 
@@ -551,7 +551,7 @@ Funkcja $f$ jest ciągła $\Leftrightarrow$ jest ciągła w każdym punkcie $a\i
 $[f,g: D\to \mathbb{R}, D\subset\mathbb{R}^k, a\in D; f,g \mbox{ są ciągłe w} a, x\in\mathbb{R}] \Rightarrow$ ciągłe w punkcie są następujące funkcje
 $$
 \begin{array}{c c c c c}
-|f| & \lambda f & f \pm g & fg & \frac{1}{g} \mbox{ jeśli tylko } g(a) \neq 0
+|f| & \lambda f & f \pm g & fg & \frac{f}{g} \mbox{ jeśli tylko } g(a) \neq 0
 \end{array}
 $$
 \end{tw}
@@ -565,7 +565,111 @@ $\\
 	\item $f$ jest ciągła na $\mathbb{R}^2 \smallsetminus \{(0,0)\}$ jako iloraz funkcji ciągłych (wielomianów)
 	\item $f$ nie jest ciągła w punkcie $(0,0)$, bo nie istnieje granica $\lim\limits_{(x,y)\to(0,0)}f(x,y)$
 \end{itemize}
-
 \end{przyklad}
+
+\subsection{Pochodne i różniczkowalność funkcji wielu zmiennych}
+\begin{df}[Pochodnej cząstkowej]~\\
+Jeśli istnieje skończona granica $\lim\limits_{h\to 0} \frac{f(x_{10}+h, x_{20}, \dots, x_{k0})-f(x_{10}, x_{20}, \dots, x_{k0})}{h}$ to nazywamy ją pochodna cząstkową funkcji $f$ względem zmiennej $x_1$ w punkcie $x_0 = (x_{10}, x_{20}, \dots, x_{k0})$ i oznaczamy $f'_{x_1}(x_0)$		
+\end{df}
+\begin{df}[Pochodnej kierunkowej]~\\
+Pochodną kierunkowa funkcji $f$ w punkcie $x_0 = (x_{10}, x_{20}, \dots, x_{k0})$ w kierunku wektora  $v = (v_{1}, v_{2}, \dots, v_{k})$ o długości 1 (to znaczy $||v|| = 1$) nazywamy granicę $\lim\limits_{t\to  0}\frac{f(x_0+tv) - f(x_0)}{t}$ jeśli istnieje i jest skończona. Oznaczamy ją $f'_v(x_0)$
+\end{df}
+\begin{df}[Różniczkowalności funkcji]~\\
+Niech $G\subset \mathbb{R}^k$ będzie obszarem i $f:G\to \mathbb{R}$. Mówimy że $f$ jest różniczkowalna w punkcie $$x_0\in G \Leftrightarrow \exists A=(a_1, a_2, \dots, a_k) \in \mathbb{R}^k \quad \lim\limits
+_{h\to 0}\frac{f(x_0+h)-f(x_0)-Ah}{||h||} = 0$$
+\end{df}
+
+%dodać definicję gradientu
+
+\begin{tw}[Warunek konieczny różniczkowalności]~\\
+$f:G\to\mathbb{R}, G\subset\mathbb{R}^m$ to obszar, $f$ jest różniczkowalna w punkcie $x_0 \Rightarrow f$ jest ciągła w punkcie $x_0$
+\begin{proof}
+$f$ różniczkowalna w punkcie $x_0 \Rightarrow \lim\limits{h\to\infty}\frac{f(x_0+h)-f(x_0)-Ah}{||h||}=0$ dla pewnego $A=(a_1,a_2, \dots, a_m) \in \mathbb{R}^m$\\
+Oznaczmy $\eta_{x_0}(h) = \frac{f(x_0+h)-f(x_0)-Ah}{||h||}$, wówczas mamy $\lim\limits_{n\to\infty}\eta_{x_0}(h) = 0$\\
+$f(x_0+h)=\eta_{x_0}(h) = \eta_x(h)||h|| + f(x_0) + Ah$\\
+$\lim\limits_{h\to 0}f(x_0+h) = \lim\limits_{h\to 0}[\eta_{x_0}(h) = \eta_x(h)||h|| + f(x_0) + a_1h_1 + a_2h_2 + \dots + a_mh_m] = f(x_0) \Rightarrow f$ jest ciągła w punkcie $x_0$
+\end{proof}
+\end{tw}
+
+\begin{tw}[warunek konieczny różniczkowalności]~\\
+$f: G\to\mathbb{R}, G\subset \mathbb{R}^m$ to obszar\\
+Istnieja pochodne cząstkowe $f'_{x_1}(x)\dots f'_{x_m}(x)$ w pewnym otoczeniu punktu $x_0$ i są one ciągłe w punkcie $x_0 \Rightarrow f$ jest różniczkowalna w punkcie $x_0$
+\end{tw}
+
+\subsection{Pochodne cząstkowe wyższych rzędów}
+\begin{df}
+Niech $f: G\to\mathbb{R}$, gdzie $G\subset \mathbb{R}^m$ to obszar, ma pochodne cząstkowe $f'_{x_i}, i=1,\dots , m$\\
+Jeśli funkcja $f'_{x_i}$ ma pochodną cząstkową po zmiennej $x_j$ to nazywamy ją pochodną czastkową drugiego rzędu i oznaczamy $f''_{x_ix_j} = (f'_{x_i})'_{x_j}$
+\end{df}
+
+\begin{tw}[Schwarza]~\\
+Niech $f: G\to\mathbb{R}$, gdzie $G\subset \mathbb{R}^2$ to obszar.\\
+Pochodne mieszane $f''_{xy}$ i $f''_{yx}$ istnieją w pewnym otoczeniu punktu $(x_0, y_0)\in G$ i są ciągłe w tym punkcie $\Rightarrow f''_{xy} = f''_{yx}$
+\end{tw}
+
+\begin{tw}[Wzór Taylora dla funkcjie 2 zmiennych]~\\
+Jeśli $f$ jest funkcją klasy $C^n$ w pewnym obszarze zawierającym odcinek $\overline{x_0x}$, to wewnątrz  tego odcinka znajduje się punkt $\mathbf{c} = (c_1,c_2)$ taki że\\
+$
+f(x) = f(x_0) + \frac{1}{1!}\left[\frac{df}{dx}(x_0)(x-x_0) + \frac{df}{dy}(x_0)(y-y_0)\right] +
+				\frac{1}{2!}\left[\frac{d^2f}{dx^2}(x_0)(x-x_0)^2 + 2\frac{d^2f}{dxdy}(x_0)(x-x_0)(y-y_0) + \frac{d^2f}{dy^2}(x_0)(y-y_0)^2\right]
+				+ \dots + \frac{1}{(n-1)!}\sum\limits_{i=0}^{n-1}{n \choose i}\frac{d^nf}{dx^idy^j}(x_0)(x-x_0)^i(y-y_0)^{n-i-1} + R_n(x_0) \\\mbox{gdzie } R_n(x_0) = \frac{1}{n!}\sum\limits_{i=0}^n {n \choose i}\frac{d^n}{dx^idY^{n-1}}(c)(x-x_0)^i(y-y_0)^{n-1}
+$
+\end{tw}
+
+\subsection{Ekstrema funkcji wielu zmiennych}
+\begin{df}
+Mówimy, że funkcja $f$ ma w punkcie $x_0\in G$:\\
+\begin{itemize}
+	\item maksimum lokalne jeśli $\exists r>0 ~\forall x\in K(x_0,r) \quad f(x) \leqslant f(x_0)$
+	\item maksimum lokalne właściwe jeśli $\exists r>0 ~\forall x\in K(x_0,r), x \neq x_0  \quad f(x) < f(x_0)$
+	\item minimum lokalne jeśli $\exists r>0 ~\forall x\in K(x_0,r) \quad f(x) \geqslant f(x_0)$
+	\item minimum lokalne właściwe jeśli $\exists r>0 ~\forall x\in K(x_0,r), x \neq x_0  \quad f(x) > f(x_0)$
+\end{itemize}
+\end{df}
+
+\begin{tw}[Warunek konieczny istnienia ekstremum funkcji wielu zmiennych]~\\
+Jeśli istnieją pochodne cząstkowe $f'_{x_1}(x_0), f'_{x_2}(x_0), \dots, f'_{x_k}(x_0)$ i funkcja ma w punkcie $x_0$ ekstremum lokalne to $f'_{x_1}(x_0) = f'_{x_2}(x_0) = \dots = f'_{x_k}(x_0) = 0$
+\end{tw}
+
+\begin{tw}[Warunek dostateczny istnienia ekstremum dla funkcji 2 zmiennych]~\\
+Niech $G\subset \mathbb{R}^2$ będzie obszarem, $f\in C^2(G)$ i $(x_0,y_0) \in G$. Jeśli $f'_x(x_0, y_0) = f'_y(x_0,y_0) = 0$ i $W(x_0,y_0) = 
+\begin{vmatrix}
+	f''_{xx}(x_0,y_0) & f''_{xy}(x_0,y_0)\\
+	f''_{yx}(x_0,y_0) & f''_{yy}(x_0,y_0)\\
+\end{vmatrix} > 0$ to w punkcie $(x_0,y_0)$ jest ekstremum lokalne właściwe. Ponadt jeśli $f''_{xx}(x_0,y_0)>0$ to jest to minimum lokalne, a jeśli $f''_{xx}(x_0,y_0)<0$ to maksimum lokalne
+\end{tw}
+
+\begin{df}
+Formę kwadraturową, a także odpowiadającą jej macierz $A$ nazywamy
+\begin{itemize}
+	\item dodatnio określoną $\Leftrightarrow \forall \mathbf{x}\neq 0 \quad \mathbf{x}A\mathbf{x}^T > 0$
+	\item ujemnie określoną $\Leftrightarrow \forall \mathbf{x}\neq 0 \quad \mathhbf{x}A\mathbf{x}^T < 0$
+	\item nieujemnie określoną $\Leftrightarrow \forall \mathbf{x}\neq 0 \quad \mathbf{x}A\mathbf{x}^T \geqslant 0$
+	\item niedodatnio określoną $\Leftrightarrow \forall \mathbf{x}\neq 0 \quad \mathbf{x}A\mathbf{x}^T \leqslant 0$	
+	\item nieokresloną $\Leftrightarrow \forall \mathbf{x,y} \quad \mathbf{x}A\mathbf{x}^T < 0,~ \mathbf{y}A\mathbf{y}^T > 0$
+\end{itemize}
+\end{df}
+
+\begin{tw}[Kryterium Sylwestera]~\\
+Macierz symetryczna $k\times k$:
+\begin{itemize}
+	\item jest dodatnio okreslona $\Leftrightarrow \forall i=1,\dots ,k ~ \det A^{(i)}>0$
+	\item jest ujemnie okreslona $\Leftrightarrow \forall i=1,\dots ,k ~ (-1)^i\det A^{(i)}>0$
+\end{itemize}
+gdzie $A^{(i)}$ to macież powstała z $A$ przez skreślenie kolumn i wierszy o numerach wiekszych niż $i$
+\end{tw}
+
+\begin{tw}[warunek wystarczający istnienia ekstremum dla funkcji wielu zmiennych]~\\
+Niech $G\subset \mathbb{R}^k$ będzie obszarem i niech $f\in C^2(G)$. Jeśli $\mathbf{x_0}\in G, f'x_0(\mathbf{x_0}) = f'x_1(\mathbf{x_0}) = \dots = f'x_n(\mathbf{x_0})$ to
+\begin{itemize}
+	\item Jeśli macierz $H(\mathbf{x_0})$ jest dodatnio określona, to $f$ ma minimum lokalne w $\mathbf{x_0}$
+	\item Jeśli macierz $H(\mathbf{x_0})$ jest ujemnie określona, to $f$ ma maksimum lokalne w $\mathbf{x_0}$
+	\item Jeśli macierz $H(\mathbf{x_0})$ jest dodatnio nieokreślona, to $f$ nie posiada ekstremum lokalnego w $\mathbf{x_0}$
+\end{itemize}
+
+\begin{tw}[O funkcji uwikłanej]
+Załóżmy że $F$ ma ciągłe pochodne cząstkowe w prwnym otoczeniu punktu $(x_0, y_0)$ oraz $F(x_0,y_0) = 0,~ F'_y(x_0,y_0) \neq 0$ to istnieje otoczenie $U_{x_0} \ni x_0$ i otoczenie $V_{y_0} \ni y_0$ oraz jedyna funkcja $y: U_{x_0} \to V_{y_0}$ klasy $C'$ taka że $\forall x\in U_{x_0} \quad F(x, y(x)) = 0$. Ponadto $y$ ma ciągłą pochodną w $U_{x_0}$ i $u'(x) = \frac{-F_x(x,y)}{F'_y(x,y)}$, dla $x\in U_{x_0}$
+\end{tw}
+
 \end{document} 
 
