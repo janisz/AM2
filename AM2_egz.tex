@@ -15,6 +15,8 @@
 \usepackage{amssymb} %pakiet potrzebny do \blacksquare i \mathbb{•}
 \usepackage{hyperref}
 
+\usepackage{graphicx}
+
 \newtheorem{lemat}{Lemat}
 \newtheorem{tw}{Twierdzenie}
 \newtheorem{przyklad}{Przykład}
@@ -33,6 +35,19 @@
 \date{\today}
 \maketitle
 \tableofcontents
+
+
+\DeclareGraphicsExtensions{.pdf,.png,.jpg}
+\begin{center}
+\leavevmode
+
+\includegraphics[width=1in]{by-sa.png}
+\end{center}
+\label{fig:cc}
+%insert a link to the licence and its description below
+\scriptsize{Ten utwór jest dostępny na licencji  \href{http://creativecommons.org/licenses/by-sa/3.0/pl/}{Creative Commons Uznanie autorstwa-Na tych samych warunkach 3.0 Polska.}}
+
+
 \pagebreak
 
 \section{Całka Riemanna}
@@ -723,6 +738,8 @@ Każdy obszar regularny w $\mathbb{R}^2$ jest mierzalny w sensie Jordana.
 Brzeg każdego obszaru regularnego w $\mathbb{R}^2$ ma miarę Jordana równą 0. Wynika to z definicji i tego że $y=f(x), x\in [a,b]$ i $y\in C([a,b])$ ma miarę Jordana w $\mathbb{R}^2$ równą $0$
 \end{proof}
 \end{tw}
+
+\section{Całka Riemanna w $\mathbb{R}^n$}
 
 \end{document} 
 
