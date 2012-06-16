@@ -55,9 +55,9 @@ Ciąg podziałów $(\pi(n))$ nazywamy normalnym, jeśli $\delta (\pi (n)) \xrigh
 \end{df}
 \begin{df}[Sumy całkowe]~\\
 \begin{array}{l l l}
-\mbox{Dolna suma całkowa:}& $s_n = s_n(\pi_n) = \sum\limits_{i=1}^{k_n}m_i^{(n)}(x_i^{(n)}-x_{i-1}^{(n)}})$ & $m\limits_i^{(n)} = \inf (f(x)) \quad x\in [x\limits_{i-1}^{(n)},x\limits_{i}^{(n)}]$\\
-\mbox{Górna suma całkowa:}& $S_n = S_n(\pi_n) = \sum\limits_{i=1}^{k_n}M_i^{(n)}(x_i^{(n)}-x_{i-1}^{(n)}})$ & $M\limits_i^{(n)} = \sup (f(x)) \quad x\in [x\limits_{i-1}^{(n)},x\limits_{i}^{(n)}]$\\
-\mbox{Suma całkowa Riemanna:}& $\sigma_n = \sigma_n(\pi_n) = \sum\limits_{i=1}^{k_n}f(\xi_i^{(n)})(x_i^{(n)}-x_{i-1}^{(n)}})$
+\text{Dolna suma całkowa:}& $s_n = s_n(\pi_n) = \sum\limits_{i=1}^{k_n}m_i^{(n)}(x_i^{(n)}-x_{i-1}^{(n)}})$ & $m\limits_i^{(n)} = \inf (f(x)) \quad x\in [x\limits_{i-1}^{(n)},x\limits_{i}^{(n)}]$\\
+\text{Górna suma całkowa:}& $S_n = S_n(\pi_n) = \sum\limits_{i=1}^{k_n}M_i^{(n)}(x_i^{(n)}-x_{i-1}^{(n)}})$ & $M\limits_i^{(n)} = \sup (f(x)) \quad x\in [x\limits_{i-1}^{(n)},x\limits_{i}^{(n)}]$\\
+\text{Suma całkowa Riemanna:}& $\sigma_n = \sigma_n(\pi_n) = \sum\limits_{i=1}^{k_n}f(\xi_i^{(n)})(x_i^{(n)}-x_{i-1}^{(n)}})$
 \end{array}
 \end{df}
 \begin{df}[Funkcja całkowalna w sensie Riemanna]~\\
@@ -90,18 +90,18 @@ $f: [a,b] \to \mathbb{R}$ funkcja ciągła, $\phi(x)$ --- dowolna funkcja pierwo
 $
 f: [a,b]\to\mathbb{R}$, funkcja ciągła, $g: [a,b]\to\mathbb{R},~ g\in C^1([a,b])\\
 \alpha = g(a),~ \beta =g(b)\\
-\int\limits_a^bf(g(x))g'(x)dx = \int\limits_\alpha^\beta f(t)dt, \mbox{ gdzie }t = g(x)
+\int\limits_a^bf(g(x))g'(x)dx = \int\limits_\alpha^\beta f(t)dt, \text{ gdzie }t = g(x)
 $
 \begin{proof}~\\
 	Niech $\phi(x)$ będzie funkcją pierwotną dla $f(x)$, to znaczy
 	 $\phi'(x) = f(x), ~ P=\int\limits_\alpha^\beta f(t)dt = \phi(\beta)-\phi(\alpha)$\\
-$[\phi(g(x))]' = \phi'(g(x))g'(x) = f(g(x))g'(x) \Rightarrow \phi(g(x)) \mbox{ to funkcja pierwotna funkcji } f(g(x))g'(x)$\\
+$[\phi(g(x))]' = \phi'(g(x))g'(x) = f(g(x))g'(x) \Rightarrow \phi(g(x)) \text{ to funkcja pierwotna funkcji } f(g(x))g'(x)$\\
 $L = \int\limits_a^bf(g(x))g'(x)dx = \phi(g(b))-\phi(g(a)) = \phi(\beta)-\phi(\alpha)\\
 L = P$
 \end{proof}
 \item Całkowanie przez cześci\\
 $
-u,v: [a,b]\to\mathbb{R} \mbox{ --- funkcje klasy } C^1\\
+u,v: [a,b]\to\mathbb{R} \text{ --- funkcje klasy } C^1\\
 \int\limits_a^bu(x)v'(x)dx = [u(x)v(x)]\limits_a^b - \int\limits_a^bu'(x)v(x)dx
 $
 \begin{proof}~\\
@@ -109,7 +109,7 @@ $
 	[u(x)v(x)]' = u'(x)v(x)+u(x)v'(x)\\
 	\int\limits_a^b[u(x)v(x)]'dx = \int\limits_a^b(u'(x)v(x)+u(x)v'(x))dx = 
 	\int\limits_a^b u'(x)v(x)dx + \int\limits_a^bu(x)v'(x)dx \quad(*)\\
-	u(x)v(x) \mbox{ to funkcja pierwotna } [u(x)v(x)]'\\
+	u(x)v(x) \text{ to funkcja pierwotna } [u(x)v(x)]'\\
 	\int\limits_a^b[u(x)v(x)]'dx u(b)v(b) - u(a)v(a) = [u(x)v(x)]\limits_a^b \quad(**)\\
 	(*):(**) \Rightarrow [u(x)v(x)]\limits_a^b = \int\limits_a^bu'(x)v(x)dx + \int\limits_a^b u(x)v'(x)dx\\
 	\int\limits_a^bu(x)v(x)dx = [u(x)v(x)]_a^b-\int\limits_a^bu'(x)v(x)dx	
@@ -117,7 +117,7 @@ $
 \end{proof}
 \item Twierdzenie o wartości średniej rachunku całkowego
 $
-f,g: [a,b]\to\mathbb{R} \mbox{ --- funkcje ciągłe, g jest nieujemna (niedodatnia)}\\
+f,g: [a,b]\to\mathbb{R} \text{ --- funkcje ciągłe, g jest nieujemna (niedodatnia)}\\
  \exists \xi\in [a,b] \int\limits_a^bf(x)g(x)dx = f(\xi)\int\limits_a^bg(x)dx
 $
 \end{enumerate}
@@ -125,19 +125,19 @@ $
 \subsection{Całki niewłaściwe}
 
 \begin{df}
-$f: [a, \infty) \to \mathbb{R} \mbox{ całkowalna na } [\alpha, \beta] ~ \forall \beta > \alpha$ oraz istnieje granica $\lim\limits_{\beta\to\infty} \int\limits_\alpha^\beta f(x)dx \Rightarrow$ granicę tę nazywamy całka niewłaściwą pierwszego rodzaju i oznaczamy $\int\limits_\alpha^\infty f(x)dx := \lim\limits_{\beta\to\infty} \int\limits_\alpha^\beta f(x)dx$\\
+$f: [a, \infty) \to \mathbb{R} \text{ całkowalna na } [\alpha, \beta] ~ \forall \beta > \alpha$ oraz istnieje granica $\lim\limits_{\beta\to\infty} \int\limits_\alpha^\beta f(x)dx \Rightarrow$ granicę tę nazywamy całka niewłaściwą pierwszego rodzaju i oznaczamy $\int\limits_\alpha^\infty f(x)dx := \lim\limits_{\beta\to\infty} \int\limits_\alpha^\beta f(x)dx$\\
 Ponadto jeśli granica ta istnieje i jest skończona to całkę niewłaściwą nazywamy zbieżną. Natomiast w pozostałych przypadkach całkę niewłaściwą nazywamy rozbieżną.
 \end{df}
 
 \begin{df}
-$f: [a, b) \to \mathbb{R} \mbox{ całkowalna na } [\alpha, \beta] \quad \forall a < \beta < b$ oraz istnieje granica $\lim\limits_{\beta\to b^-} \int\limits_a^\beta f(x)dx \Rightarrow$ granicę tę nazywamy całka niewłaściwą drugiego rodzaju i oznaczamy $\int\limits_a^b f(x)dx := \lim\limits_{\beta\to b^-} \int\limits_\alpha^\beta f(x)dx$\\
+$f: [a, b) \to \mathbb{R} \text{ całkowalna na } [\alpha, \beta] \quad \forall a < \beta < b$ oraz istnieje granica $\lim\limits_{\beta\to b^-} \int\limits_a^\beta f(x)dx \Rightarrow$ granicę tę nazywamy całka niewłaściwą drugiego rodzaju i oznaczamy $\int\limits_a^b f(x)dx := \lim\limits_{\beta\to b^-} \int\limits_\alpha^\beta f(x)dx$\\
 Ponadto jeśli granica ta istnieje i jest skończona to całkę niewłaściwą nazywamy zbieżną. Natomiast w pozostałych przypadkach całkę niewłaściwą nazywamy rozbieżną.
 \end{df}
 
 \subsection{Kryteria zbieżności}
 
 \begin{tw}[Kryterium porównawcze]~\\
-$f,g: [a,b) \to \mathbb{R} \mbox{ całkowalna na } [\alpha, \beta] \quad \forall a < \beta < b$ oraz
+$f,g: [a,b) \to \mathbb{R} \text{ całkowalna na } [\alpha, \beta] \quad \forall a < \beta < b$ oraz
 $\forall x\in [a,b) \quad 0 \leqslant f(x) \leq g(x)$ Wtedy:
 \begin{itemize}
 \item $\int\limits_a^bg(x)dx$ jest zbieżna $\Rightarrow \int\limits_a^bg(x)dx$ też jest zbieżna
@@ -146,7 +146,7 @@ $\forall x\in [a,b) \quad 0 \leqslant f(x) \leq g(x)$ Wtedy:
 \end{tw}
 
 \begin{tw}
-$f: [a,b) \to \mathbb{R} \mbox{ całkowalna na } [\alpha, \beta] \quad \forall a < \beta < b$ oraz
+$f: [a,b) \to \mathbb{R} \text{ całkowalna na } [\alpha, \beta] \quad \forall a < \beta < b$ oraz
 $\int\limits_a^b |f(x)|dx$ jest zbieżna, to $\int\limits_a^b f(x)dx$ też jest zbieżna. Mówimy wtedy, że jest zbieżna bezwzględnie.
 \end{tw} 
 
@@ -162,7 +162,7 @@ Niech $f: [a,b] \to \mathbb{R}$ - funkcja klasy $C^1$. Wówczs długość łuku 
 \end{tw}
 
 \begin{tw}[Objętość bryły]~\\
-Niech $f: [a,b] \to \mathbb{R}$ - funkcja klasy $C^1$ oraz $V$ oznacza bryłę powstałą poprzez obrót
+Niech $f: [a,b] \to \mathbb{R}$ --- funkcja klasy $C^1$ oraz $V$ oznacza bryłę powstałą poprzez obrót
  dookoła osi OX krzywej $y = f(x), x\in [a,b]$. Wówczs objętość $V$ dana jest wzorem $V = \pi\int\limits_a^b f^2(x)dx$
 \end{tw}
 
@@ -277,7 +277,7 @@ Szereg $\sum\limits_{n=1}^\infty a_n$ jest zbiezny bezwzględnie $\Rightarrow$ S
 \subsection{Ciągi funkcyjne}
 \begin{df}[Punktowej zbieżności]~\\
 Mówimy, że ciąg funkcyjny $(f_n)$ jest zbieżny do funkcji $f$ (punktowo)
- $$\Leftrightarrow \forall x\in A \quad \lim\limits_{n\to\infty}\underbrace{f_n(x)}_{\mbox{ciąg liczbowy}} = \underbrace{f(x)}_{\mbox{liczba}} \Leftrightarrow \forall x\in A ~ \forall\varepsilon > 0 ~~ \exists N = N(\varepsilon, x) ~ \forall n \geqslant N \quad |f_n(x)-f(x)| < \varepsilon$$, oznaczamy $f_n \rightarrow f$
+ $$\Leftrightarrow \forall x\in A \quad \lim\limits_{n\to\infty}\underbrace{f_n(x)}_{\text{ciąg liczbowy}} = \underbrace{f(x)}_{\text{liczba}} \Leftrightarrow \forall x\in A ~ \forall\varepsilon > 0 ~~ \exists N = N(\varepsilon, x) ~ \forall n \geqslant N \quad |f_n(x)-f(x)| < \varepsilon$$, oznaczamy $f_n \rightarrow f$
 \end{df}
 
 \begin{df}[Jednostajnej zbieżności]~\\
@@ -300,7 +300,7 @@ $
 \end{przyklad}
 
 \begin{df}[Warunek Cauch'ego dla zbieżności punktowej i jednostajnej]~\\
-$\forall x\in A f_n \rightarrow f \Leftrightarrow \forall x\in A$ ciąg $(f_n(x))$ jest zbieżny $\Leftrightarrow \forall x\in A \mbox{ ciąg } (f_n(x))$ spełnia warunek Cauch'ego, to znaczy 
+$\forall x\in A f_n \rightarrow f \Leftrightarrow \forall x\in A$ ciąg $(f_n(x))$ jest zbieżny $\Leftrightarrow \forall x\in A \text{ ciąg } (f_n(x))$ spełnia warunek Cauch'ego, to znaczy 
 $\forall x\in A ~~ \forall \varepsilon>0 ~~ \exists N ~ \forall n,m \geqslant N \quad |f_n(x) - f_m(x)| < \varepsilon$ 
 \end{df}
 
@@ -313,14 +313,14 @@ $f, f_n: A\to \mathbb{R}, f_n \rightrightarrows_A f$, funkcje $f_n$ są ciągłe
 \end{tw}
 
 \begin{tw}[o różniczkowaniu granicy ciągu funkcyjnego]~\\
-$A \mbox{ -- przedział } \subset \mathbb{R}$ są różniczkowalne w każdym punkcie przedziału A. Ciąg $(f_n')$ jest z zbieżny jednostajnie na A, czyli $\exists x_0 \in A  \quad (f_n'(x_0))$ jest zbieżny $\Rightarrow$
+$A \text{ -- przedział } \subset \mathbb{R}$ są różniczkowalne w każdym punkcie przedziału A. Ciąg $(f_n')$ jest z zbieżny jednostajnie na A, czyli $\exists x_0 \in A  \quad (f_n'(x_0))$ jest zbieżny $\Rightarrow$
 \begin{itemize}
 	\item ciąg $(f_n)$ jest jednostajnie zbieżny na A do pewnej funkcji granicznej
 	\item funckja graniczna $f$ jest różniczkowalna na A i $\forall x\in A ~~ f'(x) = \lim\limits_{n\to\infty} f_n'(x) = (\lim\limits_{n\to\infty} f_n(x))'$
 \end{itemize}
 
 \begin{tw}[o całkowaniu granicy ciągu funkcyjnego]~\\
-$A \mbox{ -- przedział } \subset \mathbb{R}, f, f_n \in C(A), f_n \rightrightarrows_A f \Rightarrow \forall a,b \in A \quad \int\limits_a^bf(x)dx = \lim\limits_{n\to\infty}\int\limits_a^bf_n(x)dx$ 
+$A \text{ -- przedział } \subset \mathbb{R}, f, f_n \in C(A), f_n \rightrightarrows_A f \Rightarrow \forall a,b \in A \quad \int\limits_a^bf(x)dx = \lim\limits_{n\to\infty}\int\limits_a^bf_n(x)dx$ 
 \end{itemize}
 
 \subsection{Szeregi funkcyjne}
@@ -442,10 +442,10 @@ Przestrzenią metryczną nazywamy parę $(X, \rho)$, gdzie $X$ to niepusty zbió
 $X = \mathbb{R}^2 ~\rho((x_1,x_2),(y_1, y_2)) = \sqrt{(x_1-y_1)^2+(x_2-y_2)^2}$
 \end{przyklad}
 \begin{przyklad}[Metryka dyskretna]
-$X \mbox{-- dowolny zbiór niepusty} \quad \rho(x,y) = 
+$X \text{-- dowolny zbiór niepusty} \quad \rho(x,y) = 
 \begin{cases}
-0 \mbox{ dla } x = y\\
-1 \mbox{ dla } x \neq y
+0 \text{ dla } x = y\\
+1 \text{ dla } x \neq y
 \end{cases}$
 \end{przyklad}
 \begin{przyklad}[Metryka taksówkowa (miejska)]
@@ -464,20 +464,20 @@ Sferą o środku w punkcie $x_0$ i promieniu $r$ w przestrzeni metrycznej $(X, \
 
 \begin{przyklad}[Kula w metryce dyskretnej]
 $$K(x_0, r) = \{x\in X: \rho(x,x_0) < r\} = \begin{cases}
-	\{x_0\} &\mbox{ gdy } r\in (0,1]\\
-	X &\mbox{ gdy } r\in (1, \infty)
+	\{x_0\} &\text{ gdy } r\in (0,1]\\
+	X &\text{ gdy } r\in (1, \infty)
 \end{cases}$$
 \end{przyklad}
 \begin{przyklad}[Kula domknięta w metryce dyskretnej]
 $$\overline{K}(x_0, r) = \{x\in X: \rho(x,x_0) \leqslant r\} = \begin{cases}
-	\{x_0\} &\mbox{ gdy } r\in (0,1)\\
-	X &\mbox{ gdy } r\in [1, \infty)
+	\{x_0\} &\text{ gdy } r\in (0,1)\\
+	X &\text{ gdy } r\in [1, \infty)
 \end{cases}$$
 \end{przyklad}
 \begin{przyklad}[Sfera w metryce dyskretnej]
 $$S(x_0, r) = \{x\in X: \rho(x,x_0) = r\} = \begin{cases}
-	\emptyset &\mbox{ gdy } r\in (0,1) \cup (1,\infty)\\
-	X\smallsetminus\{x_0\} &\mbox{ gdy } r=1
+	\emptyset &\text{ gdy } r\in (0,1) \cup (1,\infty)\\
+	X\smallsetminus\{x_0\} &\text{ gdy } r=1
 \end{cases}$$
 \end{przyklad}
 
@@ -515,7 +515,7 @@ Wówczas istnieje dokładnie jedno $x_0 \in X$ (nazywane punktem stałym odwzoro
 \subsection{Elementy topologii}
 \begin{df}
 Zbiór $A$ zawarty w przestrzeni metrycznej $(X, \rho)$ nazywamy otwartym jesli każdy punkt $a$ ze zbioru $A$ nalezy do $A$ wraz z pewną kulą o środku w $a$.\\
-$$A \mbox{ jest otwarty } \Leftrightarrow \forall a\in A ~~ \exists r>0 \quad K(a, r) \subset A$$
+$$A \text{ jest otwarty } \Leftrightarrow \forall a\in A ~~ \exists r>0 \quad K(a, r) \subset A$$
 \end{df}
 \begin{df}
 Zbiór $A$ zawarty w przestrzeni metrycznej $(X, \rho)$ nazywamy domkniętym $ \Leftrightarrow X \smallsetminus A$ jest otwarty
@@ -557,28 +557,28 @@ $$\lim\limits_{x\to a} = -\infty~~\Leftrightarrow \forall M\in\mathbb{R}~~\exist
 
 \subsection{Ciągłość funkcji}
 \begin{df}
-Funkcja $f$ jest ciągła w punkcie $a\in D \Leftrightarrow [\exists \lim\limits_{x\to a}f(x) \mbox{ i } \lim\limits_{x\to a}f(x) = f(a)]$ 
+Funkcja $f$ jest ciągła w punkcie $a\in D \Leftrightarrow [\exists \lim\limits_{x\to a}f(x) \text{ i } \lim\limits_{x\to a}f(x) = f(a)]$ 
 \end{df}
 \begin{df}
 Funkcja $f$ jest ciągła $\Leftrightarrow$ jest ciągła w każdym punkcie $a\in D$
 \end{df}
 
 \begin{tw}[O ciągłości działań arytmetycznych]~\\
-$[f,g: D\to \mathbb{R}, D\subset\mathbb{R}^k, a\in D; f,g \mbox{ są ciągłe w} a, x\in\mathbb{R}] \Rightarrow$ ciągłe w punkcie są następujące funkcje
+$[f,g: D\to \mathbb{R}, D\subset\mathbb{R}^k, a\in D; f,g \text{ są ciągłe w} a, x\in\mathbb{R}] \Rightarrow$ ciągłe w punkcie są następujące funkcje
 
 \begin{itemize}
 	\item $|f| $
 	\item $\lambda f $
 	\item $f \pm g $
 	\item $fg$ 
-	\item $\frac{f}{g} \mbox{ jeśli tylko } g(a) \neq 0$
+	\item $\frac{f}{g} \text{ jeśli tylko } g(a) \neq 0$
 \end{itemize}
 
 \end{tw}
 \begin{przyklad}
 $ f:\mathbb{R}^2 \to\mathbb{R}, f(xy) \begin{cases} 
-	\frac{xy}{x^2+y^2} & \mbox{dla} (x,y) \neq (0,0)\\
-	0 & \mbox{dla} (x,y) = (0,0)
+	\frac{xy}{x^2+y^2} & \text{dla} (x,y) \neq (0,0)\\
+	0 & \text{dla} (x,y) = (0,0)
 $\\
 \end{cases}
 \begin{itemize}
@@ -632,7 +632,7 @@ Jeśli $f$ jest funkcją klasy $C^n$ w pewnym obszarze zawierającym odcinek $\o
 $
 f(x) = f(x_0) + \frac{1}{1!}\left[\frac{df}{dx}(x_0)(x-x_0) + \frac{df}{dy}(x_0)(y-y_0)\right] +
 				\frac{1}{2!}\left[\frac{d^2f}{dx^2}(x_0)(x-x_0)^2 + 2\frac{d^2f}{dxdy}(x_0)(x-x_0)(y-y_0) + \frac{d^2f}{dy^2}(x_0)(y-y_0)^2\right]
-				+ \dots + \frac{1}{(n-1)!}\sum\limits_{i=0}^{n-1}{n \choose i}\frac{d^nf}{dx^idy^j}(x_0)(x-x_0)^i(y-y_0)^{n-i-1} + R_n(x_0) \\\mbox{gdzie } R_n(x_0) = \frac{1}{n!}\sum\limits_{i=0}^n {n \choose i}\frac{d^n}{dx^idY^{n-1}}(c)(x-x_0)^i(y-y_0)^{n-1}
+				+ \dots + \frac{1}{(n-1)!}\sum\limits_{i=0}^{n-1}{n \choose i}\frac{d^nf}{dx^idy^j}(x_0)(x-x_0)^i(y-y_0)^{n-i-1} + R_n(x_0) \text{, gdzie } R_n(x_0) = \frac{1}{n!}\sum\limits_{i=0}^n {n \choose i}\frac{d^n}{dx^idY^{n-1}}(c)(x-x_0)^i(y-y_0)^{n-1}
 $
 \end{tw}
 
