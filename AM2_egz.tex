@@ -27,7 +27,7 @@
 \usepackage[polish]{babel}
 \usepackage[utf8]{inputenc}
 
- \hypersetup{colorlinks=false}
+\hypersetup{colorlinks=false}
 
 \pagestyle{plain}
 \begin{document}
@@ -35,7 +35,6 @@
 \date{\today}
 \maketitle
 \tableofcontents
-
 
 \DeclareGraphicsExtensions{.pdf,.png,.jpg}
 \begin{center}
@@ -52,7 +51,7 @@
 
 \section{Całka Riemanna}
 \begin{df}[Ciąg normalny podziałów]
-Ciąg podziałów $(\pi(n)$ nazywamy normalnym, jeśli $\delta(\pi(n))\xrightarrow{n\to\infty}0$
+Ciąg podziałów $(\pi(n))$ nazywamy normalnym, jeśli $\delta (\pi (n)) \xrightarrow{n\to\infty}0$
 \end{df}
 \begin{df}[Sumy całkowe]~\\
 \begin{array}{l l l}
@@ -61,7 +60,7 @@ Ciąg podziałów $(\pi(n)$ nazywamy normalnym, jeśli $\delta(\pi(n))\xrightarr
 \mbox{Suma całkowa Riemanna:}& $\sigma_n = \sigma_n(\pi_n) = \sum\limits_{i=1}^{k_n}f(\xi_i^{(n)})(x_i^{(n)}-x_{i-1}^{(n)}})$
 \end{array}
 \end{df}
-\begin{df}[Funkcja całkowalna w sensie Riemanna]
+\begin{df}[Funkcja całkowalna w sensie Riemanna]~\\
 Funkcja f jest całkowalna w sensie Riemanna na $[a,b] \Leftrightarrow$ instnieje $\sigma\in\mathbb{R}$ taka,że dla dowolnego normalnego ciągu podziałów $(\pi_n)$ oraz dla dowolnego wartościowania tego ciągu $(\omega_n)$ mamy $\lim\limits_{n\to\infty}\sigma_n(\pi_n,\omega_0) = \lim\limits_{n\to\infty}\sum\limits_{i=1}^{k_n}f(\xi_i^{(n)})(x_i^{(n)}-x_{i-1}^{(n)}})$, to $\sigma$ nazywamy całką Riemanna funkcji f na $<a,b>$ i oznaczamy $\int\limits_a^b(f(x)dx$
 \end{df}
 \begin{tw}
@@ -80,9 +79,9 @@ Każda funkcja ciągła na $[a,b]$ jest całkowalna w sensie Riemanna na $[a,b]$
 \item $f,g: [a,b] \to \mathbb{R}, \quad\{x\in[a,b]: f(x) \neq g(x)\}$ jest zbiorem skończonym $\Rightarrow$ f jest całkowalna na $[a,b]\Leftrightarrow$ g jest całkowalna na $[a,b]$. W przypadku całkowalności $\int\limits_a^bf(x)dx=\int\limits_a^bg(x)dx$
 \item $ \int\limits_{a}^{b} (\alpha f(x) + \beta g(x))dx = \alpha \int\limits_a^b f(x)dx + \beta \int\limits_a^bg(x)dx $
 \item $f: [a,b]\to\mathbb{R}$ całkowalna na $[a,b] \Rightarrow$ f jest całkowalna na kazdym podprzedziale $[a,b]$
-\item $f: [a,b]\to\mathbb{R}, ~ c\in [a.b]$, f jest całkowalna na $[a,c]$ oraz $[c,b] \Rightarrow$ f jest całkowalna na $[a,b]$ oraz $\int\limits_a^bf(x)dx = \int\limits_a^cf(x)dx + \int\limits_c^bf(x)dx$
-\item $f: [a,b] \to \mathbb{R}$ całkowalna na $[a,b]$, $\forall x\in[a,b] f(x) \geq 0 \Rightarrow \int\limits_a^bf(x)dx \geq 0$
-\item $f,g: [a,b] \to \mathbb{R}$ całkowalne na $[a,b]$, $\forall x\in[a,b] f(x) \leq g(x) \Rightarrow \int\limits_a^bf(x)dx \leq \int\limits_a^bg(x)dx$
+\item $f: [a,b]\to\mathbb{R}, ~ c\in [a,b]$, f jest całkowalna na $[a,c]$ oraz $[c,b] \Rightarrow$ f jest całkowalna na $[a,b]$ oraz $\int\limits_a^bf(x)dx = \int\limits_a^cf(x)dx + \int\limits_c^bf(x)dx$
+\item $f: [a,b] \to \mathbb{R}$ całkowalna na $[a,b]$, $\forall x\in[a,b] ~~ f(x) \geq 0 \Rightarrow \int\limits_a^bf(x)dx \geq 0$
+\item $f,g: [a,b] \to \mathbb{R}$ całkowalne na $[a,b]$, $\forall x\in[a,b] ~~ f(x) \leq g(x) \Rightarrow \int\limits_a^bf(x)dx \leq \int\limits_a^bg(x)dx$
 \item $f: [a,b] \to \mathbb{R}$ całkowalna na $[a,b] \Rightarrow$ $|f|$ też jest całkowalna na $[a,b]$ oraz $|\int\limits_a^bf(x)dx| \leq \int\limits_a^b|f(x)|dx$
 \item $f: [a,b] \to \mathbb{R}$ całkowalna na $[a,b] \Rightarrow \int\limits_a^bf(x)dx \leq \sup\limits_{x\in[a,b]}f(x)\cdot(b-a)$
 \item Podstawowy wzór rachunku całkowego\\
@@ -139,7 +138,7 @@ Ponadto jeśli granica ta istnieje i jest skończona to całkę niewłaściwą n
 
 \begin{tw}[Kryterium porównawcze]~\\
 $f,g: [a,b) \to \mathbb{R} \mbox{ całkowalna na } [\alpha, \beta] \quad \forall a < \beta < b$ oraz
-$\forall x\in [a,b) \quad 0< \leqslant f(x) \leq g(x)$ Wtedy:
+$\forall x\in [a,b) \quad 0 \leqslant f(x) \leq g(x)$ Wtedy:
 \begin{itemize}
 \item $\int\limits_a^bg(x)dx$ jest zbieżna $\Rightarrow \int\limits_a^bg(x)dx$ też jest zbieżna
 \item $\int\limits_a^bf(x)dx$ jest rozbieżna $\Rightarrow \int\limits_a^bg(x)dx$ też jest rozbieżna
@@ -148,21 +147,21 @@ $\forall x\in [a,b) \quad 0< \leqslant f(x) \leq g(x)$ Wtedy:
 
 \begin{tw}
 $f: [a,b) \to \mathbb{R} \mbox{ całkowalna na } [\alpha, \beta] \quad \forall a < \beta < b$ oraz
-$\int\limits_a^b \f(x)|dx$ jest zbieżna, to $\int\limits_a^b f(x)dx$ też jest zbieżna. Mówimy wtedy, że jest zbieżna bezwzględnie.
+$\int\limits_a^b |f(x)|dx$ jest zbieżna, to $\int\limits_a^b f(x)dx$ też jest zbieżna. Mówimy wtedy, że jest zbieżna bezwzględnie.
 \end{tw} 
 
 \subsection{Zastosowania geometryczne całki Riemanna}
 
-\begin{tw}[Pole zbioru płaskiego]
+\begin{tw}[Pole zbioru płaskiego]~\\
 $f: [a,b] \to \mathbb{R}$ funkcja nieujemna i ciągła, $D = \{(x,y) \in \mathbb{R}^2: x\in [a,b[, y\in [0, f(x)]$
 pole $D = |D| = \int\limits_a^b f(x)dx$
 \end{tw}
 
-\begin{tw}[Długość łuku]
+\begin{tw}[Długość łuku]~\\
 Niech $f: [a,b] \to \mathbb{R}$ - funkcja klasy $C^1$. Wówczs długość łuku opisanego równaniem $y=f(x), x\in [a,b]$ dana jest wzorem $L = \int\limits_a^b \sqrt{1 + \left[f'(x)\right]^2}dx$
 \end{tw}
 
-\begin{tw}[Objętość bryły]
+\begin{tw}[Objętość bryły]~\\
 Niech $f: [a,b] \to \mathbb{R}$ - funkcja klasy $C^1$ oraz $V$ oznacza bryłę powstałą poprzez obrót
  dookoła osi OX krzywej $y = f(x), x\in [a,b]$. Wówczs objętość $V$ dana jest wzorem $V = \pi\int\limits_a^b f^2(x)dx$
 \end{tw}
@@ -176,9 +175,9 @@ Jeśli $\lim\limits_{n\to\infty}S_n$ jest skończona, to szereg $\sum\limits_{n=
 \end{df}
 
 \begin{tw}[Warunek konieczny zbieżności szeregu]~\\
-$\sum\limits_{n=1}^\infty an$ jest zbieżny $\Rightarrow \lim\limits_{n\to\infty}a_n = 0$
+$\sum\limits_{n=1}^\infty a_n$ jest zbieżny $\Rightarrow \lim\limits_{n\to\infty}a_n = 0$
 \begin{proof}
-Zakładamy, że $\sum\limits_{n=1}^\infty an$ jest zbieżny $\Rightarrow (S_n)$ jest zbieżny; oznaczamy 
+Zakładamy, że $\sum\limits_{n=1}^\infty a_n$ jest zbieżny $\Rightarrow (S_n)$ jest zbieżny; oznaczamy 
 $S_n \xrightarrow{n\to\infty} S$\\
 $a_n = S_n - S_{n-1} \xrightarrow{n\to\infty} S - S = 0$ 
 \end{proof}
@@ -216,7 +215,7 @@ Niech $\forall n\in\mathbb{N} \quad a_n > 0$ i istnieje granica
 $\lim\limits_{n\to\infty} \frac{a_{n+1}}{a_n} = g$, wówczas
 \begin{itemize}
 	\item $g < 1 \Rightarrow \sum\limits_{n=1}^\infty a_n < \infty$
-	\item $g < 1 \Rightarrow \sum\limits_{n=1}^\infty a_n = \infty$
+	\item $g > 1 \Rightarrow \sum\limits_{n=1}^\infty a_n = \infty$
 	\item $g = 1 \Rightarrow $?
 \end{itemize}
 \end{tw}
@@ -225,7 +224,7 @@ $\lim\limits_{n\to\infty} \frac{a_{n+1}}{a_n} = g$, wówczas
 Niech $\forall n\in\mathbb{N} \quad a_n \geqslant 0$ i oznaczamy $g = \limsup\limits_{n\to\infty} \sqrt[n]{a_n}$, wówczas
 \begin{itemize}
 	\item $g < 1 \Rightarrow \sum\limits_{n=1}^\infty a_n < \infty$
-	\item $g < 1 \Rightarrow \sum\limits_{n=1}^\infty a_n = \infty$
+	\item $g > 1 \Rightarrow \sum\limits_{n=1}^\infty a_n = \infty$
 	\item $g = 1 \Rightarrow $?
 \end{itemize}
 \end{tw}
@@ -236,10 +235,13 @@ $\sum\limits_{n=1}^\infty f(n)$ jest zbieżny $\Leftrightarrow \int\limits_{n=1}
 \end{tw}
 
 \begin{tw}[Kryterium Dirichleta]~\\
+\left.\begin{array}{l}
 $(a_n)$ to ciąg nierosnący i taki że $\lim\limits_{n\to\infty} a_n = 0$\\
-$(b_n)$ to ciąg taki że ciąg sum częściowych jest ograniczony to znaczy 
-$\exists M\in\mathbb{R} ~~ \forall n\in\mathbb{N} \quad |b_1 + b_2 + \dots b_n| \leqslant M$\\
-$\Rightarrow \sum\limits_{n=1}^\infty a_nb_n$ jest zbiezny
+$(b_n)$ to ciąg taki że ciąg sum częściowych jest ograniczony 
+\footnotemark[']
+\end{array} \right\rbrace
+$\Rightarrow \sum\limits_{n=1}^\infty a_nb_n$ jest zbieżny
+\footnotetext[']{ to znaczy $\exists M\in\mathbb{R} ~~ \forall n\in\mathbb{N} \quad |b_1 + b_2 + \dots b_n| \leqslant M$}
 \end{tw}
 
 \begin{tw}[Kryterium Leibniza]~\\
@@ -325,11 +327,11 @@ $A \mbox{ -- przedział } \subset \mathbb{R}, f, f_n \in C(A), f_n \rightrightar
 % dodać definicje
 \begin{tw}
 Szereg $\sum\limits_{n=1}^\infty a_n$ jest zbieżny jednostajnie $\Leftrightarrow$ spełnia warunek Cauchego jednostajnej zbieżności szeregu funkcyjnego.
-$\forall \epsilon ~~\exists N ~ \forall m>n>N ~~ \forall x\in A \quad |a_{n+1}(x) + \dots + u_m(x)| < \varepsilon $
+$\forall \varepsilon ~~\exists N ~ \forall m>n>N ~~ \forall x\in A \quad |a_{n+1}(x) + \dots + u_m(x)| < \varepsilon $
 \end{tw}
 
 \begin{tw}[Kryterium Weierstrassa]~\\
-Jeśli istnieje ciąg liczbowy $(a_n)$ taki, że $\forall n\in \mathbb{N} ~~ \forall x\in A \quad |u_n(x)|\leqslant a_n$ i $\sum\limits_{n=1}^\infty a_n$ jest zbieżny, to szereg funkcyjny $\sum\limits_{n=1}^\infty u_n$ jest zbieżny jednostajny ( i bezwzględnie)
+Jeśli istnieje ciąg liczbowy $(a_n)$ taki, że $\forall n\in \mathbb{N} ~~ \forall x\in A \quad |u_n(x)|\leqslant a_n$ i $\sum\limits_{n=1}^\infty a_n$ jest zbieżny, to szereg funkcyjny $\sum\limits_{n=1}^\infty u_n$ jest zbieżny jednostajnie ( i bezwzględnie)
 \begin{przyklad}
 Szereg $\sum\limits_{n=1}^\infty \frac{sin(nx)}{2^n}$ jest zbieżny jednostajnie na $\mathbb{R}$ bo
 $\forall n\in \mathbb{N} ~~ \forall x\in\mathbb{R} \quad \frac{sin(nx)}{2^n} \leqslant \frac{1}{2^n} $ i $\sum\limits_{n=1}^\infty \frac{1}{2^n}$ jest zbieżny jako ciąg geometryczny.
@@ -360,7 +362,7 @@ $ \Rightarrow \forall a,b\in A ~~ \int\limits_a^b (\sum\limits_{n=1}^\infty u_n(
 
 \subsection{Szeregi potęgowe}
 \begin{df}
-Szeregiem potęgowym nazywamy szereg funkcyjny w postaci $\sum\limits_{n=0}^\infty a_nx^n$, gdzie $a_n\in\mathbb{R}$ dla $n\in\mathbb{N}$ 
+Szeregiem potęgowym nazywamy szereg funkcyjny postaci $\sum\limits_{n=0}^\infty a_nx^n$, gdzie $a_n\in\mathbb{R}$ dla $n\in\mathbb{N}$ 
 \end{df}
 
 \begin{tw}
@@ -524,12 +526,12 @@ Wnętrze zbioru $A$ w przestrzenimetrycznej $(X, \rho)$ to
 $$ IntA := \{a\in A: ~~ \exists r>0 ~~ K(a,r) \subset A \} $$
 \end{df}
 \begin{df}
-Domknięcie zbioru $A$ w przestrzenimetrycznej $(X, \rho)$ to 
+Domknięcie zbioru $A$ w przestrzeni metrycznej $(X, \rho)$ to 
 $$ \overline{A} := \{x\in X: ~~ \exists r>0 ~~ K(x,r) \cap A \neq \emptyset \} $$
 \end{df}
 
 \begin{przyklad}
-Rozpatrzmyu przestrzen metryczną $(X, \rho)$, gdzie $X = \mathbb{R}$, $\rho (x,y) = |x-y|$\\
+Rozpatrzmy przestrzeń metryczną $(X, \rho)$, gdzie $X = \mathbb{R}$, $\rho (x,y) = |x-y|$\\
 $$Int([a,b)) = (a,b) \quad\quad \overline{(a,b)} = [a,b]$$
 \end{przyklad}
 
@@ -561,7 +563,7 @@ Funkcja $f$ jest ciągła w punkcie $a\in D \Leftrightarrow [\exists \lim\limits
 Funkcja $f$ jest ciągła $\Leftrightarrow$ jest ciągła w każdym punkcie $a\in D$
 \end{df}
 
-\begin{tw}[o ciągłości działań arytmetycznych]
+\begin{tw}[O ciągłości działań arytmetycznych]~\\
 $[f,g: D\to \mathbb{R}, D\subset\mathbb{R}^k, a\in D; f,g \mbox{ są ciągłe w} a, x\in\mathbb{R}] \Rightarrow$ ciągłe w punkcie są następujące funkcje
 
 \begin{itemize}
@@ -600,7 +602,7 @@ _{h\to 0}\frac{f(x_0+h)-f(x_0)-Ah}{||h||} = 0$$
 %dodać definicję gradientu
 
 \begin{tw}[Warunek konieczny różniczkowalności]~\\
-$f:G\to\mathbb{R}, G\subset\mathbb{R}^m$ to obszar, $f$ jest różniczkowalna w punkcie $x_0 \Rightarrow f$ jest ciągła w punkcie $x_0$
+$f:G\to\mathbb{R}, ~ G\subset\mathbb{R}^m$ to obszar, $f$ jest różniczkowalna w punkcie $x_0 \Rightarrow f$ jest ciągła w punkcie $x_0$
 \begin{proof}
 $f$ różniczkowalna w punkcie $x_0 \Rightarrow \lim\limits_{h\to\infty}\frac{f(x_0+h)-f(x_0)-Ah}{||h||}=0$ dla pewnego $A=(a_1,a_2, \dots, a_m) \in \mathbb{R}^m$\\
 Oznaczmy $\eta_{x_0}(h) = \frac{f(x_0+h)-f(x_0)-Ah}{||h||}$, wówczas mamy $\lim\limits_{n\to\infty}\eta_{x_0}(h) = 0$\\
@@ -610,7 +612,7 @@ $\lim\limits_{h\to 0}f(x_0+h) = \lim\limits_{h\to 0}[\eta_{x_0}(h)] = \lim\limit
 \end{tw}
 
 \begin{tw}[warunek konieczny różniczkowalności]~\\
-$f: G\to\mathbb{R}, G\subset \mathbb{R}^m$ to obszar\\
+$f: G\to\mathbb{R}, ~ G\subset \mathbb{R}^m$ to obszar\\
 Istnieja pochodne cząstkowe $f'_{x_1}(x)\dots f'_{x_m}(x)$ w pewnym otoczeniu punktu $x_0$ i są one ciągłe w punkcie $x_0 \Rightarrow f$ jest różniczkowalna w punkcie $x_0$
 \end{tw}
 
@@ -693,13 +695,13 @@ Załóżmy że $F$ ma ciągłe pochodne cząstkowe w prwnym otoczeniu punktu $(x
 
 \section{Funkcje wektorowe}
 \begin{df}
-Niech $D\subset\mathbb{R}^m, f_i: D\to\mathbb{R}, i=1,\dots ,k$ wtedy funkcją wektorową $m$ zmiennych nazywamy odwzorowanie $$f:D\to\mathbb{R}^k, f(x_1,\dots ,x_m) = (f_1(x_1,\dots ,x_m), \dots ,f_k(x_1,\dots ,x_m))$$
+Niech $D\subset\mathbb{R}^m, ~ f_i: D\to\mathbb{R}, i=1,\dots ,k$ wtedy funkcją wektorową $m$ zmiennych nazywamy odwzorowanie $$f:D\to\mathbb{R}^k, f(x_1,\dots ,x_m) = (f_1(x_1,\dots ,x_m), \dots ,f_k(x_1,\dots ,x_m))$$
 \end{df}
 
 \begin{df}
 Niech $G\subset\mathbb{R}^m$, będzie obszarem a $f: G\to\mathbb{R}^k$ funkcją wektorową $m$ zmiennych. Wówczas: 
 \begin{itemize}
-	\item $f$ ma granicę w punkcie $\mathbf{x_0} = (x_{10}, \dots ,x_{m0})$ który jest punktem skupienia zbioru $G$, równą $\mathbf{g} = (g_1, \dots , g_k) \Leftrightarrow \forall \varepsilon > 0 \exists \delta > 0 \forall )<||\mathbf{x}-\mathbf{x_0}||<\delta \Rightarrow ||f(\mathbf{x})-f(\mathbf{x_0})||<\varepsilon \Leftrightarrow \forall\{\mathbf{x_n}\}\subset G [\lim\limits_{n\to\infty}\mathbf{x_n} = \mathbf{x_0} \Rightarrow \lim\limits_{n\to\infty}f(\mathbf{x_n}) = f(\mathbf{x_0})$
+	\item $f$ ma granicę w punkcie $\mathbf{x_0} = (x_{10}, \dots ,x_{m0})$ który jest punktem skupienia zbioru $G$, równą $\mathbf{g} = (g_1, \dots , g_k) \Leftrightarrow \forall \varepsilon > 0 ~~ \exists \delta > 0 \forall )<||\mathbf{x}-\mathbf{x_0}||<\delta \Rightarrow ||f(\mathbf{x})-f(\mathbf{x_0})||<\varepsilon \Leftrightarrow \forall\{\mathbf{x_n}\}\subset G [\lim\limits_{n\to\infty}\mathbf{x_n} = \mathbf{x_0} \Rightarrow \lim\limits_{n\to\infty}f(\mathbf{x_n}) = f(\mathbf{x_0})$
 	\item $f$ jest ciągła w punkcie $\mathbf{x_0}\in G \Rightarrow$ istnieje $\lim\limits_{x\to x_0}f(\mathbf{x}) = f(\mathbf{x_0})$
 \end{itemize}
 \end{df}
