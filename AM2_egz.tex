@@ -55,9 +55,9 @@
 Ciąg podziałów $(\pi(n)$ nazywamy normalnym, jeśli $\delta(\pi(n))\xrightarrow{n\to\infty}0$
 \end{df}
 \begin{df}[Sumy całkowe]~\\
-\begin{array}{l l}
-\mbox{Dolna suma całkowa:}& $s_n = s_n(\pi_n) = \sum\limits_{i=1}^{k_n}m_i^{(n)}(x_i^{(n)}-x_{i-1}^{(n)}})$\\
-\mbox{Górna suma całkowa:}& $S_n = S_n(\pi_n) = \sum\limits_{i=1}^{k_n}M_i^{(n)}(x_i^{(n)}-x_{i-1}^{(n)}})$\\
+\begin{array}{l l l}
+\mbox{Dolna suma całkowa:}& $s_n = s_n(\pi_n) = \sum\limits_{i=1}^{k_n}m_i^{(n)}(x_i^{(n)}-x_{i-1}^{(n)}})$ & $m\limits_i^{(n)} = \inf (f(x)) \quad x\in [x\limits_{i-1}^{(n)},x\limits_{i}^{(n)}]$\\
+\mbox{Górna suma całkowa:}& $S_n = S_n(\pi_n) = \sum\limits_{i=1}^{k_n}M_i^{(n)}(x_i^{(n)}-x_{i-1}^{(n)}})$ & $M\limits_i^{(n)} = \sup (f(x)) \quad x\in [x\limits_{i-1}^{(n)},x\limits_{i}^{(n)}]$\\
 \mbox{Suma całkowa Riemanna:}& $\sigma_n = \sigma_n(\pi_n) = \sum\limits_{i=1}^{k_n}f(\xi_i^{(n)})(x_i^{(n)}-x_{i-1}^{(n)}})$
 \end{array}
 \end{df}
@@ -77,10 +77,10 @@ Każda funkcja ciągła na $[a,b]$ jest całkowalna w sensie Riemanna na $[a,b]$
 \subsection{Własności całki Riemanna}
 
 \begin{enumerate}
-\item $f,g: [a,b] \to \mathbb{R} {x\in[a,b]: f(x) \neq g(x)}$ jest zbiorem skończonym $\Rightarrow$ f jest całkowalna na $[a,b]\Leftrightarrow$ g jest całkowalna na $[a,b]$. W przypadku całkowalności $\int\limits_a^bf(x)dx=\int\limits_a^bg(x)dx$
-\item Liniowość
+\item $f,g: [a,b] \to \mathbb{R}, \quad\{x\in[a,b]: f(x) \neq g(x)\}$ jest zbiorem skończonym $\Rightarrow$ f jest całkowalna na $[a,b]\Leftrightarrow$ g jest całkowalna na $[a,b]$. W przypadku całkowalności $\int\limits_a^bf(x)dx=\int\limits_a^bg(x)dx$
+\item $ \int\limits_{a}^{b} (\alpha f(x) + \beta g(x))dx = \alpha \int\limits_a^b f(x)dx + \beta \int\limits_a^bg(x)dx $
 \item $f: [a,b]\to\mathbb{R}$ całkowalna na $[a,b] \Rightarrow$ f jest całkowalna na kazdym podprzedziale $[a,b]$
-\item $f: [a,b]\to\mathbb{R}$, f jest całkowalna na $[a,c]$ oraz $[c,b] \Rightarrow$ f jest całkowalna na $[a,b]$ oraz $\int\limits_a^bf(x)dx = \int\limits_a^cf(x)dx + \int\limits_c^bf(x)dx$
+\item $f: [a,b]\to\mathbb{R}, ~ c\in [a.b]$, f jest całkowalna na $[a,c]$ oraz $[c,b] \Rightarrow$ f jest całkowalna na $[a,b]$ oraz $\int\limits_a^bf(x)dx = \int\limits_a^cf(x)dx + \int\limits_c^bf(x)dx$
 \item $f: [a,b] \to \mathbb{R}$ całkowalna na $[a,b]$, $\forall x\in[a,b] f(x) \geq 0 \Rightarrow \int\limits_a^bf(x)dx \geq 0$
 \item $f,g: [a,b] \to \mathbb{R}$ całkowalne na $[a,b]$, $\forall x\in[a,b] f(x) \leq g(x) \Rightarrow \int\limits_a^bf(x)dx \leq \int\limits_a^bg(x)dx$
 \item $f: [a,b] \to \mathbb{R}$ całkowalna na $[a,b] \Rightarrow$ $|f|$ też jest całkowalna na $[a,b]$ oraz $|\int\limits_a^bf(x)dx| \leq \int\limits_a^b|f(x)|dx$
@@ -95,14 +95,14 @@ f: [a,b]\to\mathbb{R}$, funkcja ciągła, $g: [a,b]\to\mathbb{R},~ g\in C^1([a,b
 $
 \begin{proof}~\\
 	Niech $\phi(x)$ będzie funkcją pierwotną dla $f(x)$, to znaczy
-	 $\phi'(x) = f(x), \phi=\int\limits_a^bf(t)dt = \phi(\beta)-\phi(\alpha)$\\
+	 $\phi'(x) = f(x), ~ P=\int\limits_\alpha^\beta f(t)dt = \phi(\beta)-\phi(\alpha)$\\
 $[\phi(g(x))]' = \phi'(g(x))g'(x) = f(g(x))g'(x) \Rightarrow \phi(g(x)) \mbox{ to funkcja pierwotna funkcji } f(g(x))g'(x)$\\
 $L = \int\limits_a^bf(g(x))g'(x)dx = \phi(g(b))-\phi(g(a)) = \phi(\beta)-\phi(\alpha)\\
 L = P$
 \end{proof}
 \item Całkowanie przez cześci\\
 $
-u,v: [a,b]\to\mathbb{R} \mbox{ --- funkcje klasy } C'\\
+u,v: [a,b]\to\mathbb{R} \mbox{ --- funkcje klasy } C^1\\
 \int\limits_a^bu(x)v'(x)dx = [u(x)v(x)]\limits_a^b - \int\limits_a^bu'(x)v(x)dx
 $
 \begin{proof}~\\
@@ -126,20 +126,20 @@ $
 \subsection{Całki niewłaściwe}
 
 \begin{df}
-$f: [a, \infty) \to \mathbb{R} \mbox{ całkowalna na } [\alpha, \beta] \forall \beta > \alpha$ oraz istnieje granica $\lim\limits_{\beta\to\infty} \int\limits_\alpha^\beta f(x)dx \Rightarrow$ granicę tę nazywamy całka niewłaściwą pierwszego rodzaju i oznaczamy $\int\limits_\alpha^\beta f(x)dx := \lim\limits_{\beta\to\infty} \int\limits_\alpha^\beta f(x)dx$\\
+$f: [a, \infty) \to \mathbb{R} \mbox{ całkowalna na } [\alpha, \beta] ~ \forall \beta > \alpha$ oraz istnieje granica $\lim\limits_{\beta\to\infty} \int\limits_\alpha^\beta f(x)dx \Rightarrow$ granicę tę nazywamy całka niewłaściwą pierwszego rodzaju i oznaczamy $\int\limits_\alpha^\infty f(x)dx := \lim\limits_{\beta\to\infty} \int\limits_\alpha^\beta f(x)dx$\\
 Ponadto jeśli granica ta istnieje i jest skończona to całkę niewłaściwą nazywamy zbieżną. Natomiast w pozostałych przypadkach całkę niewłaściwą nazywamy rozbieżną.
 \end{df}
 
 \begin{df}
-$f: [a, \infty) \to \mathbb{R} \mbox{ całkowalna na } [\alpha, \beta] \quad \forall a < \beta < b$ oraz istnieje granica $\lim\limits_{\beta\to b^-} \int\limits_a^\beta f(x)dx \Rightarrow$ granicę tę nazywamy całka niewłaściwą drugiego rodzaju i oznaczamy $\int\limits_a^b f(x)dx := \lim\limits_{\beta\to b^-} \int\limits_\alpha^\beta f(x)dx$\\
+$f: [a, b) \to \mathbb{R} \mbox{ całkowalna na } [\alpha, \beta] \quad \forall a < \beta < b$ oraz istnieje granica $\lim\limits_{\beta\to b^-} \int\limits_a^\beta f(x)dx \Rightarrow$ granicę tę nazywamy całka niewłaściwą drugiego rodzaju i oznaczamy $\int\limits_a^b f(x)dx := \lim\limits_{\beta\to b^-} \int\limits_\alpha^\beta f(x)dx$\\
 Ponadto jeśli granica ta istnieje i jest skończona to całkę niewłaściwą nazywamy zbieżną. Natomiast w pozostałych przypadkach całkę niewłaściwą nazywamy rozbieżną.
 \end{df}
 
 \subsection{Kryteria zbieżności}
 
-\begin{tw}[Kryterium porównawcze]
+\begin{tw}[Kryterium porównawcze]~\\
 $f,g: [a,b) \to \mathbb{R} \mbox{ całkowalna na } [\alpha, \beta] \quad \forall a < \beta < b$ oraz
-$\forall x\in [a,b) \quad 0<leq f(x) \leq g(x)$ Wtedy:
+$\forall x\in [a,b) \quad 0< \leqslant f(x) \leq g(x)$ Wtedy:
 \begin{itemize}
 \item $\int\limits_a^bg(x)dx$ jest zbieżna $\Rightarrow \int\limits_a^bg(x)dx$ też jest zbieżna
 \item $\int\limits_a^bf(x)dx$ jest rozbieżna $\Rightarrow \int\limits_a^bg(x)dx$ też jest rozbieżna
@@ -154,17 +154,17 @@ $\int\limits_a^b \f(x)|dx$ jest zbieżna, to $\int\limits_a^b f(x)dx$ też jest 
 \subsection{Zastosowania geometryczne całki Riemanna}
 
 \begin{tw}[Pole zbioru płaskiego]
-$f: [a,b] \to \mathbb{R}$ funkcja nieujemna i ciągła, $D = \{(x,y) \in \mathbb{R}^2: x\in [a,b[, y\in [0, f(x)]$\\
+$f: [a,b] \to \mathbb{R}$ funkcja nieujemna i ciągła, $D = \{(x,y) \in \mathbb{R}^2: x\in [a,b[, y\in [0, f(x)]$
 pole $D = |D| = \int\limits_a^b f(x)dx$
 \end{tw}
 
 \begin{tw}[Długość łuku]
-Niech $f: [a,b] \to \mathbb{R}$ - funkcja klasy $C^1$. Wówczs długość łuku opisanego równaniem $y=f(x), x\in [a,b]$ dana jest wzorem $L = \int\limits_a^b \sqrt{1 + \left[f'(x)\right]^2}$
+Niech $f: [a,b] \to \mathbb{R}$ - funkcja klasy $C^1$. Wówczs długość łuku opisanego równaniem $y=f(x), x\in [a,b]$ dana jest wzorem $L = \int\limits_a^b \sqrt{1 + \left[f'(x)\right]^2}dx$
 \end{tw}
 
 \begin{tw}[Objętość bryły]
 Niech $f: [a,b] \to \mathbb{R}$ - funkcja klasy $C^1$ oraz $V$ oznacza bryłę powstałą poprzez obrót
- dookoła osi OX krzywej $y - f(x), x\in [a,b]$. Wówczs objętość $V$ dana jest wzorem $V = \pi\int\limits_a^b f^2(x)dx$
+ dookoła osi OX krzywej $y = f(x), x\in [a,b]$. Wówczs objętość $V$ dana jest wzorem $V = \pi\int\limits_a^b f^2(x)dx$
 \end{tw}
 
 
@@ -205,7 +205,6 @@ $\sum\limits_{n=1}^\infty a_n, \sum\limits_{n=1}^\infty b_n$ są zbieżne wówcz
 
 \begin{tw}[Kryterium porównawcze]~\\
 $\forall n\in\mathbb{N} \quad 0 \leqslant a_n \leqslant b_n$, wówczas
-$\lim\limits_{n \to \infty} \frac{a_{n+1}}{a_n} = g$ wówczas:
 \begin{itemize}
 	\item $\sum\limits_{n=1}^\infty b_n$ jest zbieżny $\Rightarrow \sum\limits_{n=1}^\infty a_n$ jest zbieżny
 	\item $\sum\limits_{n=1}^\infty a_n$ jest rozbieżny $\Rightarrow \sum\limits_{n=1}^\infty b_n$ jest rozbieżny
@@ -237,9 +236,9 @@ $\sum\limits_{n=1}^\infty f(n)$ jest zbieżny $\Leftrightarrow \int\limits_{n=1}
 \end{tw}
 
 \begin{tw}[Kryterium Dirichleta]~\\
-$(a_n)$ to ciąg nierosnący i takiże $\lim\limits_{n\to\infty} a_n = 0$\\
+$(a_n)$ to ciąg nierosnący i taki że $\lim\limits_{n\to\infty} a_n = 0$\\
 $(b_n)$ to ciąg taki że ciąg sum częściowych jest ograniczony to znaczy 
-$\exists M\mathbb{R} ~~ \forall n\in\mathbb{N} \quad |b_1 + b_2 + \dots b_n| \leqslant M$\\
+$\exists M\in\mathbb{R} ~~ \forall n\in\mathbb{N} \quad |b_1 + b_2 + \dots b_n| \leqslant M$\\
 $\Rightarrow \sum\limits_{n=1}^\infty a_nb_n$ jest zbiezny
 \end{tw}
 
@@ -276,11 +275,11 @@ Szereg $\sum\limits_{n=1}^\infty a_n$ jest zbiezny bezwzględnie $\Rightarrow$ S
 \subsection{Ciągi funkcyjne}
 \begin{df}[Punktowej zbieżności]~\\
 Mówimy, że ciąg funkcyjny $(f_n)$ jest zbieżny do funkcji $f$ (punktowo)
- $$\Leftrightarrow \forall x\in A \quad \lim\limits_{n\to\infty}\underbrace{f_n(x)}_{ciąg liczbowy} = \underbrace{f(x)}_{liczba} \Leftrightarrow \forall x\in A ~ \forall\varepsilon > 0 ~~ \exists N = N(\varepsilon, x) ~ \forall n \geqslant N \quad |f_n(x)-f(x)| < \varepsilon$$, oznaczamy $f_n \rightarrow f$
+ $$\Leftrightarrow \forall x\in A \quad \lim\limits_{n\to\infty}\underbrace{f_n(x)}_{\mbox{ciąg liczbowy}} = \underbrace{f(x)}_{\mbox{liczba}} \Leftrightarrow \forall x\in A ~ \forall\varepsilon > 0 ~~ \exists N = N(\varepsilon, x) ~ \forall n \geqslant N \quad |f_n(x)-f(x)| < \varepsilon$$, oznaczamy $f_n \rightarrow f$
 \end{df}
 
 \begin{df}[Jednostajnej zbieżności]~\\
-Mówimy, że ciąg funkcyjny $(f_n)$ jest zbieżny do funkcji $f$ (jednostajnie) $$\Leftrightarrow \forall\varepsilon > 0 ~~ \exists N = N(\varepsilon, x) ~ \forall n \geqslant N ~ \forall x\in A ~ \quad |f_n(x)-f(x)| < \varepsilon$$, oznaczamy $f_n \rightarrow f$
+Mówimy, że ciąg funkcyjny $(f_n)$ jest zbieżny do funkcji $f$ (jednostajnie) $$\Leftrightarrow \forall\varepsilon > 0 ~~ \exists N = N(\varepsilon, x) ~ \forall n \geqslant N ~ \forall x\in A ~ \quad |f_n(x)-f(x)| < \varepsilon$$, oznaczamy $f_n \rightrightarrows f$
 \end{df}
 
 \begin{tw}[Warunek równoważny zbiezności jednostajnej ciągu funkcyjnego]~\\
@@ -300,7 +299,7 @@ $
 
 \begin{df}[Warunek Cauch'ego dla zbieżności punktowej i jednostajnej]~\\
 $\forall x\in A f_n \rightarrow f \Leftrightarrow \forall x\in A$ ciąg $(f_n(x))$ jest zbieżny $\Leftrightarrow \forall x\in A \mbox{ ciąg } (f_n(x))$ spełnia warunek Cauch'ego, to znaczy 
-$\forall x\in A ~~ \forall \varepsilon>0 ~~ \exists N ~ \foralln,m \geqslant N \quad |f_n(x) - f_m(x)| < \varepsilon$ 
+$\forall x\in A ~~ \forall \varepsilon>0 ~~ \exists N ~ \forall n,m \geqslant N \quad |f_n(x) - f_m(x)| < \varepsilon$ 
 \end{df}
 
 \begin{tw}
@@ -315,7 +314,7 @@ $f, f_n: A\to \mathbb{R}, f_n \rightrightarrows_A f$, funkcje $f_n$ są ciągłe
 $A \mbox{ -- przedział } \subset \mathbb{R}$ są różniczkowalne w każdym punkcie przedziału A. Ciąg $(f_n')$ jest z zbieżny jednostajnie na A, czyli $\exists x_0 \in A  \quad (f_n'(x_0))$ jest zbieżny $\Rightarrow$
 \begin{itemize}
 	\item ciąg $(f_n)$ jest jednostajnie zbieżny na A do pewnej funkcji granicznej
-	\item funckja graniczna $f$ jest różniczkowalna na A i $$\forall x\in A ~~ f'(x) = \lim\limits_{n\to\infty} f_n'(x) = (\lim\limits_{n\to\infty} f_n(x))'$$
+	\item funckja graniczna $f$ jest różniczkowalna na A i $\forall x\in A ~~ f'(x) = \lim\limits_{n\to\infty} f_n'(x) = (\lim\limits_{n\to\infty} f_n(x))'$
 \end{itemize}
 
 \begin{tw}[o całkowaniu granicy ciągu funkcyjnego]~\\
@@ -326,11 +325,11 @@ $A \mbox{ -- przedział } \subset \mathbb{R}, f, f_n \in C(A), f_n \rightrightar
 % dodać definicje
 \begin{tw}
 Szereg $\sum\limits_{n=1}^\infty a_n$ jest zbieżny jednostajnie $\Leftrightarrow$ spełnia warunek Cauchego jednostajnej zbieżności szeregu funkcyjnego.
-$$\forall \espilon ~~\exists N ~ \forall m>n>N ~~ \forall x\in A \quad |a_{n+1}(x) + \dots + u_m(x)| < \varepsilon $$
+$\forall \epsilon ~~\exists N ~ \forall m>n>N ~~ \forall x\in A \quad |a_{n+1}(x) + \dots + u_m(x)| < \varepsilon $
 \end{tw}
 
-\begin{tw}[Kryterium Weierstrassa]
-Jeśli istnieje ciąg liczbowy $(a_n)$ taki, że $\forall n\in \mathbb{N} ~~ \forallx\in A \quad |u_n(x)|\leqslant a_n$ i $\sum\limits_{n=1}^\infty a_n$ jest zbieżny, to szereg funkcyjny $\sum\limits_{n=1}^\infty u_n$ jest zbieżny jednostajny ( i bezwzględnie)
+\begin{tw}[Kryterium Weierstrassa]~\\
+Jeśli istnieje ciąg liczbowy $(a_n)$ taki, że $\forall n\in \mathbb{N} ~~ \forall x\in A \quad |u_n(x)|\leqslant a_n$ i $\sum\limits_{n=1}^\infty a_n$ jest zbieżny, to szereg funkcyjny $\sum\limits_{n=1}^\infty u_n$ jest zbieżny jednostajny ( i bezwzględnie)
 \begin{przyklad}
 Szereg $\sum\limits_{n=1}^\infty \frac{sin(nx)}{2^n}$ jest zbieżny jednostajnie na $\mathbb{R}$ bo
 $\forall n\in \mathbb{N} ~~ \forall x\in\mathbb{R} \quad \frac{sin(nx)}{2^n} \leqslant \frac{1}{2^n} $ i $\sum\limits_{n=1}^\infty \frac{1}{2^n}$ jest zbieżny jako ciąg geometryczny.
@@ -345,7 +344,7 @@ $S, u_n: A \to \mathbb{R}, ~~ \sum\limits_{n=1}^\infty u_n$ jest zbieżny jednos
 $A$ -- przedział $\subset \mathbb{R}$\\
 $u_n: A \to \mathbb{R}$ są różniczkowalne w każdym punkcie przedziału $A$\\
 $\sum\limits_{n=1}^\infty u_n'$ jest zbieżny jednostajnie na $A$\\
-$\exists x_0\in A ~~ \sum\limits_{n=1}^\infty u_n(x_0)$ jest zbieżby $\Rightarrow$
+$\exists x_0\in A ~~ \sum\limits_{n=1}^\infty u_n(x_0)$ jest zbieżny $\Rightarrow$
 \begin{itemize}
 	\item $\sum\limits_{n=1}^\infty u_n$ jest zbieżny jednostajnie
 	\item $\sum\limits_{n=1}^\infty u_n$ jest różniczkowalna na $A$ i $(\sum\limits_{n=1}^\infty u_n)' = \sum\limits_{n=1}^\infty u_n'$
@@ -355,8 +354,8 @@ $\exists x_0\in A ~~ \sum\limits_{n=1}^\infty u_n(x_0)$ jest zbieżby $\Rightarr
 \begin{tw}[o całkowaniu szeregu funkcyjnego]~\\
 $A$ -- przedział $\subset \mathbb{R}$\\
 $u_n: A \to \mathbb{R}$ są ciągłe na $A$\\
-$\sum\limits_{n=1}^\infty u_n$ jest zbieżny jednostajnie\\
-$\forall a,b\in A ~~ \int\limits_a^b (\sum\limits_{n=1}^\infty u_n(x))dx = \lim\limits_{n\to\infty}\int\limits_a^b (u_1(x) + u_2(x) + \dots + u_n(x))dx =  \sum\limits_{n=1}^\infty \int\limits_a^b u_n(x)dx$
+$\sum\limits_{n=1}^\infty u_n$ jest zbieżny jednostajnie
+$ \Rightarrow \forall a,b\in A ~~ \int\limits_a^b (\sum\limits_{n=1}^\infty u_n(x))dx =\\ \lim\limits_{n\to\infty}\int\limits_a^b (u_1(x) + u_2(x) + \dots + u_n(x))dx =  \sum\limits_{n=1}^\infty \int\limits_a^b u_n(x)dx$
 \end{tw}
 
 \subsection{Szeregi potęgowe}
@@ -421,8 +420,8 @@ Szereg potęgowy jest funkcją ciągłą w każdym punkcie, w którym jest zbie�
 Niech $f\in C^\infty ((x_0-\delta, x_0+\delta))$ wtedy szereg potęgowy $\sum\limits_{n=0}^\infty \frac{f^{(n)}(x_0)}{n!}(x-x_0)^n$ nazywamy szeregiem Taylora o środku w punkcie $x_0$ dla funkcji $f$.
 \end{df}
 
-\begin{df}[szeregu maclaurina]~\\
-Niech $f\in C^\infty ((\delta, \delta))$ wtedy szereg potęgowy $\sum\limits_{n=0}^\infty \frac{f^{(n)}(0)}{n!}x^n$ nazywamy szeregiem Maclaurina dla funkcji $f$.
+\begin{df}[szeregu Maclaurina]~\\
+Niech $f\in C^\infty ((-\delta, \delta))$ wtedy szereg potęgowy $\sum\limits_{n=0}^\infty \frac{f^{(n)}(0)}{n!}x^n$ nazywamy szeregiem Maclaurina dla funkcji $f$.
 \end{df}
 
 \begin{przyklad}[Rozwinięć niektórych funkcji w szereg Macalurina]~\\
@@ -452,13 +451,13 @@ $X = \mathbb{R}^n ~\rho(x, y) = \sum\limits_{k=1}^n |x_k-y_k|$
 \end{przyklad}
 
 \begin{df}
-Kulą (otwartą) o środku w punkcie $x_0$ i promieniu $r$ w przestrzeni metrycznej $(X, \rho)$ nazywamy zbiór $K(x_0, r) = \{x\in X: \rho(x,x_0) < r\}$
+Kulą (otwartą) o środku w punkcie $x_0$ i promieniu $r$ w przestrzeni metrycznej $(X, \rho)$ nazywamy zbiór $$K(x_0, r) = \{x\in X: \rho(x,x_0) < r\}$$
 \end{df}
 \begin{df}
-Kulą domkniętą o środku w punkcie $x_0$ i promieniu $r$ w przestrzeni metrycznej $(X, \rho)$ nazywamy zbiór $\overline{K}(x_0, r) = \{x\in X: \rho(x,x_0) \leqslant r\}$
+Kulą domkniętą o środku w punkcie $x_0$ i promieniu $r$ w przestrzeni metrycznej $(X, \rho)$ nazywamy zbiór $$\overline{K}(x_0, r) = \{x\in X: \rho(x,x_0) \leqslant r\}$$
 \end{df}
 \begin{df}
-Sferą o środku w punkcie $x_0$ i promieniu $r$ w przestrzeni metrycznej $(X, \rho)$ nazywamy zbiór $S(x_0, r) = \{x\in X: \rho(x,x_0) = r\}$
+Sferą o środku w punkcie $x_0$ i promieniu $r$ w przestrzeni metrycznej $(X, \rho)$ nazywamy zbiór $$S(x_0, r) = \{x\in X: \rho(x,x_0) = r\}$$
 \end{df}
 
 \begin{przyklad}[Kula w metryce dyskretnej]
@@ -564,11 +563,15 @@ Funkcja $f$ jest ciągła $\Leftrightarrow$ jest ciągła w każdym punkcie $a\i
 
 \begin{tw}[o ciągłości działań arytmetycznych]
 $[f,g: D\to \mathbb{R}, D\subset\mathbb{R}^k, a\in D; f,g \mbox{ są ciągłe w} a, x\in\mathbb{R}] \Rightarrow$ ciągłe w punkcie są następujące funkcje
-$$
-\begin{array}{c c c c c}
-|f| & \lambda f & f \pm g & fg & \frac{f}{g} \mbox{ jeśli tylko } g(a) \neq 0
-\end{array}
-$$
+
+\begin{itemize}
+	\item $|f| $
+	\item $\lambda f $
+	\item $f \pm g $
+	\item $fg$ 
+	\item $\frac{f}{g} \mbox{ jeśli tylko } g(a) \neq 0$
+\end{itemize}
+
 \end{tw}
 \begin{przyklad}
 $ f:\mathbb{R}^2 \to\mathbb{R}, f(xy) \begin{cases} 
@@ -599,10 +602,10 @@ _{h\to 0}\frac{f(x_0+h)-f(x_0)-Ah}{||h||} = 0$$
 \begin{tw}[Warunek konieczny różniczkowalności]~\\
 $f:G\to\mathbb{R}, G\subset\mathbb{R}^m$ to obszar, $f$ jest różniczkowalna w punkcie $x_0 \Rightarrow f$ jest ciągła w punkcie $x_0$
 \begin{proof}
-$f$ różniczkowalna w punkcie $x_0 \Rightarrow \lim\limits{h\to\infty}\frac{f(x_0+h)-f(x_0)-Ah}{||h||}=0$ dla pewnego $A=(a_1,a_2, \dots, a_m) \in \mathbb{R}^m$\\
+$f$ różniczkowalna w punkcie $x_0 \Rightarrow \lim\limits_{h\to\infty}\frac{f(x_0+h)-f(x_0)-Ah}{||h||}=0$ dla pewnego $A=(a_1,a_2, \dots, a_m) \in \mathbb{R}^m$\\
 Oznaczmy $\eta_{x_0}(h) = \frac{f(x_0+h)-f(x_0)-Ah}{||h||}$, wówczas mamy $\lim\limits_{n\to\infty}\eta_{x_0}(h) = 0$\\
 $f(x_0+h)=\eta_{x_0}(h) = \eta_x(h)||h|| + f(x_0) + Ah$\\
-$\lim\limits_{h\to 0}f(x_0+h) = \lim\limits_{h\to 0}[\eta_{x_0}(h) = \eta_x(h)||h|| + f(x_0) + a_1h_1 + a_2h_2 + \dots + a_mh_m] = f(x_0) \Rightarrow f$ jest ciągła w punkcie $x_0$
+$\lim\limits_{h\to 0}f(x_0+h) = \lim\limits_{h\to 0}[\eta_{x_0}(h)] = \lim\limits_{h\to 0}[\eta_x(h)||h|| + f(x_0) + a_1h_1 + a_2h_2 + \dots + a_mh_m] = f(x_0) \Rightarrow f$ jest ciągła w punkcie $x_0$
 \end{proof}
 \end{tw}
 
@@ -655,10 +658,10 @@ Niech $G\subset \mathbb{R}^2$ będzie obszarem, $f\in C^2(G)$ i $(x_0,y_0) \in G
 \end{tw}
 
 \begin{df}
-Formę kwadraturową, a także odpowiadającą jej macierz $A$ nazywamy
+Formę kwadratową, a także odpowiadającą jej macierz $A$ nazywamy
 \begin{itemize}
 	\item dodatnio określoną $\Leftrightarrow \forall \mathbf{x}\neq 0 \quad \mathbf{x}A\mathbf{x}^T > 0$
-	\item ujemnie określoną $\Leftrightarrow \forall \mathbf{x}\neq 0 \quad \mathhbf{x}A\mathbf{x}^T < 0$
+	\item ujemnie określoną $\Leftrightarrow \forall \mathbf{x}\neq 0 \quad \mathbf{x}A\mathbf{x}^T < 0$
 	\item nieujemnie określoną $\Leftrightarrow \forall \mathbf{x}\neq 0 \quad \mathbf{x}A\mathbf{x}^T \geqslant 0$
 	\item niedodatnio określoną $\Leftrightarrow \forall \mathbf{x}\neq 0 \quad \mathbf{x}A\mathbf{x}^T \leqslant 0$	
 	\item nieokresloną $\Leftrightarrow \forall \mathbf{x,y} \quad \mathbf{x}A\mathbf{x}^T < 0,~ \mathbf{y}A\mathbf{y}^T > 0$
@@ -668,8 +671,8 @@ Formę kwadraturową, a także odpowiadającą jej macierz $A$ nazywamy
 \begin{tw}[Kryterium Sylwestera]~\\
 Macierz symetryczna $k\times k$:
 \begin{itemize}
-	\item jest dodatnio okreslona $\Leftrightarrow \forall i=1,\dots ,k ~ \det A^{(i)}>0$
-	\item jest ujemnie okreslona $\Leftrightarrow \forall i=1,\dots ,k ~ (-1)^i\det A^{(i)}>0$
+	\item jest dodatnio określona $\Leftrightarrow \forall i=1,\dots ,k ~ \det A^{(i)}>0$
+	\item jest ujemnie określona $\Leftrightarrow \forall i=1,\dots ,k ~ (-1)^i\det A^{(i)}>0$
 \end{itemize}
 gdzie $A^{(i)}$ to macież powstała z $A$ przez skreślenie kolumn i wierszy o numerach wiekszych niż $i$
 \end{tw}
@@ -683,7 +686,7 @@ Niech $G\subset \mathbb{R}^k$ będzie obszarem i niech $f\in C^2(G)$. Jeśli $\m
 \end{itemize}
 
 \begin{tw}[O funkcji uwikłanej]
-Załóżmy że $F$ ma ciągłe pochodne cząstkowe w prwnym otoczeniu punktu $(x_0, y_0)$ oraz $F(x_0,y_0) = 0,~ F'_y(x_0,y_0) \neq 0$ to istnieje otoczenie $U_{x_0} \ni x_0$ i otoczenie $V_{y_0} \ni y_0$ oraz jedyna funkcja $y: U_{x_0} \to V_{y_0}$ klasy $C'$ taka że $\forall x\in U_{x_0} \quad F(x, y(x)) = 0$. Ponadto $y$ ma ciągłą pochodną w $U_{x_0}$ i $u'(x) = \frac{-F_x(x,y)}{F'_y(x,y)}$, dla $x\in U_{x_0}$
+Załóżmy że $F$ ma ciągłe pochodne cząstkowe w prwnym otoczeniu punktu $(x_0, y_0)$ oraz $F(x_0,y_0) = 0,~ F'_y(x_0,y_0) \neq 0$ to istnieje otoczenie $U_{x_0} \ni x_0$ i otoczenie $V_{y_0} \ni y_0$ oraz jedyna funkcja $y: U_{x_0} \to V_{y_0}$ klasy $C^1$ taka że $\forall x\in U_{x_0} \quad F(x, y(x)) = 0$. Ponadto $y$ ma ciągłą pochodną w $U_{x_0}$ i $y'(x) = \frac{-F_x(x,y)}{F'_y(x,y)}$, dla $x\in U_{x_0}$
 \end{tw}
 
 
@@ -721,7 +724,7 @@ Jeżeli krzywa $\gamma :[\alpha , \beta ] \to\mathbb{R}^2$ jest łukiem gładkim
 Miara wewnętrzna Jordana zbioru $D$ to $\sup\{s:$ s to suma miar skończonej liczby kostek n-wymiarowych, takich że wnętrza tych kostek są parami rozłączne i każda z tych kostek zawiera się w zbiorze $D\} = \underline{j}(D)$
 \end{df}
 \begin{df}
-Miara zewnętrzna Jordana zbioru $D$ to $\inf\{s: $s to suma miar skończonej liczby kostek n-wymiarowych, pokrywających zbiór $ D\} = \overline{j}(D)$
+Miara zewnętrzna Jordana zbioru $D$ to $\inf\{s:$ s to suma miar skończonej liczby kostek n-wymiarowych, pokrywających zbiór $ D\} = \overline{j}(D)$
 \end{df}
 
 \begin{df}
