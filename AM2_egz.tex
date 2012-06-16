@@ -1,19 +1,17 @@
 \documentclass[12pt,a4paper]{article}
-\usepackage[centertags]{amsmath}
 \usepackage[polish]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[a4paper]{geometry}
-\usepackage{amsfonts}
 \usepackage{fullpage}
-%\usepackage{epsfig}
-\usepackage{amsthm}
 \usepackage{pdflscape}
 \usepackage{float}
-%\usepackage{newlfont}
+
+\usepackage{amsthm}
+\usepackage{amsfonts}
 \usepackage{amsmath} %pakiet potrzebny do \eqref
 \usepackage{amssymb} %pakiet potrzebny do \blacksquare i \mathbb{•}
-\usepackage{hyperref}
+
 
 \usepackage{graphicx}
 
@@ -24,9 +22,11 @@
 \newtheorem{zad}{Zadanie}
 \theoremstyle{definition}
 \newtheorem{df}{Definicja}
-\usepackage[polish]{babel}
-\usepackage[utf8]{inputenc}
 
+\usepackage[pdfauthor={Janisz},%
+pdftitle={AM2},%
+pagebackref=true,%
+pdftex]{hyperref}
 \hypersetup{colorlinks=false}
 
 \pagestyle{plain}
@@ -54,14 +54,16 @@
 Ciąg podziałów $(\pi(n))$ nazywamy normalnym, jeśli $\delta (\pi (n)) \xrightarrow{n\to\infty}0$
 \end{df}
 \begin{df}[Sumy całkowe]~\\
-\begin{array}{l l l}
-\text{Dolna suma całkowa:}& $s_n = s_n(\pi_n) = \sum\limits_{i=1}^{k_n}m_i^{(n)}(x_i^{(n)}-x_{i-1}^{(n)}})$ & $m\limits_i^{(n)} = \inf (f(x)) \quad x\in [x\limits_{i-1}^{(n)},x\limits_{i}^{(n)}]$\\
-\text{Górna suma całkowa:}& $S_n = S_n(\pi_n) = \sum\limits_{i=1}^{k_n}M_i^{(n)}(x_i^{(n)}-x_{i-1}^{(n)}})$ & $M\limits_i^{(n)} = \sup (f(x)) \quad x\in [x\limits_{i-1}^{(n)},x\limits_{i}^{(n)}]$\\
-\text{Suma całkowa Riemanna:}& $\sigma_n = \sigma_n(\pi_n) = \sum\limits_{i=1}^{k_n}f(\xi_i^{(n)})(x_i^{(n)}-x_{i-1}^{(n)}})$
-\end{array}
+$\begin{array}{l l l}
+\text{Dolna suma całkowa:}& s_n = s_n(\pi_n) = \sum \limits_{i=1}^{k_n}m_i^{(n)}
+(x_i^{(n)}-x_{i-1}^{(n)}) & m_i^{(n)} =
+ \inf (f(x)) \quad x\in [x_{i-1}^{(n)} ,x_{i}^{(n)} ]\\
+\text{Górna suma całkowa:}& S_n = S_n(\pi_n) = \sum_{i=1}^{k_n}M_i^{(n)}(x_i^{(n)}-x_{i-1}^{(n)}) & M_i^{(n)} = \sup (f(x)) \quad x\in [x_{i-1}^{(n)},x_{i}^{(n)}]\\
+\text{Suma całkowa Riemanna:}& \sigma_n = \sigma_n(\pi_n) = \sum_{i=1}^{k_n}f(\xi_i^{(n)})(x_i^{(n)}-x_{i-1}^{(n)})
+\end{array}$
 \end{df}
 \begin{df}[Funkcja całkowalna w sensie Riemanna]~\\
-Funkcja f jest całkowalna w sensie Riemanna na $[a,b] \Leftrightarrow$ instnieje $\sigma\in\mathbb{R}$ taka,że dla dowolnego normalnego ciągu podziałów $(\pi_n)$ oraz dla dowolnego wartościowania tego ciągu $(\omega_n)$ mamy $\lim\limits_{n\to\infty}\sigma_n(\pi_n,\omega_0) = \lim\limits_{n\to\infty}\sum\limits_{i=1}^{k_n}f(\xi_i^{(n)})(x_i^{(n)}-x_{i-1}^{(n)}})$, to $\sigma$ nazywamy całką Riemanna funkcji f na $<a,b>$ i oznaczamy $\int\limits_a^b(f(x)dx$
+Funkcja f jest całkowalna w sensie Riemanna na $[a,b] \Leftrightarrow$ instnieje $\sigma\in\mathbb{R}$ taka,że dla dowolnego normalnego ciągu podziałów $(\pi_n)$ oraz dla dowolnego wartościowania tego ciągu $(\omega_n)$ mamy $\lim\limits_{n\to\infty}\sigma_n(\pi_n,\omega_0) = \lim\limits_{n\to\infty}\sum\limits_{i=1}^{k_n}f(\xi_i^{(n)})(x_i^{(n)}-x_{i-1}^{(n)})$, to $\sigma$ nazywamy całką Riemanna funkcji f na $<a,b>$ i oznaczamy $\int\limits_a^b(f(x)dx$
 \end{df}
 \begin{tw}
 $f: [a,b] \rightarrow \mathbb{R}$ (ograniczona) jest całkowalna w sensie Riemanna na $[a,b] \Leftrightarrow s=S$
@@ -102,7 +104,7 @@ L = P$
 \item Całkowanie przez cześci\\
 $
 u,v: [a,b]\to\mathbb{R} \text{ --- funkcje klasy } C^1\\
-\int\limits_a^bu(x)v'(x)dx = [u(x)v(x)]\limits_a^b - \int\limits_a^bu'(x)v(x)dx
+\int\limits_a^bu(x)v'(x)dx = [u(x)v(x)]_a^b - \int\limits_a^bu'(x)v(x)dx
 $
 \begin{proof}~\\
 $
@@ -110,8 +112,8 @@ $
 	\int\limits_a^b[u(x)v(x)]'dx = \int\limits_a^b(u'(x)v(x)+u(x)v'(x))dx = 
 	\int\limits_a^b u'(x)v(x)dx + \int\limits_a^bu(x)v'(x)dx \quad(*)\\
 	u(x)v(x) \text{ to funkcja pierwotna } [u(x)v(x)]'\\
-	\int\limits_a^b[u(x)v(x)]'dx u(b)v(b) - u(a)v(a) = [u(x)v(x)]\limits_a^b \quad(**)\\
-	(*):(**) \Rightarrow [u(x)v(x)]\limits_a^b = \int\limits_a^bu'(x)v(x)dx + \int\limits_a^b u(x)v'(x)dx\\
+	\int\limits_a^b[u(x)v(x)]'dx u(b)v(b) - u(a)v(a) = [u(x)v(x)]_a^b \quad(**)\\
+	(*):(**) \Rightarrow [u(x)v(x)]_a^b = \int\limits_a^bu'(x)v(x)dx + \int\limits_a^b u(x)v'(x)dx\\
 	\int\limits_a^bu(x)v(x)dx = [u(x)v(x)]_a^b-\int\limits_a^bu'(x)v(x)dx	
 $
 \end{proof}
@@ -124,12 +126,12 @@ $
 
 \subsection{Całki niewłaściwe}
 
-\begin{df}
+\begin{df}[Całka niewłaściwa I rodzaju]~\\
 $f: [a, \infty) \to \mathbb{R} \text{ całkowalna na } [\alpha, \beta] ~ \forall \beta > \alpha$ oraz istnieje granica $\lim\limits_{\beta\to\infty} \int\limits_\alpha^\beta f(x)dx \Rightarrow$ granicę tę nazywamy całka niewłaściwą pierwszego rodzaju i oznaczamy $\int\limits_\alpha^\infty f(x)dx := \lim\limits_{\beta\to\infty} \int\limits_\alpha^\beta f(x)dx$\\
 Ponadto jeśli granica ta istnieje i jest skończona to całkę niewłaściwą nazywamy zbieżną. Natomiast w pozostałych przypadkach całkę niewłaściwą nazywamy rozbieżną.
 \end{df}
 
-\begin{df}
+\begin{df}[Całka niewłaściwa II rodzaju]~\\
 $f: [a, b) \to \mathbb{R} \text{ całkowalna na } [\alpha, \beta] \quad \forall a < \beta < b$ oraz istnieje granica $\lim\limits_{\beta\to b^-} \int\limits_a^\beta f(x)dx \Rightarrow$ granicę tę nazywamy całka niewłaściwą drugiego rodzaju i oznaczamy $\int\limits_a^b f(x)dx := \lim\limits_{\beta\to b^-} \int\limits_\alpha^\beta f(x)dx$\\
 Ponadto jeśli granica ta istnieje i jest skończona to całkę niewłaściwą nazywamy zbieżną. Natomiast w pozostałych przypadkach całkę niewłaściwą nazywamy rozbieżną.
 \end{df}
@@ -186,7 +188,7 @@ $\sum\limits_{n=1}^\infty \frac{1}{n}$ nie jest zbiezny, mimo że $\lim\limits_{
 \end{przyklad}
 \end{tw}
 
-\begin{tw}
+\begin{tw}[Warunek Cauch'ego zbieżności szeregu]~\\
 Szereg $\sum\limits_{n=1}^\infty a_n$ jest zbieżny $\Leftrightarrow$ spełnia warunek Cauch'ego, to znaczy
 $$
 \forall \varepsilon > 0 ~~\exists N ~~\forall m > n > N \quad |a_{n+1} + a_{n+2} + \dots + a_m| < \varepsilon
@@ -235,13 +237,14 @@ $\sum\limits_{n=1}^\infty f(n)$ jest zbieżny $\Leftrightarrow \int\limits_{n=1}
 \end{tw}
 
 \begin{tw}[Kryterium Dirichleta]~\\
-\left.\begin{array}{l}
-$(a_n)$ to ciąg nierosnący i taki że $\lim\limits_{n\to\infty} a_n = 0$\\
-$(b_n)$ to ciąg taki że ciąg sum częściowych jest ograniczony 
-\footnotemark[']
-\end{array} \right\rbrace
-$\Rightarrow \sum\limits_{n=1}^\infty a_nb_n$ jest zbieżny
-\footnotetext[']{ to znaczy $\exists M\in\mathbb{R} ~~ \forall n\in\mathbb{N} \quad |b_1 + b_2 + \dots b_n| \leqslant M$}
+
+$\left.
+\begin{array}{l}
+	(a_n) \text{ to ciąg nierosnący i taki że } \lim\limits_{n\to\infty} a_n = 0\\
+	(b_n) \text{ to ciąg taki że ciąg sum częściowych jest ograniczony }\footnotemark[1]
+\end{array} 
+\right\rbrace \Rightarrow \sum\limits_{n=1}^\infty a_nb_n$ jest zbieżny
+\footnotetext[1]{ to znaczy $\exists M\in\mathbb{R} ~~ \forall n\in\mathbb{N} \quad |b_1 + b_2 + \dots b_n| \leqslant M$}
 \end{tw}
 
 \begin{tw}[Kryterium Leibniza]~\\
@@ -318,14 +321,15 @@ $A \text{ -- przedział } \subset \mathbb{R}$ są różniczkowalne w każdym pun
 	\item ciąg $(f_n)$ jest jednostajnie zbieżny na A do pewnej funkcji granicznej
 	\item funckja graniczna $f$ jest różniczkowalna na A i $\forall x\in A ~~ f'(x) = \lim\limits_{n\to\infty} f_n'(x) = (\lim\limits_{n\to\infty} f_n(x))'$
 \end{itemize}
+\end{tw}
 
 \begin{tw}[o całkowaniu granicy ciągu funkcyjnego]~\\
 $A \text{ -- przedział } \subset \mathbb{R}, f, f_n \in C(A), f_n \rightrightarrows_A f \Rightarrow \forall a,b \in A \quad \int\limits_a^bf(x)dx = \lim\limits_{n\to\infty}\int\limits_a^bf_n(x)dx$ 
-\end{itemize}
+\end{tw}
 
 \subsection{Szeregi funkcyjne}
 % dodać definicje
-\begin{tw}
+\begin{tw}[Warunek Cauch'ego zbieżności jednostajnej]~\\
 Szereg $\sum\limits_{n=1}^\infty a_n$ jest zbieżny jednostajnie $\Leftrightarrow$ spełnia warunek Cauchego jednostajnej zbieżności szeregu funkcyjnego.
 $\forall \varepsilon ~~\exists N ~ \forall m>n>N ~~ \forall x\in A \quad |a_{n+1}(x) + \dots + u_m(x)| < \varepsilon $
 \end{tw}
@@ -365,7 +369,7 @@ $ \Rightarrow \forall a,b\in A ~~ \int\limits_a^b (\sum\limits_{n=1}^\infty u_n(
 Szeregiem potęgowym nazywamy szereg funkcyjny postaci $\sum\limits_{n=0}^\infty a_nx^n$, gdzie $a_n\in\mathbb{R}$ dla $n\in\mathbb{N}$ 
 \end{df}
 
-\begin{tw}
+\begin{tw}[D'Alemberta]~\\
 Jesli istnieje granica $\lim\limits_{n\to\infty} |\frac{a_{n+1}}{a_n}| = \lambda $, to promień zbieżności szeregu potęgowego $\sum\limits_{n=0}^\infty a_nx^n$ dany jest wzorem:
 $ R = 
 	\begin{cases}
@@ -385,14 +389,17 @@ $ R =
 	\end{cases} $, gdzie $\lambda = \limsup\limits_{n\to\infty}\sqrt[n]{|a_n|}$
 \end{tw}
 
-\begin{przyklad}[Szeregu o promieniu zbieżności = 7]
+\begin{przyklad}[Szeregu o promieniu zbieżności $= 7$]
 $\sum\limits_{n=1}^\infty \frac{1}{n7^n}x^n$
 \end{przyklad}
-\begin{przyklad}[Szeregu zbieżnego tylko dla x=0]
+\begin{przyklad}[Szeregu zbieżnego tylko dla $x=0$]
 $\sum\limits_{n=1}^\infty n^nx^n$
 \end{przyklad}
-\begin{przyklad}[Szeregu zbieżnego tylko dla x=5]
+\begin{przyklad}[Szeregu zbieżnego tylko dla $x=5$]
 $\sum\limits_{n=1}^\infty n^n(5-x)^n$
+\end{przyklad}
+\begin{przyklad}[Szeregu zbieżnego $\forall x\in\mathbb{R}$]
+$\sum\limits_{n=1}^\infty \frac{x^n}{n!}$
 \end{przyklad}
 
 \begin{tw}[o ciągłości sumy szeregu potęgowego]~\\
@@ -433,6 +440,7 @@ Niech $f\in C^\infty ((-\delta, \delta))$ wtedy szereg potęgowy $\sum\limits_{n
 	\item $sinx = \sum\limits_{n=0}^\infty \frac{(-1)^n}{(2n+1)!}x^{2n+1}$
 	\item $cosx = \sum\limits_{n=0}^\infty \frac{(-1)^n}{(2n)!}x^{2n}$
 \end{itemize}
+\end{przyklad}
 
 \section{Przestrzenie metryczne i unormowane}
 \begin{df}
@@ -481,12 +489,12 @@ $$S(x_0, r) = \{x\in X: \rho(x,x_0) = r\} = \begin{cases}
 \end{cases}$$
 \end{przyklad}
 
-\begin{df}
+\begin{df}[Zbiezności ciągu o wyrazach w przestrzeni metrycznej]~\\
 Ciąg $(a_n)$ o wyrazach w przestrzeni metrycznej $(X, \rho)$ jest zbiezny do $a\in X \Leftrightarrow \forall\varepsilon >0~~ \exists N ~ \forall n \geqslant N \quad \rho(a_n, a) < \varepsilon \Leftrightarrow \forall\varepsilon >0~~ \exists N ~ \forall n \geqslant N \quad |\rho(a_n, a) - 0| < \varepsilon \Leftrightarrow \rho(a_n, a) \rightarrow 0$
 \end{df}
 
 \begin{df}
-Ciąg $(a_n)$ o wyrazach w przestrzeni metrycznej spelnia warunek Cauch'ego $\Leftrightarrow \forall \varepsilon >0 ~~ \exists N ~ \foralln,m > N \quad \rho(a_n, a_m) < \varepsilon$
+Ciąg $(a_n)$ o wyrazach w przestrzeni metrycznej spelnia warunek Cauch'ego $\Leftrightarrow \forall \varepsilon >0 ~~ \exists N ~ \forall n,m > N \quad \rho(a_n, a_m) < \varepsilon$
 \end{df}
 
 \begin{tw}
@@ -497,7 +505,7 @@ Ciąg $(a_n)$ o wyrazach w przestrzeni metrycznej jest zbieżny $\Rightarrow$ sp
 Ciąg $a_n = \frac{1}{n}$ o wyrazach w przestrzeni metrycznej $X = (0, \infty)$ z metryką naturalną spełnia warunek Cauch'ego a mimo to nie jest zbieżny bo jedyny kandydat na granicę -- $0$ odpada
 \end{przyklad}
 
-\begin{df}
+\begin{df}[Przestrzeni metrycznej zupełnej]
 Przestrzeń metryczna, w której każdy ciąg spełniający warunek Cauch'ego jest zbieżny nazywamy przestrzenią metryczną zupełną.
 \end{df}
 
@@ -513,11 +521,11 @@ Wówczas istnieje dokładnie jedno $x_0 \in X$ (nazywane punktem stałym odwzoro
 
 
 \subsection{Elementy topologii}
-\begin{df}
+\begin{df}[Zbioru otwartego]~\\
 Zbiór $A$ zawarty w przestrzeni metrycznej $(X, \rho)$ nazywamy otwartym jesli każdy punkt $a$ ze zbioru $A$ nalezy do $A$ wraz z pewną kulą o środku w $a$.\\
 $$A \text{ jest otwarty } \Leftrightarrow \forall a\in A ~~ \exists r>0 \quad K(a, r) \subset A$$
 \end{df}
-\begin{df}
+\begin{df}[Zbioru domkniętego]~\\
 Zbiór $A$ zawarty w przestrzeni metrycznej $(X, \rho)$ nazywamy domkniętym $ \Leftrightarrow X \smallsetminus A$ jest otwarty
 \end{df}
 
@@ -579,8 +587,8 @@ $[f,g: D\to \mathbb{R}, D\subset\mathbb{R}^k, a\in D; f,g \text{ są ciągłe w}
 $ f:\mathbb{R}^2 \to\mathbb{R}, f(xy) \begin{cases} 
 	\frac{xy}{x^2+y^2} & \text{dla} (x,y) \neq (0,0)\\
 	0 & \text{dla} (x,y) = (0,0)
-$\\
-\end{cases}
+\end{cases}$\\
+
 \begin{itemize}
 	\item $f$ jest ciągła na $\mathbb{R}^2 \smallsetminus \{(0,0)\}$ jako iloraz funkcji ciągłych (wielomianów)
 	\item $f$ nie jest ciągła w punkcie $(0,0)$, bo nie istnieje granica $\lim\limits_{(x,y)\to(0,0)}f(x,y)$
@@ -686,6 +694,7 @@ Niech $G\subset \mathbb{R}^k$ będzie obszarem i niech $f\in C^2(G)$. Jeśli $\m
 	\item Jeśli macierz $H(\mathbf{x_0})$ jest ujemnie określona, to $f$ ma maksimum lokalne w $\mathbf{x_0}$
 	\item Jeśli macierz $H(\mathbf{x_0})$ jest dodatnio nieokreślona, to $f$ nie posiada ekstremum lokalnego w $\mathbf{x_0}$
 \end{itemize}
+\end{tw}
 
 \begin{tw}[O funkcji uwikłanej]
 Załóżmy że $F$ ma ciągłe pochodne cząstkowe w prwnym otoczeniu punktu $(x_0, y_0)$ oraz $F(x_0,y_0) = 0,~ F'_y(x_0,y_0) \neq 0$ to istnieje otoczenie $U_{x_0} \ni x_0$ i otoczenie $V_{y_0} \ni y_0$ oraz jedyna funkcja $y: U_{x_0} \to V_{y_0}$ klasy $C^1$ taka że $\forall x\in U_{x_0} \quad F(x, y(x)) = 0$. Ponadto $y$ ma ciągłą pochodną w $U_{x_0}$ i $y'(x) = \frac{-F_x(x,y)}{F'_y(x,y)}$, dla $x\in U_{x_0}$
@@ -706,7 +715,7 @@ Niech $G\subset\mathbb{R}^m$, będzie obszarem a $f: G\to\mathbb{R}^k$ funkcją 
 \end{itemize}
 \end{df}
 
-\begin{df}
+\begin{df}[Różniczkowalności w punkcie]~\\
 Niech $G\subset\mathbb{R}^m$, będzie obszarem a $f: G\to\mathbb{R}^k$ funkcją wektorową $m$ zmiennych. Mówimy, że $f$ jest różniczkowalna w punkcie $\mathbf{x}_0\in G \Leftrightarrow$ istnieje operator liniowy $A: \mathbb{R}^m \to \mathbb{R}^k$ taki że $\lim\limits_{h\to 0}\frac{f(\mathbf{x}_0+h)-f(\mathbf{x}_0)-Ah}{||h||} = 0$
 \end{df}
 
