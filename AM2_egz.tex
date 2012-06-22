@@ -612,14 +612,22 @@ _{h\to 0}\frac{f(x_0+h)-f(x_0)-Ah}{||h||} = 0$$
 \begin{tw}[Warunek konieczny różniczkowalności]~\\
 $f:G\to\mathbb{R}, ~ G\subset\mathbb{R}^m$ to obszar, $f$ jest różniczkowalna w punkcie $x_0 \Rightarrow f$ jest ciągła w punkcie $x_0$
 \begin{proof}
+<<<<<<< HEAD
 $f$ różniczkowalna w punkcie $x_0 \Rightarrow \lim\limits_{h\to 0}frac{f(x_0+h)-f(x_0)-Ah}{||h||}=0$ dla pewnego $A=(a_1,a_2, \dots, a_m) \in \mathbb{R}^m$\\
+=======
+$f$ różniczkowalna w punkcie $x_0 \Rightarrow \lim\limits_{h\to\infty}\frac{f(x_0+h)-f(x_0)-Ah}{||h||}=0$ dla pewnego $A=(a_1,a_2, \dots, a_m) \in \mathbb{R}^m$\\
+>>>>>>> 73d05e3b72f0549127cd3af350f31fa3f23f18ec
 Oznaczmy $\eta_{x_0}(h) = \frac{f(x_0+h)-f(x_0)-Ah}{||h||}$, wówczas mamy $\lim\limits_{n\to\infty}\eta_{x_0}(h) = 0$\\
 $f(x_0+h)=\eta_{x_0}(h) = \eta_x(h)||h|| + f(x_0) + Ah$\\
 $\lim\limits_{h\to 0}f(x_0+h) = \lim\limits_{h\to 0}[\eta_{x_0}(h)] = \lim\limits_{h\to 0}[\underbrace{\eta_x(h)||h||}_{0} + f(x_0) + \underbrace{a_1h_1 + a_2h_2 + \dots + a_mh_m}_{0}] = f(x_0) \Rightarrow f$ jest ciągła w punkcie $x_0$
 \end{proof}
 \end{tw}
 
+<<<<<<< HEAD
 \begin{tw}[warunek dostateczny różniczkowalności]~\\
+=======
+\begin{tw}[warunek konieczny różniczkowalności]~\\
+>>>>>>> 73d05e3b72f0549127cd3af350f31fa3f23f18ec
 $f: G\to\mathbb{R}, ~ G\subset \mathbb{R}^m$ to obszar\\
 Istnieją pochodne cząstkowe $f'_{x_1}(x)\dots f'_{x_m}(x)$ w pewnym otoczeniu punktu $x_0$ i są one ciągłe w punkcie $x_0 \Rightarrow f$ jest różniczkowalna w punkcie $x_0$
 \end{tw}
