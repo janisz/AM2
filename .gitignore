@@ -12,6 +12,7 @@
 *.dvi
 *.glg
 *.gls
+*.gz
 *.ilg
 *.ind
 *.lof
