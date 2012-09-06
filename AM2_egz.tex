@@ -549,14 +549,14 @@ $$Int([a,b)) = (a,b) \quad\quad \overline{(a,b)} = [a,b]$$
 \subsection{Granica funkcji}
 \begin{df}[Granicy wg Heinego]
 Mówimy, że $g$ jest granicą funkcji $f$ w punkcie $a$
-$$\Leftrightarrow ~~\forall \{\mathbf{x}_n \subset D \smallsetminus \{a\} \quad [\lim\limits_{n\to\infty}\mathbf{x}_n = a \Rightarrow \lim\limits_{n\to\infty}f(\mathbf{x}_n)=g]$$
+$$\Leftrightarrow ~~\forall \{\mathbf{x}_n \subset D \smallsetminus \{a\} \} \quad [\lim\limits_{n\to\infty}\mathbf{x}_n = a \Rightarrow \lim\limits_{n\to\infty}f(\mathbf{x}_n)=g]$$
 \end{df}
 \begin{df}[Granicy wg Cauchego]
 Mówimy, że $g$ jest granicą funkcji $f$ w punkcie $a$
 $$\Leftrightarrow \forall\varepsilon >0 ~~\exists \delta >0 ~~\forall x\in D \quad 0<||\mathbf{x} - a|| <\delta \Rightarrow |f(\mathbf{x})-g| < \varepsilon$$
 \end{df}
 \begin{df}[Granicy niewłaściwej wg Heinego]
-$$\lim\limits_{x\to a} = \pm \infty~~\Leftrightarrow ~~\forall \{\mathbf{x}_n \subset D \smallsetminus \{a\} \quad [\lim\limits_{n\to\infty}\mathbf{x}_n = a \Rightarrow \lim\limits_{n\to\infty}f(\mathbf{x}_n)=\pm\infty$$
+$$\lim\limits_{x\to a} = \pm \infty~~\Leftrightarrow ~~\forall \{\mathbf{x}_n \subset D \smallsetminus \{a\} \} \quad [\lim\limits_{n\to\infty}\mathbf{x}_n = a \Rightarrow \lim\limits_{n\to\infty}f(\mathbf{x}_n)=\pm\infty]$$
 \end{df}
 \begin{df}[Granicy niewłaściwej wg Cauchego]
 $$\lim\limits_{x\to a} = +\infty~~\Leftrightarrow \forall M\in\mathbb{R}~~\exists \delta >0 ~~\forall x\in D \quad 0<||\mathbf{x} - a|| <\delta \Rightarrow f(x) > M$$
@@ -692,7 +692,7 @@ Niech $G\subset \mathbb{R}^k$ będzie obszarem i niech $f\in C^2(G)$. Jeśli $\m
 \begin{itemize}
 	\item Jeśli macierz $H(\mathbf{x_0})$ jest dodatnio określona, to $f$ ma minimum lokalne w $\mathbf{x_0}$
 	\item Jeśli macierz $H(\mathbf{x_0})$ jest ujemnie określona, to $f$ ma maksimum lokalne w $\mathbf{x_0}$
-	\item Jeśli macierz $H(\mathbf{x_0})$ jest dodatnio nieokreślona, to $f$ nie posiada ekstremum lokalnego w $\mathbf{x_0}$
+	\item Jeśli macierz $H(\mathbf{x_0})$ jest nieokreślona, to $f$ nie posiada ekstremum lokalnego w $\mathbf{x_0}$
 \end{itemize}
 \end{tw}
 
@@ -711,7 +711,7 @@ Niech $D\subset\mathbb{R}^m, ~ f_i: D\to\mathbb{R}, i=1,\dots ,k$ wtedy funkcją
 Niech $G\subset\mathbb{R}^m$, będzie obszarem a $f: G\to\mathbb{R}^k$ funkcją wektorową $m$ zmiennych. Wówczas: 
 \begin{itemize}
 	\item $f$ ma granicę w punkcie $\mathbf{x_0} = (x_{10}, \dots ,x_{m0})$ który jest punktem skupienia zbioru $G$, równą $\mathbf{g} = (g_1, \dots , g_k) \Leftrightarrow \forall \varepsilon > 0 ~~ \exists \delta > 0 \forall )<||\mathbf{x}-\mathbf{x_0}||<\delta \Rightarrow ||f(\mathbf{x})-f(\mathbf{x_0})||<\varepsilon \Leftrightarrow \forall\{\mathbf{x_n}\}\subset G [\lim\limits_{n\to\infty}\mathbf{x_n} = \mathbf{x_0} \Rightarrow \lim\limits_{n\to\infty}f(\mathbf{x_n}) = f(\mathbf{x_0})$
-	\item $f$ jest ciągła w punkcie $\mathbf{x_0}\in G \Rightarrow$ istnieje $\lim\limits_{x\to x_0}f(\mathbf{x}) = f(\mathbf{x_0})$
+	\item $f$ jest ciągła w punkcie $\mathbf{x_0}\in G \Rightarrow$ istnieje $\lim\limits_{x\to x_0}f(\mathbf{x}) = f(\mathbf{x_0})]$
 \end{itemize}
 \end{df}
 
