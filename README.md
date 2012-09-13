@@ -5,7 +5,7 @@ Opis
 ----
 Skrypt zawiera materiał wymagany na egzamin teoretyczny z Analizy Matematycznej 2 w roku 2012. 
 
-Licencja
+Licencja ![](http://i.creativecommons.org/l/by-sa/3.0/80x15.png)
 --------
 Skrypt jest dostępny na licencji [Creative Commons](http://creativecommons.org/licenses/by-sa/3.0/pl/legalcode). 
 Oznacza to że możesz go:
