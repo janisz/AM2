@@ -1,5 +1,5 @@
 language: python
 before_install:
         - sudo apt-get update 
-        - sudo apt-get install pdflatex
-script: "latex -interaction=nonstopmode -halt-on-error AM2_egz.tex"
+        - sudo apt-get install texlive-latex-base
+script: "pdflatex -interaction=nonstopmode -halt-on-error AM2_egz.tex"
