@@ -1,5 +1,5 @@
 language: python
 before_install:
-        - sudo apt-get update -qq
-        - sudo apt-get install -qq pdflatex
+        - sudo apt-get update 
+        - sudo apt-get install pdflatex
 script: "pdflatex -interaction=nonstopmode -halt-on-error AM2_egz.tex"
