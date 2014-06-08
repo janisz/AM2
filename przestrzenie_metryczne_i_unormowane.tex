@@ -1,0 +1,113 @@
+\section{Przestrzenie metryczne i unormowane}
+\begin{df}
+Przestrzenią metryczną nazywamy parę $(X, \rho)$, gdzie $X$ to niepusty zbiór, a $\rho$ to metryka w tym zbiorze.
+Elementy $X$ nazywamy punktami zaś $\rho (x,y)$ odległością między $x$ i $y$
+\end{df}
+\begin{przyklad}[Metryka naturalna (euklidesowa)]
+$X = \mathbb{R}^2 ~\rho((x_1,x_2),(y_1, y_2)) = \sqrt{(x_1-y_1)^2+(x_2-y_2)^2}$
+\end{przyklad}
+\begin{przyklad}[Metryka dyskretna]
+$X \text{-- dowolny zbiór niepusty} \quad \rho(x,y) =
+\begin{cases}
+0 \text{ dla } x = y\\
+1 \text{ dla } x \neq y
+\end{cases}$
+\end{przyklad}
+\begin{przyklad}[Metryka taksówkowa (miejska)]
+$X = \mathbb{R}^n ~\rho(x, y) = \sum\limits_{k=1}^n |x_k-y_k|$
+\end{przyklad}
+
+\begin{df}
+Kulą (otwartą) o środku w punkcie $x_0$ i promieniu $r$ w przestrzeni metrycznej $(X, \rho)$ nazywamy zbiór
+$$K(x_0, r) = \{x\in X: \rho(x,x_0) < r\}$$
+\end{df}
+\begin{df}
+Kulą domkniętą o środku w punkcie $x_0$ i promieniu $r$ w przestrzeni metrycznej $(X, \rho)$ nazywamy zbiór
+$$\overline{K}(x_0, r) = \{x\in X: \rho(x,x_0) \leqslant r\}$$
+\end{df}
+\begin{df}
+Sferą o środku w punkcie $x_0$ i promieniu $r$ w przestrzeni metrycznej $(X, \rho)$ nazywamy zbiór $$S(x_0, r) =
+\{x\in X: \rho(x,x_0) = r\}$$
+\end{df}
+
+\begin{przyklad}[Kula w metryce dyskretnej]
+$$K(x_0, r) = \{x\in X: \rho(x,x_0) < r\} = \begin{cases}
+	\{x_0\} &\text{ gdy } r\in (0,1]\\
+	X &\text{ gdy } r\in (1, \infty)
+\end{cases}$$
+\end{przyklad}
+\begin{przyklad}[Kula domknięta w metryce dyskretnej]
+$$\overline{K}(x_0, r) = \{x\in X: \rho(x,x_0) \leqslant r\} = \begin{cases}
+	\{x_0\} &\text{ gdy } r\in (0,1)\\
+	X &\text{ gdy } r\in [1, \infty)
+\end{cases}$$
+\end{przyklad}
+\begin{przyklad}[Sfera w metryce dyskretnej]
+$$S(x_0, r) = \{x\in X: \rho(x,x_0) = r\} = \begin{cases}
+	\emptyset &\text{ gdy } r\in (0,1) \cup (1,\infty)\\
+	X\smallsetminus\{x_0\} &\text{ gdy } r=1
+\end{cases}$$
+\end{przyklad}
+
+\begin{df}[zbieżności ciągu o wyrazach w przestrzeni metrycznej]~\\
+Ciąg $(a_n)$ o wyrazach w przestrzeni metrycznej $(X, \rho)$ jest zbieżny do $a\in X \Leftrightarrow
+\forall\varepsilon >0~~ \exists N ~ \forall n \geqslant N \quad \rho(a_n, a) < \varepsilon \Leftrightarrow
+\forall\varepsilon >0~~ \exists N ~ \forall n \geqslant N \quad |\rho(a_n, a) - 0| < \varepsilon \Leftrightarrow
+\rho(a_n, a) \rightarrow 0$
+\end{df}
+
+\begin{df}
+Ciąg $(a_n)$ o wyrazach w przestrzeni metrycznej spełnia warunek Cauch'ego $\Leftrightarrow \forall \varepsilon >0 ~~
+\exists N ~ \forall n,m > N \quad \rho(a_n, a_m) < \varepsilon$
+\end{df}
+
+\begin{tw}
+Ciąg $(a_n)$ o wyrazach w przestrzeni metrycznej jest zbieżny $\Rightarrow$ spełnia warunek Cauch'ego
+\end{tw}
+
+\begin{przyklad}
+Ciąg $a_n = \frac{1}{n}$ o wyrazach w przestrzeni metrycznej $X = (0, \infty)$ z metryką naturalną spełnia warunek
+Cauch'ego a mimo to nie jest zbieżny bo jedyny kandydat na granicę -- $0$ odpada
+\end{przyklad}
+
+\begin{df}[Przestrzeni metrycznej zupełnej]
+Przestrzeń metryczna, w której każdy ciąg spełniający warunek Cauch'ego jest zbieżny nazywamy przestrzenią
+metryczną zupełną.
+\end{df}
+
+\begin{tw}
+Przestrzeń $X = \mathbb{R}$ i $\rho (x,y) = |x-y|$ jest przestrzenią zupełną
+\end{tw}
+
+\begin{tw}[Banach o punkcie stałym]~\\
+Niech $(X, \rho)$ będzie przestrzenią metryczną zupełną i $f: X \to X$ będzie odwzorowaniem zwężającym, to
+znaczy funkcją spełniająca warunek
+$$ \exists L\in (0,1) ~~ \forall x,y\in X \quad \rho (f(x), f(y)) \leqslant L\rho (x, y) $$
+Wówczas istnieje dokładnie jedno $x_0 \in X$ (nazywane punktem stałym odwzorowania), takie że $f(x_0) = x_0$.
+\end{tw}
+
+
+\subsection{Elementy topologii}
+\begin{df}[Zbioru otwartego]~\\
+Zbiór $A$ zawarty w przestrzeni metrycznej $(X, \rho)$ nazywamy otwartym jeśli każdy punkt $a$ ze zbioru $A$ należy
+do $A$ wraz z pewną kulą o środku w $a$.\\
+$$A \text{ jest otwarty } \Leftrightarrow \forall a\in A ~~ \exists r>0 \quad K(a, r) \subset A$$
+\end{df}
+\begin{df}[Zbioru domkniętego]~\\
+Zbiór $A$ zawarty w przestrzeni metrycznej $(X, \rho)$ nazywamy domkniętym $ \Leftrightarrow X \smallsetminus A$ jest
+otwarty
+\end{df}
+
+\begin{df}
+Wnętrze zbioru $A$ w przestrzeni metrycznej $(X, \rho)$ to
+$$ IntA := \{a\in A: ~~ \exists r>0 ~~ K(a,r) \subset A \} $$
+\end{df}
+\begin{df}
+Domknięcie zbioru $A$ w przestrzeni metrycznej $(X, \rho)$ to
+$$ \overline{A} := \{x\in X: ~~ \exists r>0 ~~ K(x,r) \cap A \neq \emptyset \} $$
+\end{df}
+
+\begin{przyklad}
+Rozpatrzmy przestrzeń metryczną $(X, \rho)$, gdzie $X = \mathbb{R}$, $\rho (x,y) = |x-y|$\\
+$$Int([a,b)) = (a,b) \quad\quad \overline{(a,b)} = [a,b]$$
+\end{przyklad}

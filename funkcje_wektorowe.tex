@@ -1,0 +1,67 @@
+\section{Funkcje wektorowe}
+\begin{df}
+Niech $D\subset\mathbb{R}^m, ~ f_i: D\to\mathbb{R}, i=1,\dots ,k$ wtedy funkcją wektorową $m$ zmiennych nazywamy
+odwzorowanie $$f:D\to\mathbb{R}^k, f(x_1,\dots ,x_m) = (f_1(x_1,\dots ,x_m), \dots ,f_k(x_1,\dots ,x_m))$$
+\end{df}
+
+\begin{df}
+Niech $G\subset\mathbb{R}^m$, będzie obszarem a $f: G\to\mathbb{R}^k$ funkcją wektorową $m$ zmiennych. Wówczas:
+\begin{itemize}
+	\item $f$ ma granicę w punkcie $\mathbf{x_0} = (x_{10}, \dots ,x_{m0})$ który jest punktem skupienia zbioru
+$G$, równą $\mathbf{g} = (g_1, \dots , g_k) \Leftrightarrow \forall \varepsilon > 0 ~~ \exists \delta > 0 \forall
+)<||\mathbf{x}-\mathbf{x_0}||<\delta \Rightarrow ||f(\mathbf{x})-f(\mathbf{x_0})||<\varepsilon \Leftrightarrow
+\forall\{\mathbf{x_n}\}\subset G [\lim\limits_{n\to\infty}\mathbf{x_n} = \mathbf{x_0} \Rightarrow
+\lim\limits_{n\to\infty}f(\mathbf{x_n}) = f(\mathbf{x_0})$
+	\item $f$ jest ciągła w punkcie $\mathbf{x_0}\in G \Rightarrow$ istnieje $\lim\limits_{x\to x_0}f(\mathbf{x})
+= f(\mathbf{x_0})]$
+\end{itemize}
+\end{df}
+
+\begin{df}[Różniczkowalności w punkcie]~\\
+Niech $G\subset\mathbb{R}^m$, będzie obszarem a $f: G\to\mathbb{R}^k$ funkcją wektorową $m$ zmiennych. Mówimy, że
+$f$ jest różniczkowalna w punkcie $\mathbf{x}_0\in G \Leftrightarrow$ istnieje operator liniowy $A: \mathbb{R}^m \to
+\mathbb{R}^k$ taki że $\lim\limits_{h\to 0}\frac{f(\mathbf{x}_0+h)-f(\mathbf{x}_0)-Ah}{||h||} = 0$
+\end{df}
+
+\begin{df}
+Krzywą w $\mathbb{R}^k$ nazywamy ciągłą funkcje wektorową jednej zmiennej $\gamma: J\to\mathbb{R}^k$. Jeśli
+funkcja jest różnowartościowa to wtedy krzywą nazywamy łukiem (zwykłym).
+\end{df}
+\begin{df}
+Krzywą $\gamma: J\to\mathbb{R}^k$. Nazywamy łukiem gładkim, jeśli jest łukiem zwykłym i $\gamma_i, \dots
+,\gamma_k$ są klasy $C^1$ oraz $\forall t\in J ||\gamma '(x)||^2 \neq 0$
+\end{df}
+
+\begin{tw}[Wzór na długość łuku gładkiego]~\\
+Jeżeli krzywa $\gamma :[\alpha , \beta ] \to\mathbb{R}^2$ jest łukiem gładkim, to jest prostowalna i jej długość
+wyraża się wzorem $d = \int\limits_\alpha^\beta \sqrt{(x'(t))^2 + (y'(t))^2}dt$
+\end{tw}
+
+\subsection{Miara Jordana}
+\begin{df}
+Miara wewnętrzna Jordana zbioru $D$ to $\sup\{s:$ s to suma miar skończonej liczby kostek n-wymiarowych, takich że
+wnętrza tych kostek są parami rozłączne i każda z tych kostek zawiera się w zbiorze $D\} = \underline{j}(D)$
+\end{df}
+\begin{df}
+Miara zewnętrzna Jordana zbioru $D$ to $\inf\{s:$ s to suma miar skończonej liczby kostek n-wymiarowych,
+pokrywających zbiór $ D\} = \overline{j}(D)$
+\end{df}
+
+\begin{df}
+Zbiór $D$ jest mierzalny w sensie Jordana $\Leftrightarrow$ miara wewnętrzna Jordana zbioru $D = $ miara zewnętrzna
+Jordana zbioru $D$.
+Jeżeli $D$ jest mierzalny w sensie Jordana, to jego miara Jordana $j(D) = \underline{j}(D) = \overline{j}(D)$
+\end{df}
+
+\begin{df}
+Obszar ograniczony $D\subset \mathbb{R}^2$ nazywamy obszarem regularnym jeśli jego brzeg da się rozbić na
+skończoną liczbę krzywych, które można zapisać w postaci $y=y(x), x\in [a,b]$ i $y\in C([a,b])$ lub $x=x(y), y\in
+[c,d]$ i $x\in C([c,d])$. Niektóre z tych krzywych mogą się redukować do punktu.
+\end{df}
+\begin{tw}
+Każdy obszar regularny w $\mathbb{R}^2$ jest mierzalny w sensie Jordana.
+\begin{proof}
+Brzeg każdego obszaru regularnego w $\mathbb{R}^2$ ma miarę Jordana równą 0. Wynika to z definicji i tego że
+$y=f(x), x\in [a,b]$ i $y\in C([a,b])$ ma miarę Jordana w $\mathbb{R}^2$ równą $0$
+\end{proof}
+\end{tw}

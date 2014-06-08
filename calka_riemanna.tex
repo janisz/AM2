@@ -1,0 +1,143 @@
+\section{Całka Riemanna}
+\begin{df}[Ciąg normalny podziałów]
+Ciąg podziałów $(\pi(n))$ nazywamy normalnym, jeśli $\delta (\pi (n)) \xrightarrow{n\to\infty}0$
+\end{df}
+\begin{df}[Sumy całkowe]~\\
+$\begin{array}{l l l l}
+\text{Dolna suma całkowa:}& s_n = s_n(\pi_n) = \sum \limits_{i=1}^{k_n}m_i^{(n)}
+(x_i^{(n)}-x_{i-1}^{(n)}) & m_i^{(n)} =
+ \inf (f(x)) & x\in [x_{i-1}^{(n)} ,x_{i}^{(n)} ]\\
+\text{Górna suma całkowa:}& S_n = S_n(\pi_n) = \sum_{i=1}^{k_n}M_i^{(n)}(x_i^{(n)}-x_{i-1}^{(n)}) & M_i^{(n)} = \sup
+(f(x)) & x\in [x_{i-1}^{(n)},x_{i}^{(n)}]\\
+\text{Suma całkowa Riemanna:}& \sigma_n = \sigma_n(\pi_n) = \sum_{i=1}^{k_n}f(\xi_i^{(n)})(x_i^{(n)}-x_{i-1}^{(n)}) &
+& \xi\in [x_{i-1}^{(n)},x_{i}^{(n)}]
+\end{array}$
+\end{df}
+\begin{df}[Funkcja całkowalna w sensie Riemanna]~\\
+Funkcja f jest całkowalna w sensie Riemanna na $[a,b] \Leftrightarrow$ istnieje $\sigma\in\mathbb{R}$ taka,że dla
+dowolnego normalnego ciągu podziałów $(\pi_n)$ oraz dla dowolnego wartościowania tego ciągu $(\omega_n)$ mamy
+$\lim\limits_{n\to\infty}\sigma_n(\pi_n,\omega_0) =
+\lim\limits_{n\to\infty}\sum\limits_{i=1}^{k_n}f(\xi_i^{(n)})(x_i^{(n)}-x_{i-1}^{(n)})$, to $\sigma$ nazywamy całką
+Riemanna funkcji f na $[a,b]$ i oznaczamy $\int\limits_a^b(f(x)dx$
+\end{df}
+\begin{tw}
+$f: [a,b] \rightarrow \mathbb{R}$ (ograniczona) jest całkowalna w sensie Riemanna na $[a,b] \Leftrightarrow s=S$
+\end{tw}
+\begin{tw}
+Każda funkcja monotoniczna i ograniczona na $[a,b]$ jest całkowalna w sensie Riemanna na $[a,b]$
+\end{tw}
+\begin{tw}
+Każda funkcja ciągła na $[a,b]$ jest całkowalna w sensie Riemanna na $[a,b]$
+\end{tw}
+
+\subsection{Własności całki Riemanna}
+
+\begin{enumerate}
+\item $f,g: [a,b] \to \mathbb{R}, \quad\{x\in[a,b]: f(x) \neq g(x)\}$ jest zbiorem skończonym $\Rightarrow$ f jest
+całkowalna na $[a,b]\Leftrightarrow$ g jest całkowalna na $[a,b]$. W przypadku całkowalności
+$\int\limits_a^bf(x)dx=\int\limits_a^bg(x)dx$
+\item $ \int\limits_{a}^{b} (\alpha f(x) + \beta g(x))dx = \alpha \int\limits_a^b f(x)dx + \beta \int\limits_a^bg(x)dx $
+\item $f: [a,b]\to\mathbb{R}$ całkowalna na $[a,b] \Rightarrow$ f jest całkowalna na każdym pod przedziale $[a,b]$
+\item $f: [a,b]\to\mathbb{R}, ~ c\in [a,b]$, f jest całkowalna na $[a,c]$ oraz $[c,b] \Rightarrow$ f jest całkowalna
+na $[a,b]$ oraz $\int\limits_a^bf(x)dx = \int\limits_a^cf(x)dx + \int\limits_c^bf(x)dx$
+\item $f: [a,b] \to \mathbb{R}$ całkowalna na $[a,b]$, $\forall x\in[a,b] ~~ f(x) \geq 0 \Rightarrow
+\int\limits_a^bf(x)dx \geq 0$
+\item $f,g: [a,b] \to \mathbb{R}$ całkowalne na $[a,b]$, $\forall x\in[a,b] ~~ f(x) \leqslant g(x) \Rightarrow
+\int\limits_a^bf(x)dx \leqslant \int\limits_a^bg(x)dx$
+\item $f: [a,b] \to \mathbb{R}$ całkowalna na $[a,b] \Rightarrow$ $|f|$ też jest całkowalna na $[a,b]$ oraz
+$|\int\limits_a^bf(x)dx| \leqslant \int\limits_a^b|f(x)|dx$
+\item $f: [a,b] \to \mathbb{R}$ całkowalna na $[a,b] \Rightarrow \int\limits_a^bf(x)dx \leqslant
+\sup\limits_{x\in[a,b]}f(x)\cdot(b-a)$
+\item Podstawowy wzór rachunku całkowego\\
+$f: [a,b] \to \mathbb{R}$ funkcja ciągła, $\phi(x)$ --- dowolna funkcja pierwotna dla $f(x)$, to znaczy
+$\phi'(x)=f(x) \Rightarrow \int\limits_a^bf(x)dx = \phi(b)-\phi(a)$
+\item Całkowanie przez podstawienie\\
+$
+f: [a,b]\to\mathbb{R}$, funkcja ciągła, $g: [a,b]\to\mathbb{R},~ g\in C^1([a,b])\\
+\alpha = g(a),~ \beta =g(b)\\
+\int\limits_a^bf(g(x))g'(x)dx = \int\limits_\alpha^\beta f(t)dt, \text{ gdzie }t = g(x)
+$
+\begin{proof}~\\
+	Niech $\phi(x)$ będzie funkcją pierwotną dla $f(x)$, to znaczy
+	 $\phi'(x) = f(x), ~ P=\int\limits_\alpha^\beta f(t)dt = \phi(\beta)-\phi(\alpha)$\\
+$[\phi(g(x))]' = \phi'(g(x))g'(x) = f(g(x))g'(x) \Rightarrow \phi(g(x)) \text{ to funkcja pierwotna funkcji }
+f(g(x))g'(x)$\\
+$L = \int\limits_a^bf(g(x))g'(x)dx = \phi(g(b))-\phi(g(a)) = \phi(\beta)-\phi(\alpha)\\
+L = P$
+\end{proof}
+\item Całkowanie przez części\\
+$
+u,v: [a,b]\to\mathbb{R} \text{ --- funkcje klasy } C^1\\
+\int\limits_a^bu(x)v'(x)dx = [u(x)v(x)]_a^b - \int\limits_a^bu'(x)v(x)dx
+$
+\begin{proof}~\\
+$
+	[u(x)v(x)]' = u'(x)v(x)+u(x)v'(x)\\
+	\int\limits_a^b[u(x)v(x)]'dx = \int\limits_a^b(u'(x)v(x)+u(x)v'(x))dx =
+	\int\limits_a^b u'(x)v(x)dx + \int\limits_a^bu(x)v'(x)dx \quad(*)\\
+	u(x)v(x) \text{ to funkcja pierwotna } [u(x)v(x)]'\\
+	\int\limits_a^b[u(x)v(x)]'dx u(b)v(b) - u(a)v(a) = [u(x)v(x)]_a^b \quad(**)\\
+	(*):(**) \Rightarrow [u(x)v(x)]_a^b = \int\limits_a^bu'(x)v(x)dx + \int\limits_a^b u(x)v'(x)dx\\
+	\int\limits_a^bu'(x)v(x)dx = [u(x)v(x)]_a^b-\int\limits_a^bu'(x)v(x)dx
+$
+\end{proof}
+\item Twierdzenie o wartości średniej rachunku całkowego
+$
+f,g: [a,b]\to\mathbb{R} \text{ --- funkcje ciągłe, g jest nieujemna (niedodatnia)}\\
+ \exists \xi\in [a,b] \int\limits_a^bf(x)g(x)dx = f(\xi)\int\limits_a^bg(x)dx
+$
+\end{enumerate}
+
+\subsection{Całki niewłaściwe}
+
+\begin{df}[Całka niewłaściwa I rodzaju]~\\
+$f: [a, \infty) \to \mathbb{R} \text{ całkowalna na } [\alpha, \beta] ~ \forall \beta > \alpha$ oraz istnieje granica
+$\lim\limits_{\beta\to\infty} \int\limits_\alpha^\beta f(x)dx \Rightarrow$ granicę tę nazywamy całka niewłaściwą
+pierwszego rodzaju i oznaczamy $\int\limits_\alpha^\infty f(x)dx := \lim\limits_{\beta\to\infty}
+\int\limits_\alpha^\beta f(x)dx$\\
+Ponadto jeśli granica ta istnieje i jest skończona to całkę niewłaściwą nazywamy zbieżną. Natomiast w
+pozostałych przypadkach całkę niewłaściwą nazywamy rozbieżną.
+\end{df}
+
+\begin{df}[Całka niewłaściwa II rodzaju]~\\
+$f: [a, b) \to \mathbb{R} \text{ całkowalna na } [\alpha, \beta] \quad \forall a < \beta < b$ oraz istnieje granica
+$\lim\limits_{\beta\to b^-} \int\limits_a^\beta f(x)dx \Rightarrow$ granicę tę nazywamy całka niewłaściwą
+drugiego rodzaju i oznaczamy $\int\limits_a^b f(x)dx := \lim\limits_{\beta\to b^-} \int\limits_\alpha^\beta f(x)dx$\\
+Ponadto jeśli granica ta istnieje i jest skończona to całkę niewłaściwą nazywamy zbieżną. Natomiast w
+pozostałych przypadkach całkę niewłaściwą nazywamy rozbieżną.
+\end{df}
+
+\subsection{Kryteria zbieżności}
+
+\begin{tw}[Kryterium porównawcze]~\\
+$f,g: [a,b) \to \mathbb{R} \text{ całkowalna na } [\alpha, \beta] \quad \forall a < \beta < b$ oraz
+$\forall x\in [a,b) \quad 0 \leqslant f(x) \leqslant g(x)$ Wtedy:
+\begin{itemize}
+\item $\int\limits_a^bg(x)dx$ jest zbieżna $\Rightarrow \int\limits_a^bg(x)dx$ też jest zbieżna
+\item $\int\limits_a^bf(x)dx$ jest rozbieżna $\Rightarrow \int\limits_a^bg(x)dx$ też jest rozbieżna
+\end{itemize}
+\end{tw}
+
+\begin{tw}
+$f: [a,b) \to \mathbb{R} \text{ całkowalna na } [\alpha, \beta] \quad \forall a < \beta < b$ oraz
+$\int\limits_a^b |f(x)|dx$ jest zbieżna, to $\int\limits_a^b f(x)dx$ też jest zbieżna. Mówimy wtedy, że jest
+zbieżna bezwzględnie.
+\end{tw}
+
+\subsection{Zastosowania geometryczne całki Riemanna}
+
+\begin{tw}[Pole zbioru płaskiego]~\\
+$f: [a,b] \to \mathbb{R}$ funkcja nieujemna i ciągła, $D = \{(x,y) \in \mathbb{R}^2: x\in [a,b[, y\in [0, f(x)]$
+pole $D = |D| = \int\limits_a^b f(x)dx$
+\end{tw}
+
+\begin{tw}[Długość łuku]~\\
+Niech $f: [a,b] \to \mathbb{R}$ -- funkcja klasy $C^1$. Wówczas długość łuku opisanego równaniem $y=f(x), x\in
+[a,b]$ dana jest wzorem $L = \int\limits_a^b \sqrt{1 + \left[f'(x)\right]^2}dx$
+\end{tw}
+
+\begin{tw}[Objętość bryły]~\\
+Niech $f: [a,b] \to \mathbb{R}$ -- funkcja klasy $C^1$ oraz $V$ oznacza bryłę powstałą poprzez obrót
+ dookoła osi OX krzywej $y = f(x), x\in [a,b]$. Wówczas objętość $V$ dana jest wzorem $V = \pi\int\limits_a^b
+f^2(x)dx$
+\end{tw}
