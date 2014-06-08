@@ -1,0 +1,115 @@
+\section{Szeregi liczbowe}
+\begin{df}[sumy szeregu liczbowego]~\\
+Jeśli istnieje skończona lub nie $\lim\limits_{n\to\infty}S_n$, to nazywamy ją sumą szeregu
+$\sum\limits_{n=1}^\infty a_n$ i zapisujemy $\sum\limits_{n=1}^\infty a_n=\lim\limits_{n\to\infty}S_n$.
+Jeśli $\lim\limits_{n\to\infty}S_n$ jest skończona, to szereg $\sum\limits_{n=1}^\infty a_n$ nazywamy zbieżnym; w
+pozostałych przypadkach (to znaczy gdy granica jest nieskończona lub nie istnieje) szereg ten nazywamy rozbieżnym
+\end{df}
+
+\begin{tw}[Warunek konieczny zbieżności szeregu]~\\
+$\sum\limits_{n=1}^\infty a_n$ jest zbieżny $\Rightarrow \lim\limits_{n\to\infty}a_n = 0$
+\begin{proof}
+Zakładamy, że $\sum\limits_{n=1}^\infty a_n$ jest zbieżny $\Rightarrow (S_n)$ jest zbieżny; oznaczamy
+$S_n \xrightarrow{n\to\infty} S$\\
+$a_n = S_n - S_{n-1} \xrightarrow{n\to\infty} S - S = 0$
+\end{proof}
+\begin{przyklad}[Powyższy warunek nie jest warunkiem dostatecznym]~\\
+$\sum\limits_{n=1}^\infty \frac{1}{n}$ nie jest zbieżny, mimo że $\lim\limits_{n\to\infty} \frac{1}{n} = 0$
+\end{przyklad}
+\end{tw}
+
+\begin{tw}[Warunek Cauch'ego zbieżności szeregu]~\\
+Szereg $\sum\limits_{n=1}^\infty a_n$ jest zbieżny $\Leftrightarrow$ spełnia warunek Cauch'ego, to znaczy
+$$
+\forall \varepsilon > 0 ~~\exists N ~~\forall m > n > N \quad |a_{n+1} + a_{n+2} + \dots + a_m| < \varepsilon
+$$
+\end{tw}
+
+\begin{tw}[O mnożeniu szeregu przez stałą]~\\
+$\sum\limits_{n=1}^\infty a_n$ jest zbieżny i $\lambda\in\mathbb{R}$ wówczas szereg $\sum\limits_{n=1}^\infty \lambda
+a_n$ jest zbieżny i $\sum\limits_{n=1}^\infty \lambda a_n = \lambda \sum\limits_{n=1}^\infty a_n$
+\end{tw}
+\begin{tw}[O dodawaniu i odejmowaniu szeregów]~\\
+$\sum\limits_{n=1}^\infty a_n, \sum\limits_{n=1}^\infty b_n$ są zbieżne wówczas szereg $\sum\limits_{n=1}^\infty a_n
+\pm \sum\limits_{n=1}^\infty b_n$ jest zbieżny i $\sum\limits_{n=1}^\infty a_n \pm \sum\limits_{n=1}^\infty b_n =
+\sum\limits_{n=1}^\infty (a_n \pm b_n)$
+\end{tw}
+
+\subsection{Kryteria zbieżności szeregów}
+
+\begin{tw}[Kryterium porównawcze]~\\
+$\forall n\in\mathbb{N} \quad 0 \leqslant a_n \leqslant b_n$, wówczas
+\begin{itemize}
+	\item $\sum\limits_{n=1}^\infty b_n$ jest zbieżny $\Rightarrow \sum\limits_{n=1}^\infty a_n$ jest zbieżny
+	\item $\sum\limits_{n=1}^\infty a_n$ jest rozbieżny $\Rightarrow \sum\limits_{n=1}^\infty b_n$ jest rozbieżny
+\end{itemize}
+\end{tw}
+
+\begin{tw}[Kryterium d'Alemberta]~\\
+Niech $\forall n\in\mathbb{N} \quad a_n > 0$ i istnieje granica
+$\lim\limits_{n\to\infty} \frac{a_{n+1}}{a_n} = g$, wówczas
+\begin{itemize}
+	\item $g < 1 \Rightarrow \sum\limits_{n=1}^\infty a_n < \infty$
+	\item $g > 1 \Rightarrow \sum\limits_{n=1}^\infty a_n = \infty$
+	\item $g = 1 \Rightarrow $?
+\end{itemize}
+\end{tw}
+
+\begin{tw}[Kryterium Cauch'ego]~\\
+Niech $\forall n\in\mathbb{N} \quad a_n \geqslant 0$ i oznaczamy $g = \limsup\limits_{n\to\infty} \sqrt[n]{a_n}$,
+wówczas
+\begin{itemize}
+	\item $g < 1 \Rightarrow \sum\limits_{n=1}^\infty a_n < \infty$
+	\item $g > 1 \Rightarrow \sum\limits_{n=1}^\infty a_n = \infty$
+	\item $g = 1 \Rightarrow $?
+\end{itemize}
+\end{tw}
+
+\begin{tw}[Kryterium całkowe zbieżności szeregu]~\\
+$f: [1, \infty) \to \mathbb{R}$ funkcja nieujemna i nierosnąca. Wtedy
+$\sum\limits_{n=1}^\infty f(n)$ jest zbieżny $\Leftrightarrow \int\limits_{n=1}^\infty f(x)dx$ jest zbieżna.
+\end{tw}
+
+\begin{tw}[Kryterium Dirichleta]~\\
+
+$\left.
+\begin{array}{l}
+	(a_n) \text{ to ciąg nierosnący i taki że } \lim\limits_{n\to\infty} a_n = 0\\
+	(b_n) \text{ to ciąg taki że ciąg sum częściowych jest ograniczony }\footnotemark[1]
+\end{array}
+\right\rbrace \Rightarrow \sum\limits_{n=1}^\infty a_nb_n$ jest zbieżny
+\footnotetext[1]{ to znaczy $\exists M\in\mathbb{R} ~~ \forall n\in\mathbb{N} \quad |b_1 + b_2 + \dots b_n| \leqslant
+M$}
+\end{tw}
+
+\begin{tw}[Kryterium Leibniza]~\\
+$(a_n)$ to ciąg nierosnący i taki, że $\lim\limits_{n\to\infty} a_n = 0 \Rightarrow \sum\limits_{n=1}^\infty
+a_n(-1)^{n+1} = a-1 - a_2 + a_3 - a_4 + \dots$ jest zbieżny
+\begin{proof}
+Niech $b_n = (-1)^{n+1}$, wówczas $b_1 + b_2 + \dots + b_n =
+	\begin{cases}
+		1 \quad n=2k+1\\
+		0 \quad n=2k\\
+ 	\end{cases}
+\Rightarrow \forall n\in\mathbb{N} ~~ 0\leqslant b_1 + b_2 + \dots + b_n \leqslant 1$ to znaczy ciąg $(b_1 + b_2 +
+\dots + b_n)$ jest ograniczony. Są spełnione założenia kryterium Dirichleta $\Rightarrow \sum\limits_{n=1}^\infty
+a_nb_n = \sum\limits_{n=1}^\infty a_n(-1)^{n+1}$ jest zbieżny.
+\end{proof}
+\end{tw}
+
+\begin{df}
+Szereg $\sum\limits_{n=1}^\infty a_n$ jest zbieżny bezwzględnie $\Leftrightarrow \sum\limits_{n=1}^\infty |a_n|$ jest
+zbieżny.
+\end{df}
+
+\begin{df}
+Szereg który jest zbieżny ale nie jest zbieżny bezwzględnie nazywamy zbieżnym warunkowo.
+\end{df}
+
+\begin{tw}
+Szereg $\sum\limits_{n=1}^\infty a_n$ jest zbieżny bezwzględnie $\Rightarrow$ Szereg $\sum\limits_{n=1}^\infty a_n$
+jest zbieżny i $|\sum\limits_{n=1}^\infty a_n| \leqslant \sum\limits_{n=1}^\infty |a_n|$
+\end{tw}
+
+%dodać przykłady i wyjaśnieniea
+

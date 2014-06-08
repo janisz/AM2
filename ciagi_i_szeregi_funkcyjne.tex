@@ -1,0 +1,194 @@
+\section{Ciągi i szeregi funkcyjne}
+\subsection{Ciągi funkcyjne}
+\begin{df}[Punktowej zbieżności]~\\
+Mówimy, że ciąg funkcyjny $(f_n)$ jest zbieżny do funkcji $f$ (punktowo)
+ $$\Leftrightarrow \forall x\in A \quad \lim\limits_{n\to\infty}\underbrace{f_n(x)}_{\text{ciąg liczbowy}} =
+\underbrace{f(x)}_{\text{liczba}} \Leftrightarrow \forall x\in A ~ \forall\varepsilon > 0 ~~ \exists N = N(\varepsilon,
+x) ~ \forall n \geqslant N \quad |f_n(x)-f(x)| < \varepsilon$$, oznaczamy $f_n \rightarrow f$
+\end{df}
+
+\begin{df}[Jednostajnej zbieżności]~\\
+Mówimy, że ciąg funkcyjny $(f_n)$ jest zbieżny do funkcji $f$ (jednostajnie) $$\Leftrightarrow \forall\varepsilon >
+0 ~~ \exists N = N(\varepsilon, x) ~ \forall n \geqslant N ~ \forall x\in A ~ \quad |f_n(x)-f(x)| < \varepsilon$$,
+oznaczamy $f_n \rightrightarrows f$
+\end{df}
+
+\begin{tw}[Warunek równoważny zbieżności jednostajnej ciągu funkcyjnego]~\\
+$f, f_n: A \to \mathbb{R}$. Wówczas $f_n \rightrightarrows f \Leftrightarrow \lim\limits_{n\to\infty}
+\sup\limits_{x\in A} |f_n(x)-f(x)| = 0$
+\end{tw}
+
+\begin{przyklad}[ciągu który jest zbieżny punktowo ale nie jednostajnie]
+$f_n: [0,1] \to \mathbb{R}, \quad f_n(x) = x^n$ zbieżność punktowa
+$
+	\lim\limits_{n\to\infty}f_n(x) = \lim\limits_{n\to\infty}x^n =
+	\begin{cases}
+	0 \quad x\in[0,1)\\
+	1 \quad x=1
+	\end{cases}
+$
+\end{przyklad}
+
+\begin{df}[Warunek Cauch'ego dla zbieżności punktowej i jednostajnej]~\\
+$\forall x\in A f_n \rightarrow f \Leftrightarrow \forall x\in A$ ciąg $(f_n(x))$ jest zbieżny $\Leftrightarrow
+\forall x\in A \text{ ciąg } (f_n(x))$ spełnia warunek Cauch'ego, to znaczy
+$\forall x\in A ~~ \forall \varepsilon>0 ~~ \exists N ~ \forall n,m \geqslant N \quad |f_n(x) - f_m(x)| < \varepsilon$
+\end{df}
+
+\begin{tw}
+Ciąg funkcyjny $(f_n)$ jest zbieżny jednostajnie na A $\Leftrightarrow$ spełnia warunek Cauch'ego zbieżności
+jednostajnej.
+\end{tw}
+
+\begin{tw}[o ciągłości granicy ciągu funkcyjnego]~\\
+$f, f_n: A\to \mathbb{R}, f_n \rightrightarrows_A f$, funkcje $f_n$ są ciągłe w punkcie $a\in A ~~ \forall n\in N
+\Rightarrow f$ jest ciągła w punkcie $a$
+\end{tw}
+
+\begin{tw}[o różniczkowaniu granicy ciągu funkcyjnego]~\\
+$A \subset \mathbb{R} \text{ -- przedział }$ są różniczkowalne w każdym punkcie przedziału A. Ciąg $(f_n')$ jest
+z zbieżny jednostajnie na A, czyli $\exists x_0 \in A  \quad (f_n'(x_0))$ jest zbieżny $\Rightarrow$
+\begin{itemize}
+	\item ciąg $(f_n)$ jest jednostajnie zbieżny na A do pewnej funkcji granicznej
+	\item funkcja graniczna $f$ jest różniczkowalna na A i $\forall x\in A ~~ f'(x) = \lim\limits_{n\to\infty}
+f_n'(x) = (\lim\limits_{n\to\infty} f_n(x))'$
+\end{itemize}
+\end{tw}
+
+\begin{tw}[o całkowaniu granicy ciągu funkcyjnego]~\\
+$A \text{ -- przedział } \subset \mathbb{R}, f, f_n \in C(A), f_n \rightrightarrows_A f \Rightarrow \forall a,b \in A
+\quad \int\limits_a^bf(x)dx = \lim\limits_{n\to\infty}\int\limits_a^bf_n(x)dx$
+\end{tw}
+
+\subsection{Szeregi funkcyjne}
+% dodać definicje
+\begin{tw}[Warunek Cauch'ego zbieżności jednostajnej]~\\
+Szereg $\sum\limits_{n=1}^\infty a_n$ jest zbieżny jednostajnie $\Leftrightarrow$ spełnia warunek Cauchego
+jednostajnej zbieżności szeregu funkcyjnego.
+$\forall \varepsilon ~~\exists N ~ \forall m>n>N ~~ \forall x\in A \quad |a_{n+1}(x) + \dots + u_m(x)| < \varepsilon $
+\end{tw}
+
+\begin{tw}[Kryterium Weierstrassa]~\\
+Jeśli istnieje ciąg liczbowy $(a_n)$ taki, że $\forall n\in \mathbb{N} ~~ \forall x\in A \quad |u_n(x)|\leqslant
+a_n$ i $\sum\limits_{n=1}^\infty a_n$ jest zbieżny, to szereg funkcyjny $\sum\limits_{n=1}^\infty u_n$ jest zbieżny
+jednostajnie ( i bezwzględnie)
+\begin{przyklad}
+Szereg $\sum\limits_{n=1}^\infty \frac{sin(nx)}{2^n}$ jest zbieżny jednostajnie na $\mathbb{R}$ bo
+$\forall n\in \mathbb{N} ~~ \forall x\in\mathbb{R} \quad \frac{sin(nx)}{2^n} \leqslant \frac{1}{2^n} $ i
+$\sum\limits_{n=1}^\infty \frac{1}{2^n}$ jest zbieżny jako ciąg geometryczny.
+\end{przyklad}
+\end{tw}
+
+\begin{tw}[o ciągłości sumy szeregu funkcyjnego]~\\
+$S, u_n: A \to \mathbb{R}, ~~ \sum\limits_{n=1}^\infty u_n$ jest zbieżny jednostajnie do funkcji S, funkcje $u_n$ są
+ciągłe na $A~ \forall n\in\mathbb{N} \Rightarrow S=\sum\limits_{n=1}^\infty u_n$ też jest ciągła na $A$.
+\end{tw}
+
+\begin{tw}[o różniczkowaniu sumy szeregu funkcyjnego]~\\
+$A$ -- przedział $\subset \mathbb{R}$\\
+$u_n: A \to \mathbb{R}$ są różniczkowalne w każdym punkcie przedziału $A$\\
+$\sum\limits_{n=1}^\infty u_n'$ jest zbieżny jednostajnie na $A$\\
+$\exists x_0\in A ~~ \sum\limits_{n=1}^\infty u_n(x_0)$ jest zbieżny $\Rightarrow$
+\begin{itemize}
+	\item $\sum\limits_{n=1}^\infty u_n$ jest zbieżny jednostajnie
+	\item $\sum\limits_{n=1}^\infty u_n$ jest różniczkowalna na $A$ i $(\sum\limits_{n=1}^\infty u_n)' =
+\sum\limits_{n=1}^\infty u_n'$
+\end{itemize}
+\end{tw}
+
+\begin{tw}[o całkowaniu szeregu funkcyjnego]~\\
+$A$ -- przedział $\subset \mathbb{R}$\\
+$u_n: A \to \mathbb{R}$ są ciągłe na $A$\\
+$\sum\limits_{n=1}^\infty u_n$ jest zbieżny jednostajnie
+$ \Rightarrow \forall a,b\in A ~~ \int\limits_a^b (\sum\limits_{n=1}^\infty u_n(x))dx =
+\lim\limits_{n\to\infty}\int\limits_a^b (u_1(x) + u_2(x) + \dots + u_n(x))dx =  \sum\limits_{n=1}^\infty
+\int\limits_a^b u_n(x)dx$
+\end{tw}
+
+\subsection{Szeregi potęgowe}
+\begin{df}
+Szeregiem potęgowym nazywamy szereg funkcyjny postaci $\sum\limits_{n=0}^\infty a_nx^n$, gdzie $a_n\in\mathbb{R}$ dla
+$n\in\mathbb{N}$
+\end{df}
+
+\begin{tw}[D'Alemberta]~\\
+Jeśli istnieje granica $\lim\limits_{n\to\infty} |\frac{a_{n+1}}{a_n}| = \lambda $, to promień zbieżności szeregu
+potęgowego $\sum\limits_{n=0}^\infty a_nx^n$ dany jest wzorem:
+$ R =
+	\begin{cases}
+		\frac{1}{\lambda}, & \lambda \in (0,\infty)\\
+		+\infty, & \lambda = 0\\
+		0, & \lambda = \infty
+	\end{cases} $
+\end{tw}
+
+\begin{tw}[Cauch'ego-Hadamarda]~\\
+Promień zbieżności szeregu potęgowego $\sum\limits_{n=0}^\infty a_nx^n$ dany jest wzorem
+$ R =
+	\begin{cases}
+		\frac{1}{\lambda}, & \lambda \in (0,\infty)\\
+		+\infty, & \lambda = 0\\
+		0, & \lambda = \infty
+	\end{cases} $, gdzie $\lambda = \limsup\limits_{n\to\infty}\sqrt[n]{|a_n|}$
+\end{tw}
+
+\begin{przyklad}[Szeregu o promieniu zbieżności $= 7$]
+$\sum\limits_{n=1}^\infty \frac{1}{n7^n}x^n$
+\end{przyklad}
+\begin{przyklad}[Szeregu zbieżnego tylko dla $x=0$]
+$\sum\limits_{n=1}^\infty n^nx^n$
+\end{przyklad}
+\begin{przyklad}[Szeregu zbieżnego tylko dla $x=5$]
+$\sum\limits_{n=1}^\infty n^n(5-x)^n$
+\end{przyklad}
+\begin{przyklad}[Szeregu zbieżnego $\forall x\in\mathbb{R}$]
+$\sum\limits_{n=1}^\infty \frac{x^n}{n!}$
+\end{przyklad}
+
+\begin{tw}[o ciągłości sumy szeregu potęgowego]~\\
+Niech promień zbieżności $R$ szeregu $\sum\limits_{n=0}^\infty a_nx^n$ będzie dodatni. Wówczas funkcja
+$f(x)=\sum\limits_{n=0}^\infty a_nx^n$ jest ciągła na $(-R, R)$
+\end{tw}
+
+\begin{tw}[Abela]
+Szereg potęgowy jest funkcją ciągłą w każdym punkcie, w którym jest zbieżny (w punktach końcowych przedziału
+mówimy o ciągłości jednostronnej)
+\end{tw}
+
+\begin{tw}[o różniczkowaniu szeregu potęgowego]~\\
+\begin{itemize}
+	\item Oba szeregi $\sum\limits_{n=0}^\infty a_nx^n$ i $\sum\limits_{n=0}^\infty (a_nx^n)'$ mają te same
+promienie zbieżności
+	\item Jeśli $R > 0$, to $f(x) = \sum\limits_{n=0}^\infty a_nx^n$ jest różniczkowalna na $(-R, R)$ i $f'(x) =
+(\sum\limits_{n=0}^\infty a_nx^n)' = \sum\limits_{n=0}^\infty (a_nx^n)' \quad \forall x\in (-R,R)$
+\end{itemize}
+\end{tw}
+
+\begin{tw}[o całkowaniu szeregu potęgowego]~\\
+\begin{itemize}
+	\item Oba szeregi $\sum\limits_{n=0}^\infty a_nx^n$ i $\sum\limits_{n=0}^\infty \int\limits_0^x (a_nt^n)dt$
+mają te same promienie zbieżności
+	\item Jeśli $R > 0$, to $f(t) = \sum\limits_{n=0}^\infty a_nt^n$ jest całkowalna na $(0, x)$ i
+$\int\limits_0^x f(t)dt = \int\limits_0^x(\sum\limits_{n=0}^\infty a_nt^n)dt \quad \forall x\in (-R,R)$
+\end{itemize}
+\end{tw}
+
+\subsection{Szereg Taylora i Maclaurina}
+\begin{df}[szeregu Taylora]~\\
+Niech $f\in C^\infty ((x_0-\delta, x_0+\delta))$ wtedy szereg potęgowy $\sum\limits_{n=0}^\infty
+\frac{f^{(n)}(x_0)}{n!}(x-x_0)^n$ nazywamy szeregiem Taylora o środku w punkcie $x_0$ dla funkcji $f$.
+\end{df}
+
+\begin{df}[szeregu Maclaurina]~\\
+Niech $f\in C^\infty ((-\delta, \delta))$ wtedy szereg potęgowy $\sum\limits_{n=0}^\infty \frac{f^{(n)}(0)}{n!}x^n$
+nazywamy szeregiem Maclaurina dla funkcji $f$.
+\end{df}
+
+\begin{przyklad}[Rozwinięć niektórych funkcji w szereg Macalurina]~\\
+\begin{itemize}
+	\item $\frac{1}{1-x} = \sum\limits_{n=0}^\infty x^n \quad |x| < 1$
+	\item $e^x = \sum\limits_{n=0}^\infty \frac{x^n}{n!}$
+	\item $sinx = \sum\limits_{n=0}^\infty \frac{(-1)^n}{(2n+1)!}x^{2n+1}$
+	\item $cosx = \sum\limits_{n=0}^\infty \frac{(-1)^n}{(2n)!}x^{2n}$
+\end{itemize}
+\end{przyklad}
